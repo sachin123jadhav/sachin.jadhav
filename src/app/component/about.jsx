@@ -8,25 +8,32 @@ export default function About() {
 
   return (
     <>
-      <section className="relative md:py-24 py-16 bg-gray-50 dark:bg-slate-800" id="about">
+      <section
+        className="relative md:py-24 py-16 bg-gray-50 dark:bg-slate-800"
+        id="about"
+      >
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10 items-center">
+          <div
+            className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10 items-center wow animate__animated animate__fadeInUp"
+            data-wow-delay=".90s "
+          >
             <div className="lg:col-span-5">
               <div className="relative">
                 <Image
                   src={"/images/about.jpg"}
-                  className="rounded-lg shadow-lg relative"
+                  className="rounded-lg shadow-lg relative "
                   alt=""
                   width={0}
                   height={0}
                   sizes="100vw"
-                  style={{ width: "100%", height: "auto" }} // optional
+                  style={{ width: "100%", height: "auto" }}
+                  loading="lazy" // optional
                 />
                 <div className="absolute bottom-2/4 translate-y-2/4 start-0 end-0 text-center">
                   <Link
                     href="#"
                     scroll={false}
-                    onClick={()=>setOpen(!isOpen)}
+                    onClick={() => setOpen(!isOpen)}
                     className="lightbox h-20 w-20 rounded-full shadow-lg shadow-slate-100 dark:shadow-slate-800 inline-flex items-center justify-center bg-white dark:bg-slate-900 text-orange-600 cursor-pointer"
                   >
                     <i className="mdi mdi-play inline-flex items-center justify-center text-2xl"></i>
@@ -63,31 +70,77 @@ export default function About() {
                     View Portfolio
                   </Link>
                 </div>
+
+                <Link
+                  href={"#"}
+                  class="
+    relative inline-block z-[1] overflow-hidden
+    bg-[#5B6CFF] text-white font-urban
+    h-[60px] leading-[61px] px-[35px]
+    rounded-full shadow-[inset_-2px_-2px_2px_rgba(7,13,29,0.3)]
+    font-bold text-[16px] tracking-[0.02em]
+    transition-all duration-1000
+    xs:h-[50px] xs:leading-[50px] xs:px-[25px]
+    group
+  "
+                >
+                  <span class="relative z-[5] text-white transition-colors duration-500 group-hover:text-white">
+                    View Portfolio
+                  </span>
+
+                  <span
+                    class="absolute inset-0 -top-full -bottom-full bg-black rounded-[95px]
+           scale-y-0 origin-bottom transition-transform duration-1000 ease-[cubic-bezier(.14,0,0,1.01)]
+           group-hover:scale-y-100 group-hover:origin-top -z-[1] after:block"
+                  ></span>
+                </Link>
+                {/* Gerold - Personal Portfolio HTML5 Template */}
               </div>
             </div>
           </div>
         </div>
       </section>
       {/* <!-- End --> */}
-      {isOpen && 
+      {isOpen && (
         <div className="flex bg-[#00000099] overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-            <div className="relative p-1 w-full max-w-2xl max-h-full">
-                <div className="relative bg-white rounded-lg shadow-xs dark:bg-gray-700">
-                    <div className="flex items-center justify-between p-1 border-b rounded-t dark:border-gray-600 border-gray-200">
-                        <button type="button" onClick={()=>setOpen(!isOpen)} className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-                            <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                            </svg>
-                            <span className="sr-only">Close modal</span>
-                        </button>
-                    </div>
-                    <div className="p-1 md:p-1 space-y-4">
-                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/yba7hPeTSjk?playlist=yba7hPeTSjk&loop=1"></iframe>
-                    </div>
-                </div>
+          <div className="relative p-1 w-full max-w-2xl max-h-full">
+            <div className="relative bg-white rounded-lg shadow-xs dark:bg-gray-700">
+              <div className="flex items-center justify-between p-1 border-b rounded-t dark:border-gray-600 border-gray-200">
+                <button
+                  type="button"
+                  onClick={() => setOpen(!isOpen)}
+                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  data-modal-hide="default-modal"
+                >
+                  <svg
+                    className="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  <span className="sr-only">Close modal</span>
+                </button>
+              </div>
+              <div className="p-1 md:p-1 space-y-4">
+                <iframe
+                  width="100%"
+                  height="400"
+                  src="https://www.youtube.com/embed/yba7hPeTSjk?playlist=yba7hPeTSjk&loop=1"
+                ></iframe>
+              </div>
             </div>
+          </div>
         </div>
-      }
+      )}
     </>
   );
 }

@@ -67,37 +67,38 @@ export default function Services() {
           <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6">
             {team.map((item, key) => { 
              const Icon = item.Icon
-             return(
-              <div
-                key={key}
-                className={`features p-6 ${
-                  key % 2 === 0
-                    ? "hover:shadow-xl hover:shadow-slate-100 dark:hover:shadow-slate-800"
-                    : "shadow-xl shadow-slate-100 dark:shadow-slate-800"
-                } transition duration-500 rounded-3xl mt-8`}
-              >
-                <div className="size-20 bg-orange-600/5 text-orange-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm">
-                  <Icon  width="30px" height="30px"/>
-                </div>
+             return (
+               <div
+                 key={key}
+                 className={`features p-6  wow animate__animated animate__fadeInRight ${
+                   key % 2 === 0
+                     ? "hover:shadow-xl hover:shadow-slate-100 dark:hover:shadow-slate-800"
+                     : "shadow-xl shadow-slate-100 dark:shadow-slate-800"
+                 } transition duration-500 rounded-3xl mt-8`}
+               >
+                 <div className="size-20 bg-orange-600/5 text-orange-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm">
+                   <Icon width="30px" height="30px" />
+                 </div>
 
-                <div className="content mt-7">
-                  <Link
-                    href="#"
-                    className="text-lg hover:text-orange-600 dark:text-white dark:hover:text-orange-600 transition-all duration-500 ease-in-out font-medium"
-                  >
-                    {item.title}
-                  </Link>
-                  <p className="text-slate-400 mt-3">{item.subtext}</p>
+                 <div className="content mt-7">
+                   <Link
+                     href="#"
+                     className="text-lg hover:text-orange-600 dark:text-white dark:hover:text-orange-600 transition-all duration-500 ease-in-out font-medium"
+                   >
+                     {item.title}
+                   </Link>
+                   <p className="text-slate-400 mt-3">{item.subtext}</p>
 
-                  <Link href="#" className="mt-5 !inline-flex items-center btn btn-link hover:text-orange-600 dark:hover:text-orange-600 after:bg-orange-600 dark:text-white transition duration-500">
-                    <span>
-                       Read More
-                    </span>
-                      <FiArrowRight width="16px"/>
-                  </Link>
-                </div>
-              </div>
-            )})}
+                   <Link
+                     href="#"
+                     className="mt-5 !inline-flex items-center btn btn-link hover:text-orange-600 dark:hover:text-orange-600 after:bg-orange-600 dark:text-white transition duration-500"
+                   >
+                     <span>Read More</span>
+                     <FiArrowRight width="16px" />
+                   </Link>
+                 </div>
+               </div>
+             );})}
           </div>
         </div>
 
