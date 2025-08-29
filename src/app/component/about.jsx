@@ -95,6 +95,19 @@ export default function About() {
                   ></span>
                 </Link>
                 {/* Gerold - Personal Portfolio HTML5 Template */}
+
+                <a
+                  href="#"
+                  class="relative inline-block after:content-[''] after:absolute 
+         after:w-full after:h-[2px] after:rounded-md
+         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bottom-[0px] after:left-0
+         after:origin-right after:scale-x-0
+         after:transition-transform after:duration-300 after:ease-in-out
+         hover:after:scale-x-100 hover:after:origin-left"
+                >
+                  Hover Link
+                </a>
               </div>
             </div>
           </div>

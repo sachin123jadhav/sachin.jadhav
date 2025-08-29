@@ -97,7 +97,13 @@ export default function Navbar({navdark}){
                 id="navbar-navlist"
               >
                 <Link2
-                  className="nav-item"
+                  className="nav-item relative inline-block after:content-[''] after:absolute 
+         after:w-full after:h-[2px] after:rounded-md
+         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bottom-[0px] after:left-0
+         after:origin-right after:scale-x-0
+         after:transition-transform after:duration-300 after:ease-in-out
+         hover:after:scale-x-100 hover:after:origin-left"
                   to="home"
                   activeclassname="active"
                   spy={true}
@@ -107,7 +113,13 @@ export default function Navbar({navdark}){
                   <span className="nav-link">Home</span>
                 </Link2>
                 <Link2
-                  className="nav-item"
+                  className="nav-item relative inline-block after:content-[''] after:absolute 
+         after:w-full after:h-[2px] after:rounded-md
+         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bottom-[0px] after:left-0
+         after:origin-right after:scale-x-0
+         after:transition-transform after:duration-300 after:ease-in-out
+         hover:after:scale-x-100 hover:after:origin-left"
                   activeclassname="active"
                   spy={true}
                   smooth={true}
@@ -117,7 +129,13 @@ export default function Navbar({navdark}){
                   <span className="nav-link">About us</span>
                 </Link2>
                 <Link2
-                  className="nav-item"
+                  className="nav-item relative inline-block after:content-[''] after:absolute 
+         after:w-full after:h-[2px] after:rounded-md
+         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bottom-[0px] after:left-0
+         after:origin-right after:scale-x-0
+         after:transition-transform after:duration-300 after:ease-in-out
+         hover:after:scale-x-100 hover:after:origin-left"
                   to="features"
                   activeclassname="active"
                   spy={true}
@@ -127,7 +145,13 @@ export default function Navbar({navdark}){
                   <span className="nav-link">Services</span>
                 </Link2>
                 <Link2
-                  className="nav-item"
+                  className="nav-item relative inline-block after:content-[''] after:absolute 
+         after:w-full after:h-[2px] after:rounded-md
+         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bottom-[0px] after:left-0
+         after:origin-right after:scale-x-0
+         after:transition-transform after:duration-300 after:ease-in-out
+         hover:after:scale-x-100 hover:after:origin-left"
                   to="portfolio"
                   activeclassname="active"
                   spy={true}
@@ -137,7 +161,13 @@ export default function Navbar({navdark}){
                   <span className="nav-link">Portfolio</span>
                 </Link2>
                 <Link2
-                  className="nav-item"
+                  className="nav-item relative inline-block after:content-[''] after:absolute 
+         after:w-full after:h-[2px] after:rounded-md
+         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bottom-[0px] after:left-0
+         after:origin-right after:scale-x-0
+         after:transition-transform after:duration-300 after:ease-in-out
+         hover:after:scale-x-100 hover:after:origin-left"
                   to="testi"
                   activeclassname="active"
                   spy={true}
@@ -147,7 +177,13 @@ export default function Navbar({navdark}){
                   <span className="nav-link">Review</span>
                 </Link2>
                 <Link2
-                  className="nav-item"
+                  className="nav-item relative inline-block after:content-[''] after:absolute 
+         after:w-full after:h-[2px] after:rounded-md
+         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bottom-[0px] after:left-0
+         after:origin-right after:scale-x-0
+         after:transition-transform after:duration-300 after:ease-in-out
+         hover:after:scale-x-100 hover:after:origin-left"
                   to="pricing"
                   activeclassname="active"
                   spy={true}
@@ -157,7 +193,13 @@ export default function Navbar({navdark}){
                   <span className="nav-link">Pricing</span>
                 </Link2>
                 <Link2
-                  className="nav-item"
+                  className="nav-item relative inline-block after:content-[''] after:absolute 
+         after:w-full after:h-[2px] after:rounded-md
+         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bottom-[0px] after:left-0
+         after:origin-right after:scale-x-0
+         after:transition-transform after:duration-300 after:ease-in-out
+         hover:after:scale-x-100 hover:after:origin-left"
                   to="blog"
                   activeclassname="active"
                   spy={true}
@@ -167,7 +209,13 @@ export default function Navbar({navdark}){
                   <span className="nav-link">Blog</span>
                 </Link2>
                 <Link2
-                  className="nav-item"
+                  className="nav-item relative inline-block after:content-[''] after:absolute 
+         after:w-full after:h-[2px] after:rounded-md
+         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bottom-[0px] after:left-0
+         after:origin-right after:scale-x-0
+         after:transition-transform after:duration-300 after:ease-in-out
+         hover:after:scale-x-100 hover:after:origin-left"
                   to="contact"
                   activeclassname="active"
                   spy={true}
