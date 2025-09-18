@@ -13,46 +13,14 @@ import Review from "./component/testimonial";
 import Switcher from "./component/switcher";
 import Navbar from "./component/navbar";
 import Link from 'next/link';
+import TopSlider from './component/top-slider';
 
 function Home() {
   return (
     <>
-          <Navbar/>
-          <section style={{ backgroundImage: `url(/images/bg/1.jpg)` }} className="py-36 lg:py-64 w-full table relative bg-center bg-cover" id="home" >
-            <div className="absolute inset-0 bg-slate-900/80"></div>
-            <div className="container relative">
-              <div className="grid grid-cols-1 mt-12">
-                <h4 className="text-white lg:text-5xl text-4xl lg:leading-normal leading-normal font-medium mb-7 position-relative">  Providing Brilliant Ideas <br /> For Your 
-                  <TypeAnimation
-                    sequence={[
-                      // Same substring at the start will only be typed out once, initially
-                      'Business',
-                      1000, // wait 1s before replacing "Mice" with "Hamsters"
-                      'Startups',
-                      1000,
-                      'Digital Agency',
-                      1000,
-                      'Marketing',
-                      1000
-                    ]}
-                    wrapper="span"
-                    speed={10}
-                    repeat={Infinity}
-                    className="typewrite relative text-type-element ms-2"
-                    cursor={false}
-                  />
-                </h4>
-
-                <p className="text-white opacity-50 mb-0 max-w-2xl !text-lg"> Launch your campaign and benefit from our expertise on designing and managing conversion centered Tailwind CSS html page.</p>
-
-                <div className="relative mt-10">
-                  <Link href="#" className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md">
-                    Get Started
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </section>
+      <Navbar />
+      <TopSlider />
+ 
 
           <About />
 

@@ -8,7 +8,7 @@
       .navbar-nav {
           @apply mt-4 flex flex-row overflow-y-scroll h-24;
           .nav-link {
-              @apply block text-[15px] p-3 text-slate-900 hover:text-orange-600 dark:text-white/60 dark:hover:text-white;
+              @apply block text-[15px] p-3 text-slate-900 hover:text-orange-600 dark:text-white dark:hover:text-white;
           }
           .active {
               .nav-link {
@@ -88,11 +88,11 @@
 
                 &.nav-light {
                     .nav-link {
-                        @apply block p-3 text-white/60 hover:text-white;
+                        @apply block p-0 text-black hover:text-black dark:text-white dark:hover:text-white;
                     }
                     .active {
                         .nav-link {
-                            @apply text-white;
+                            @apply text-black dark:text-white dark:hover:text-white;
                         }
                     }
                 }
@@ -108,7 +108,7 @@
             @apply py-3;
             .navbar-nav {
                 .nav-link {
-                    @apply text-slate-900 dark:text-white/60;
+                    @apply text-slate-900 dark:text-white;
                 }
                 .active {
                     .nav-link {
@@ -118,7 +118,7 @@
 
                 &.nav-light {
                     .nav-link {
-                        @apply text-slate-900 hover:text-orange-600 dark:text-white/60 dark:hover:text-white;
+                        @apply text-slate-900 hover:text-orange-600 dark:text-white dark:hover:text-white;
                     }
                     .active {
                         .nav-link {
@@ -129,6 +129,8 @@
             }
         }
     }
+
+ 
 }
 
 @media (max-width: 991px) {
@@ -136,9 +138,9 @@
       @apply bg-white dark:bg-slate-900 !shadow-sm dark:shadow-slate-800;
       .navigation {
           .navbar-nav {
-              @apply block h-[21.25rem];
+              @apply flex h-[21.25rem] flex-col;
               .nav-link {
-                  @apply text-slate-900 dark:text-white/60;
+                  @apply text-slate-900 dark:text-white;
               }
               .active {
                   .nav-link {
@@ -152,3 +154,5 @@
       }
   }
 }
+
+

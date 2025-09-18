@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedButton from "./button";
+import { FiDownload } from "react-icons/fi";
 
 export default function About() {
   const [isOpen, setOpen] = useState(false)
@@ -9,12 +11,12 @@ export default function About() {
   return (
     <>
       <section
-        className="relative md:py-24 py-16 bg-gray-50 dark:bg-slate-800"
+        className="relative md:py-3 py-16  dark:bg-slate-800"
         id="about"
       >
         <div className="container mx-auto">
           <div
-            className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10 items-center wow animate__animated animate__fadeInUp"
+            className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10 items-center wow animate__animated animate__fadeInUp relative bg-center bg-cover dark:bg-none dark:bg-slate-900 bg-[url('/images/about_bg1.jpg')]  p-15 rounded-[40px] shadow-sm"
             data-wow-delay=".90s "
           >
             <div className="lg:col-span-5">
@@ -45,69 +47,37 @@ export default function About() {
 
             <div className="lg:col-span-7">
               <div className="lg:ms-7">
-                <h6 className="text-orange-600 text-base font-medium uppercase mb-2">
-                  Who We Are ?
+                <h6 className="text-orange-600 text-base font-medium mb-2 ">
+                  <span className="inline-block w-[20px] h-[1.5px] bg-orange-600 transform translate-y-[-5px] mr-2.5"></span>{" "}
+                  About Me
                 </h6>
                 <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">
-                  Our Company Story
+                  Designing with Purpose, Developing with Passion
                 </h3>
 
-                <p className="text-slate-400 max-w-2xl">
-                  Start working with Upwind that can provide everything you need
-                  to generate awareness, drive traffic, connect. Dummy text is
-                  text that is used in the publishing industry or by web
-                  designers to occupy the space which will later be filled with
-                  real content. This is required when, for example, the final
-                  text is not yet available. Dummy texts have been in use by
-                  typesetters since the 16th century.
+                <p className="text-gray-600 max-w-2xl text-lg dark:text-gray-400">
+                  I'm a passionate UI/UX Developer with a strong eye for detail
+                  and a deep love for creating seamless digital experiences. My
+                  expertise spans a diverse range of technologies, including
+                  HTML, CSS, JavaScript, React, and SASS, as well as platforms
+                  like WordPress, Shopify, Ghost, and OpenCart. With a solid
+                  background in both design and development, I bridge the gap
+                  between aesthetics and functionality. I’m highly proficient
+                  with tools like Photoshop and Figma, and I thrive on
+                  transforming concepts into fully responsive, user-centered
+                  designs.
                 </p>
 
-                <div className="relative mt-10">
-                  <Link
-                    href="#portfolio"
-                    className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md"
-                  >
-                    View Portfolio
-                  </Link>
-                </div>
+                <h6 className=" text-lg font-medium mt-4 text-gray-800 dark:text-gray-200">
+                  Driven by innovation and always tuned into emerging trends,
+                  I’m committed to delivering modern web solutions that are not
+                  just visually appealing, but also purposeful and
+                  user-friendly.
+                </h6>
 
-                <Link
-                  href={"#"}
-                  class="
-    relative inline-block z-[1] overflow-hidden
-    bg-[#5B6CFF] text-white font-urban
-    h-[60px] leading-[61px] px-[35px]
-    rounded-full shadow-[inset_-2px_-2px_2px_rgba(7,13,29,0.3)]
-    font-bold text-[16px] tracking-[0.02em]
-    transition-all duration-1000
-    xs:h-[50px] xs:leading-[50px] xs:px-[25px]
-    group
-  "
-                >
-                  <span class="relative z-[5] text-white transition-colors duration-500 group-hover:text-white">
-                    View Portfolio
-                  </span>
+                <div className="relative mt-10"></div>
 
-                  <span
-                    class="absolute inset-0 -top-full -bottom-full bg-black rounded-[95px]
-           scale-y-0 origin-bottom transition-transform duration-1000 ease-[cubic-bezier(.14,0,0,1.01)]
-           group-hover:scale-y-100 group-hover:origin-top -z-[1] after:block"
-                  ></span>
-                </Link>
-                {/* Gerold - Personal Portfolio HTML5 Template */}
-
-                <a
-                  href="#"
-                  class="relative inline-block after:content-[''] after:absolute 
-         after:w-full after:h-[2px] after:rounded-md
-         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
-         after:bottom-[0px] after:left-0
-         after:origin-right after:scale-x-0
-         after:transition-transform after:duration-300 after:ease-in-out
-         hover:after:scale-x-100 hover:after:origin-left"
-                >
-                  Hover Link
-                </a>
+                <AnimatedButton href="#" label="View Portfolio" />
               </div>
             </div>
           </div>

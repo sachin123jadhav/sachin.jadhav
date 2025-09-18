@@ -1,28 +1,27 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
-import {  Link as Link2, scrollSpy } from "react-scroll";
+import { Link as Link2, scrollSpy } from "react-scroll";
 import Link from "next/link";
 
-import { FaGithub,FaTwitter,FaInstagram  } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FiDownload } from "react-icons/fi";
+import AnimatedButton from "./button";
 
-
-
-export default function Navbar({navdark}){
+export default function Navbar({ navdark }) {
   const [isOpen, setMenu] = useState(true);
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     window.addEventListener("scroll", windowScroll);
     window.scrollTo(0, 0);
     scrollSpy.update();
-    return()=>{
-      window.removeEventListener( 'scroll', windowScroll )
-    }
-
-  },[])
+    return () => {
+      window.removeEventListener("scroll", windowScroll);
+    };
+  }, []);
 
   const toggleMenu = () => {
-    setMenu(!isOpen)
-  }
+    setMenu(!isOpen);
+  };
 
   function windowScroll() {
     const navbar = document.getElementById("navbar");
@@ -48,186 +47,202 @@ export default function Navbar({navdark}){
     }
   }
 
-    return (
-      <>
-        <nav className="navbar" id="navbar">
-          <div className="container flex flex-wrap items-center justify-between">
-            {navdark && (
-              <Link className="navbar-brand" href="/">
-                <span>
-                  <img
-                    src="/images/logo-dark.png"
-                    className="inline-block dark:hidden"
-                    alt=""
-                  />
-                  <img
-                    src="/images/logo-light.png"
-                    className="hidden dark:inline-block"
-                    alt=""
-                  />
-                </span>
-              </Link>
-            )}
-            {!navdark && (
-              <Link className="navbar-brand" href="/">
-                <span className="inline-block dark:hidden">
-                  <img src="/images/logo-dark.png" className="l-dark" alt="" />
-                  <img
-                    src="/images/logo-light.png"
-                    className="l-light"
-                    alt=""
-                  />
-                </span>
+  return (
+    <>
+      <nav className="navbar" id="navbar">
+        <div className="container flex flex-wrap items-center justify-between">
+          {navdark && (
+            <Link className="navbar-brand max-w-[150px]" href="/">
+              <span>
                 <img
-                  src="/images/logo-light.png"
+                  src="/images/SachinJadhavLogo.png"
+                  className="inline-block dark:hidden"
+                  alt=""
+                />
+                <img
+                  src="/images/SachinJadhavLogo.png"
                   className="hidden dark:inline-block"
                   alt=""
                 />
-              </Link>
-            )}
-
-            <div
-              className={`${
-                isOpen === true ? "hidden" : "block"
-              } navigation lg_992:order-1 lg_992:flex`}
-              id="menu-collapse"
+              </span>
+            </Link>
+          )}
+          {!navdark && (
+            <Link className="navbar-brand max-w-[250px]" href="/">
+              <span className="inline-block dark:hidden">
+                <img
+                  src="/images/SachinJadhavLogo.png"
+                  className="l-dark"
+                  alt=""
+                />
+                <img
+                  src="/images/SachinJadhavLogo.png"
+                  className="l-light"
+                  alt=""
+                />
+              </span>
+              <img
+                src="/images/SachinJadhavLogo.png"
+                className="hidden dark:inline-block"
+                alt=""
+              />
+            </Link>
+          )}
+          <button
+            type="button"
+            className="collapse-btn inline-flex items-center ms-3 text-dark dark:text-white lg_992:hidden"
+            onClick={toggleMenu}
+          >
+            <span className="sr-only">Navigation Menu</span>
+            <i className="mdi mdi-menu mdi-24px"></i>
+          </button>
+          <div
+            className={`${
+              isOpen === true ? "hidden" : "block"
+            } navigation lg_992:order-1 lg_992:flex`}
+            id="menu-collapse"
+          >
+            <ul
+              className={`navbar-nav lg:gap-8 py-4 items-center ${
+                navdark ? "" : "nav-light"
+              }`}
+              id="navbar-navlist"
             >
-              <ul
-                className={`navbar-nav ${navdark ? "" : "nav-light"}`}
-                id="navbar-navlist"
+              <Link2
+                className="nav-item relative inline-block after:content-[''] after:absolute 
+         after:w-full after:h-[2px] after:rounded-md
+         after:bg-[linear-gradient(260deg,_rgb(42,_20,_84)_0%,_rgb(135,_80,_247)_100%)]
+         after:bottom-[0px] after:left-0
+         after:origin-right after:scale-x-0
+         after:transition-transform after:duration-300 after:ease-in-out
+         hover:after:scale-x-100 hover:after:origin-left"
+                to="home"
+                activeclassname="active"
+                spy={true}
+                smooth={true}
+                duration={500}
               >
-                <Link2
-                  className="nav-item relative inline-block after:content-[''] after:absolute 
+                <span className="nav-link">Home</span>
+              </Link2>
+              <Link2
+                className="nav-item relative inline-block after:content-[''] after:absolute 
          after:w-full after:h-[2px] after:rounded-md
-         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bg-[linear-gradient(260deg,_rgb(42,_20,_84)_0%,_rgb(135,_80,_247)_100%)]
          after:bottom-[0px] after:left-0
          after:origin-right after:scale-x-0
          after:transition-transform after:duration-300 after:ease-in-out
          hover:after:scale-x-100 hover:after:origin-left"
-                  to="home"
-                  activeclassname="active"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                >
-                  <span className="nav-link">Home</span>
-                </Link2>
-                <Link2
-                  className="nav-item relative inline-block after:content-[''] after:absolute 
+                activeclassname="active"
+                spy={true}
+                smooth={true}
+                duration={500}
+                to="about"
+              >
+                <span className="nav-link">About us</span>
+              </Link2>
+              <Link2
+                className="nav-item relative inline-block after:content-[''] after:absolute 
          after:w-full after:h-[2px] after:rounded-md
-         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bg-[linear-gradient(260deg,_rgb(42,_20,_84)_0%,_rgb(135,_80,_247)_100%)]
          after:bottom-[0px] after:left-0
          after:origin-right after:scale-x-0
          after:transition-transform after:duration-300 after:ease-in-out
          hover:after:scale-x-100 hover:after:origin-left"
-                  activeclassname="active"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  to="about"
-                >
-                  <span className="nav-link">About us</span>
-                </Link2>
-                <Link2
-                  className="nav-item relative inline-block after:content-[''] after:absolute 
+                to="features"
+                activeclassname="active"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                <span className="nav-link">Services</span>
+              </Link2>
+              <Link2
+                className="nav-item relative inline-block after:content-[''] after:absolute 
          after:w-full after:h-[2px] after:rounded-md
-         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bg-[linear-gradient(260deg,_rgb(42,_20,_84)_0%,_rgb(135,_80,_247)_100%)]
          after:bottom-[0px] after:left-0
          after:origin-right after:scale-x-0
          after:transition-transform after:duration-300 after:ease-in-out
          hover:after:scale-x-100 hover:after:origin-left"
-                  to="features"
-                  activeclassname="active"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                >
-                  <span className="nav-link">Services</span>
-                </Link2>
-                <Link2
-                  className="nav-item relative inline-block after:content-[''] after:absolute 
+                to="portfolio"
+                activeclassname="active"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                <span className="nav-link">Portfolio</span>
+              </Link2>
+              <Link2
+                className="nav-item relative inline-block after:content-[''] after:absolute 
          after:w-full after:h-[2px] after:rounded-md
-         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bg-[linear-gradient(260deg,_rgb(42,_20,_84)_0%,_rgb(135,_80,_247)_100%)]
          after:bottom-[0px] after:left-0
          after:origin-right after:scale-x-0
          after:transition-transform after:duration-300 after:ease-in-out
          hover:after:scale-x-100 hover:after:origin-left"
-                  to="portfolio"
-                  activeclassname="active"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                >
-                  <span className="nav-link">Portfolio</span>
-                </Link2>
-                <Link2
-                  className="nav-item relative inline-block after:content-[''] after:absolute 
+                to="testi"
+                activeclassname="active"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                <span className="nav-link">Review</span>
+              </Link2>
+              <Link2
+                className="nav-item relative inline-block after:content-[''] after:absolute 
          after:w-full after:h-[2px] after:rounded-md
-         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bg-[linear-gradient(260deg,_rgb(42,_20,_84)_0%,_rgb(135,_80,_247)_100%)]
          after:bottom-[0px] after:left-0
          after:origin-right after:scale-x-0
          after:transition-transform after:duration-300 after:ease-in-out
          hover:after:scale-x-100 hover:after:origin-left"
-                  to="testi"
-                  activeclassname="active"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                >
-                  <span className="nav-link">Review</span>
-                </Link2>
-                <Link2
-                  className="nav-item relative inline-block after:content-[''] after:absolute 
+                to="pricing"
+                activeclassname="active"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                <span className="nav-link">Pricing</span>
+              </Link2>
+              <Link2
+                className="nav-item relative inline-block after:content-[''] after:absolute 
          after:w-full after:h-[2px] after:rounded-md
-         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bg-[linear-gradient(260deg,_rgb(42,_20,_84)_0%,_rgb(135,_80,_247)_100%)]
          after:bottom-[0px] after:left-0
          after:origin-right after:scale-x-0
          after:transition-transform after:duration-300 after:ease-in-out
          hover:after:scale-x-100 hover:after:origin-left"
-                  to="pricing"
-                  activeclassname="active"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                >
-                  <span className="nav-link">Pricing</span>
-                </Link2>
-                <Link2
-                  className="nav-item relative inline-block after:content-[''] after:absolute 
+                to="blog"
+                activeclassname="active"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                <span className="nav-link">Blog</span>
+              </Link2>
+              <Link2
+                className="nav-item relative inline-block after:content-[''] after:absolute 
          after:w-full after:h-[2px] after:rounded-md
-         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
+         after:bg-[linear-gradient(260deg,_rgb(42,_20,_84)_0%,_rgb(135,_80,_247)_100%)]
          after:bottom-[0px] after:left-0
          after:origin-right after:scale-x-0
          after:transition-transform after:duration-300 after:ease-in-out
          hover:after:scale-x-100 hover:after:origin-left"
-                  to="blog"
-                  activeclassname="active"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                >
-                  <span className="nav-link">Blog</span>
-                </Link2>
-                <Link2
-                  className="nav-item relative inline-block after:content-[''] after:absolute 
-         after:w-full after:h-[2px] after:rounded-md
-         after:bg-gradient-to-r after:from-[#f54900] after:to-[#f54900]
-         after:bottom-[0px] after:left-0
-         after:origin-right after:scale-x-0
-         after:transition-transform after:duration-300 after:ease-in-out
-         hover:after:scale-x-100 hover:after:origin-left"
-                  to="contact"
-                  activeclassname="active"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                >
-                  <span className="nav-link">Contact us</span>
-                </Link2>
-              </ul>
-            </div>
+                to="contact"
+                activeclassname="active"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                <span className="nav-link">Contact us</span>
+              </Link2>
+          
+             
+              <AnimatedButton href="#" label="Download CV" icon={<FiDownload className="inline ms-2 text-xl" />} />
+            </ul>
           </div>
-        </nav>
-      </>
-    );
-}   
+        </div>
+      </nav>
+    </>
+  );
+}

@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    @apply font-rubik text-[15px] text-slate-900 overflow-x-hidden;
+    @apply font-rubik text-[16px] text-slate-900 overflow-x-hidden;
 }
 
 .container {
@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 p {
-    @apply leading-relaxed text-[15px];
+    @apply leading-relaxed ;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -27,3 +27,4 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 a{
     @apply cursor-pointer;
 }
+
