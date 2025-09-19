@@ -14,6 +14,7 @@ import Switcher from "./component/switcher";
 import Navbar from "./component/navbar";
 import Link from 'next/link';
 import TopSlider from './component/top-slider';
+import Experience from './component/experience';
 
 function Home() {
   return (
@@ -22,7 +23,8 @@ function Home() {
       <TopSlider />
  
 
-          <About />
+      <About />
+      <Experience />
 
           <Services />
 
