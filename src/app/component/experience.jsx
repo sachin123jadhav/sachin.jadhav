@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import React from 'react'
-import { FiArrowRight } from 'react-icons/fi';
+import Link from "next/link";
+import React from "react";
+import { FiArrowRight } from "react-icons/fi";
 
 function Experience() {
   return (
@@ -19,14 +19,14 @@ function Experience() {
                   {/* Triangle Arrow – shown only on desktop */}
                   <div
                     className="
-        hidden md:block 
-        absolute top-1/2 -right-2 translate-x-1/2 -translate-y-1/2
-        w-0 h-0 
-        border-l-[20px] border-l-[#ff4b7e]
-        border-t-[15px] border-t-transparent
-        border-b-[15px] border-b-transparent
-        z-[6]
-      "
+                    hidden md:block 
+                    absolute top-1/2 -right-2 translate-x-1/2 -translate-y-1/2
+                    w-0 h-0 
+                    border-l-[20px] border-l-[#ff4b7e]
+                    border-t-[15px] border-t-transparent
+                    border-b-[15px] border-b-transparent
+                    z-[6]
+                  "
                   ></div>
                 </div>
 
@@ -68,14 +68,14 @@ function Experience() {
                   {/* Triangle Arrow – shown only on desktop */}
                   <div
                     className="
-        hidden md:block 
-        absolute top-1/2 -right-2 translate-x-1/2 -translate-y-1/2
-        w-0 h-0 
-        border-l-[20px] border-l-[#fcc760]
-        border-t-[15px] border-t-transparent
-        border-b-[15px] border-b-transparent
-        z-[6]
-      "
+                    hidden md:block 
+                    absolute top-1/2 -right-2 translate-x-1/2 -translate-y-1/2
+                    w-0 h-0 
+                    border-l-[20px] border-l-[#fcc760]
+                    border-t-[15px] border-t-transparent
+                    border-b-[15px] border-b-transparent
+                    z-[6]
+                  "
                   ></div>
                 </div>
 
@@ -145,23 +145,23 @@ function Experience() {
                   {/* Triangle Arrow – shown only on desktop */}
                   <div
                     className="
-        hidden md:block 
-        absolute 
-    top-1/2 
-    -left-[30px] 
-    translate-x-1/2 
-    -translate-y-1/2 
-    rotate-180
-    w-0 
-    h-0 
-    border-l-[20px] 
-    border-l-[#ff7551] 
-    border-t-[15px] 
-    border-t-transparent 
-    border-b-[15px] 
-    border-b-transparent 
-    z-[6]
-      "
+                    hidden md:block 
+                    absolute 
+                    top-1/2 
+                    -left-[30px] 
+                    translate-x-1/2 
+                    -translate-y-1/2 
+                    rotate-180
+                    w-0 
+                    h-0 
+                    border-l-[20px] 
+                    border-l-[#ff7551] 
+                    border-t-[15px] 
+                    border-t-transparent 
+                    border-b-[15px] 
+                    border-b-transparent 
+                    z-[6]
+                  "
                   ></div>
                 </div>
               </div>
@@ -204,23 +204,23 @@ function Experience() {
                   {/* Triangle Arrow – shown only on desktop */}
                   <div
                     className="
-        hidden md:block 
-        absolute 
-    top-1/2 
-    -left-[30px] 
-    translate-x-1/2 
-    -translate-y-1/2 
-    rotate-180
-    w-0 
-    h-0 
-    border-l-[20px] 
-    border-l-[#00c8d8] 
-    border-t-[15px] 
-    border-t-transparent 
-    border-b-[15px] 
-    border-b-transparent 
-    z-[6]
-      "
+                    hidden md:block 
+                    absolute 
+                    top-1/2 
+                    -left-[30px] 
+                    translate-x-1/2 
+                    -translate-y-1/2 
+                    rotate-180
+                    w-0 
+                    h-0 
+                    border-l-[20px] 
+                    border-l-[#00c8d8] 
+                    border-t-[15px] 
+                    border-t-transparent 
+                    border-b-[15px] 
+                    border-b-transparent 
+                    z-[6]
+                  "
                   ></div>
                 </div>
               </div>
@@ -236,14 +236,14 @@ function Experience() {
                   {/* Triangle Arrow – shown only on desktop */}
                   <div
                     className="
-        hidden md:block 
-        absolute top-1/2 -right-2 translate-x-1/2 -translate-y-1/2
-        w-0 h-0 
-        border-l-[20px] border-l-[#7709d7]
-        border-t-[15px] border-t-transparent
-        border-b-[15px] border-b-transparent
-        z-[6]
-      "
+                    hidden md:block 
+                    absolute top-1/2 -right-2 translate-x-1/2 -translate-y-1/2
+                    w-0 h-0 
+                    border-l-[20px] border-l-[#7709d7]
+                    border-t-[15px] border-t-transparent
+                    border-b-[15px] border-b-transparent
+                    z-[6]
+                  "
                   ></div>
                 </div>
 
@@ -281,4 +281,4 @@ function Experience() {
   );
 }
 
-export default Experience
+export default Experience;
