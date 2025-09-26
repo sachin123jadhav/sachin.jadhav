@@ -54,7 +54,7 @@ module.exports = {
           800: "#b38a28",
           900: "#8d6a1c",
         },
-        orange: {
+        orangeC: {
           50: "#fff0e6",
           100: "#ffcc99",
           200: "#ff9933",

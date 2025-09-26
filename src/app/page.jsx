@@ -15,32 +15,32 @@ import Navbar from "./component/navbar";
 import Link from 'next/link';
 import TopSlider from './component/top-slider';
 import Experience from './component/experience';
+import Projects from './component/projects';
 
 function Home() {
   return (
     <>
       <Navbar />
       <TopSlider />
- 
 
       <About />
       <Experience />
+      <Projects />
+      <Services />
 
-          <Services />
+      <Portfolio />
 
-          <Portfolio />
+      <Review />
 
-          <Review />
+      <Pricing />
 
-          <Pricing />
+      <Blog />
 
-          <Blog />
+      <Contact />
 
-          <Contact />
+      <Footer />
 
-          <Footer />
-
-          <Switcher />
+      <Switcher />
     </>
   );
 }
