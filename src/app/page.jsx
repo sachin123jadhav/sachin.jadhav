@@ -16,6 +16,7 @@ import Link from 'next/link';
 import TopSlider from './component/top-slider';
 import Experience from './component/experience';
 import Projects from './component/projects';
+import MySkills from './component/my-skills';
 
 function Home() {
   return (
@@ -26,6 +27,7 @@ function Home() {
       <About />
       <Experience />
       <Projects />
+      <MySkills />
       <Services />
 
       <Portfolio />
