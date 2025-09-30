@@ -28,15 +28,12 @@ function Home() {
       <Experience />
       <Projects />
       <MySkills />
-      <Services />
+     
 
-      <Portfolio />
+ 
 
-      <Review />
 
-      <Pricing />
 
-      <Blog />
 
       <Contact />
 

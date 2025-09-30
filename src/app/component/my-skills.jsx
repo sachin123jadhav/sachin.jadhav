@@ -4,6 +4,7 @@ import Image from "next/image";
 // import TopShape from "../../../public/assets/images/offter-item-shape-top.png";
 import TopShape from "../../../public/images/offter-item-shape-top.png";
 import BottomShape from "../../../public/images/offter-item-shape-bottom.png";
+import bgImg from "../../../public/images/about_bg1.jpg";
 
 function MySkills() {
   const [activeTab, setActiveTab] = useState("Technologies");
@@ -112,7 +113,10 @@ function MySkills() {
   ];
 
   return (
-    <section className="relative py-12 bg-white dark:bg-gray-900">
+    <section
+      className="relative py-12 bg-white dark:bg-gray-900   bg-no-repeat bg-cover bg-center"
+      style={{ backgroundImage: `url(${bgImg.src})` }}
+    >
       <div className="container mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-12">
@@ -143,36 +147,41 @@ function MySkills() {
 
         {/* Tab Content */}
         {activeTab === "Technologies" && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="flex flex-wrap justify-center items-center gap-6 mt-20">
             {techSkills.map((skill, index) => (
               <div
                 key={index}
-                className="group relative text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition wow bounceInUp"
+                className="group w-[200px] relative text-center p-6 bg-white dark:bg-gray-800 rounded-md shadow hover:shadow-lg transition wow bounceInUp"
                 data-wow-delay={`${index * 100}ms`}
                 data-wow-duration="1000ms"
               >
                 {/* Top Shape */}
                 <div
                   className="absolute w-[30] h-[30]
-              top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-              group-hover:top-0 group-hover:left-full group-hover:-translate-x-full group-hover:translate-y-0 
+              top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0
+              group-hover:top-0 group-hover:left-full group-hover:-translate-x-full group-hover:translate-y-0 group-hover:opacity-100
               transition-all duration-300"
                 >
                   <Image src={TopShape} alt="top" />
                 </div>
 
                 {/* Bottom Shape */}
-                {/* <div className="absolute top-1/2 right-1/2 w-12 -translate-x-1/2 -translate-y-1/2 opacity-100 transition-all duration-300 group-hover:bottom-0 group-hover:right-0 group-hover:opacity-100">
+                <div
+                  className="absolute w-[30px] h-[30px] 
+    top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0
+    group-hover:bottom-0 group-hover:left-0 group-hover:-translate-x-0 group-hover:translate-y-full group-hover:opacity-100
+    transition-all duration-300"
+                >
                   <Image src={BottomShape} alt="bottom" />
-                </div> */}
+                </div>
 
                 {/* Icon */}
-                <div className="flex justify-center mb-4 text-blue-600">
+                <div className="w-[70px] relative h-[70px] rounded-full text-center border border-[#ff3c82] bg-white mt-[-55px] translate-y-1 mx-auto transition-all duration-1000 text-[#ff3c82] flex items-center justify-center mb-4 group-hover:transform group-hover:rotate-y-[360deg] group-hover:bg-[#ff3c82] group-hover:text-white ">
                   {skill.svg}
                 </div>
 
                 {/* Skill Name */}
-                <h4 className="font-semibold text-gray-800 dark:text-white">
+                <h4 className="font-semibold text-gray-800 dark:text-white mb-3 mt-6">
                   {skill.name}
                 </h4>
               </div>
