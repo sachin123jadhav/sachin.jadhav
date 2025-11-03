@@ -138,7 +138,7 @@ export default function Navbar({ navdark }) {
                 duration={500}
                 to="about"
               >
-                <span className="nav-link">About us</span>
+                <span className="nav-link">About Me</span>
               </Link2>
               <Link2
                 className="nav-item relative inline-block after:content-[''] after:absolute 
@@ -148,13 +148,13 @@ export default function Navbar({ navdark }) {
          after:origin-right after:scale-x-0
          after:transition-transform after:duration-300 after:ease-in-out
          hover:after:scale-x-100 hover:after:origin-left"
-                to="features"
+                to="Experience"
                 activeclassname="active"
                 spy={true}
                 smooth={true}
                 duration={500}
               >
-                <span className="nav-link">Services</span>
+                <span className="nav-link">Experience</span>
               </Link2>
               <Link2
                 className="nav-item relative inline-block after:content-[''] after:absolute 
@@ -164,7 +164,7 @@ export default function Navbar({ navdark }) {
          after:origin-right after:scale-x-0
          after:transition-transform after:duration-300 after:ease-in-out
          hover:after:scale-x-100 hover:after:origin-left"
-                to="portfolio"
+                to="projects"
                 activeclassname="active"
                 spy={true}
                 smooth={true}
@@ -180,46 +180,16 @@ export default function Navbar({ navdark }) {
          after:origin-right after:scale-x-0
          after:transition-transform after:duration-300 after:ease-in-out
          hover:after:scale-x-100 hover:after:origin-left"
-                to="testi"
+                to="skills"
                 activeclassname="active"
                 spy={true}
                 smooth={true}
                 duration={500}
               >
-                <span className="nav-link">Review</span>
+                <span className="nav-link">Skills</span>
               </Link2>
-              <Link2
-                className="nav-item relative inline-block after:content-[''] after:absolute 
-         after:w-full after:h-[2px] after:rounded-md
-         after:bg-[linear-gradient(260deg,_rgb(42,_20,_84)_0%,_rgb(135,_80,_247)_100%)]
-         after:bottom-[0px] after:left-0
-         after:origin-right after:scale-x-0
-         after:transition-transform after:duration-300 after:ease-in-out
-         hover:after:scale-x-100 hover:after:origin-left"
-                to="pricing"
-                activeclassname="active"
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
-                <span className="nav-link">Pricing</span>
-              </Link2>
-              <Link2
-                className="nav-item relative inline-block after:content-[''] after:absolute 
-         after:w-full after:h-[2px] after:rounded-md
-         after:bg-[linear-gradient(260deg,_rgb(42,_20,_84)_0%,_rgb(135,_80,_247)_100%)]
-         after:bottom-[0px] after:left-0
-         after:origin-right after:scale-x-0
-         after:transition-transform after:duration-300 after:ease-in-out
-         hover:after:scale-x-100 hover:after:origin-left"
-                to="blog"
-                activeclassname="active"
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
-                <span className="nav-link">Blog</span>
-              </Link2>
+             
+             
               <Link2
                 className="nav-item relative inline-block after:content-[''] after:absolute 
          after:w-full after:h-[2px] after:rounded-md
@@ -234,7 +204,7 @@ export default function Navbar({ navdark }) {
                 smooth={true}
                 duration={500}
               >
-                <span className="nav-link">Contact us</span>
+                <span className="nav-link">Contact</span>
               </Link2>
           
              

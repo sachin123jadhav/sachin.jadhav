@@ -8,108 +8,82 @@ export default function Footer() {
   return (
     <>
       {/*  Start Footer  */}
-      <footer className="py-8 bg-slate-800 dark:bg-gray-900">
-        <div className="container">
-          <div className="grid md:grid-cols-12 items-center">
-            <div className="md:col-span-3">
-              <Link href="#" className="logo-footer">
-                <Image
-                  src={"/images/logo-light.png"}
-                  className="md:ms-0 mx-auto"
-                  alt=""
-                  width={105}
-                  height={24}
-                />
-              </Link>
-            </div>
+   <footer className="py-8 bg-slate-800 dark:bg-gray-900">
+  <div className="container">
+    {/* Grid: 1 column mobile, 2 columns from md */}
+    <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+      
+      {/* Left column */}
+      <div className="mt-8 md:mt-0 flex justify-center md:justify-start">
+        <p className="text-gray-400">
+          © {new Date().getFullYear()} Sachin Jadhav
+        </p>
+      </div>
 
-            <div className="md:col-span-5 md:mt-0 mt-8">
-              <div className="text-center">
-                <p className="text-gray-400">
-                  © {new Date().getFullYear()} Upwind. Design & Develop with{" "}
-                  <i className="mdi mdi-heart text-orange-700"></i> by{" "}
-                  <Link
-                    href="https://shreethemes.in/"
-                    target="_blank"
-                    className="text-reset"
-                  >
-                    Shreethemes
-                  </Link>
-                  .
-                </p>
-              </div>
-            </div>
+      {/* Right column */}
+      <div className="mt-8 md:mt-0 flex justify-center md:justify-end">
+        <ul className="flex flex-wrap gap-2">
+          <li>
+            <Link
+              href="https://dribbble.com/shreethemes"
+              target="_blank"
+              className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
+            >
+              <FiDribbble width="17px" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://www.behance.net/shreethemes"
+              target="_blank"
+              className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
+            >
+              <FaBehance width="17px" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="http://linkedin.com/company/shreethemes"
+              target="_blank"
+              className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
+            >
+              <FiLinkedin width="17px" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://www.facebook.com/shreethemes"
+              target="_blank"
+              className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
+            >
+              <FaFacebookF width="17px" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://www.instagram.com/shreethemes/"
+              target="_blank"
+              className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
+            >
+              <FiInstagram width="17px" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://twitter.com/shreethemes"
+              target="_blank"
+              className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
+            >
+              <FiTwitter width="17px"/>
+            </Link>
+          </li>
+        </ul>
+      </div>
 
-            <div className="md:col-span-4 md:mt-0 mt-8">
-              <ul className="list-none foot-icon md:text-end text-center">
-                {/* <li className="inline ms-1">
-                  <Link
-                    href="https://1.envato.market/upwind-next"
-                    target="_blank"
-                    className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
-                  >
-                     <Unicons.UilShoppingCart width="17px" />
-                  </Link>
-                </li> */}
-                <li className="inline ms-1">
-                  <Link
-                    href="https://dribbble.com/shreethemes"
-                    target="_blank"
-                    className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
-                  >
-                    <FiDribbble width="17px" />
-                  </Link>
-                </li>
-                <li className="inline ms-1">
-                  <Link
-                    href="https://www.behance.net/shreethemes"
-                    target="_blank"
-                    className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
-                  >
-                   <FaBehance width="17px" />
-                  </Link>
-                </li>
-                <li className="inline ms-1">
-                  <Link
-                    href="http://linkedin.com/company/shreethemes"
-                    target="_blank"
-                    className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
-                  >
-                   <FiLinkedin width="17px" />
-                  </Link>
-                </li>
-                <li className="inline ms-1">
-                  <Link
-                    href="https://www.facebook.com/shreethemes"
-                    target="_blank"
-                    className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
-                  >
-                    <FaFacebookF width="17px" />
-                  </Link>
-                </li>
-                <li className="inline ms-1">
-                  <Link
-                    href="https://www.instagram.com/shreethemes/"
-                    target="_blank"
-                    className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
-                  >
-                    <FiInstagram width="17px" />
-                  </Link>
-                </li>
-                <li className="inline ms-1">
-                  <Link
-                    href="https://twitter.com/shreethemes"
-                    target="_blank"
-                    className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
-                  >
-                   <FiTwitter width="17px"/>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+    </div>
+  </div>
+</footer>
+
       {/* <!-- End Footer --> */}
 
       {/* <!-- Back to top --> */}

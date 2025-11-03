@@ -79,7 +79,7 @@ export default function Portfolio() {
       {/* Project Start  */}
       <section
         className="relative md:py-24 py-16 bg-gray-50 dark:bg-slate-800 active"
-        id="portfolio"
+        id="projects"
       >
         <div className="container">
           <div className="grid grid-cols-1 pb-8 text-center">

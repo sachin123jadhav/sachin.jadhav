@@ -114,7 +114,7 @@ function MySkills() {
   ];
 
   return (
-    <section
+    <section id="skills"
       className="relative py-12 bg-white dark:bg-gray-900   bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImg.src})` }}
     >
