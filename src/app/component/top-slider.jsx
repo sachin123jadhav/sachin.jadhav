@@ -33,7 +33,7 @@ function TopSlider() {
                   wrapper="span"
                   speed={20}
                   repeat={Infinity}
-                  className="typewrite relative text-type-element ms-2"
+                  className="typewrite relative text-type-element ms-2  bg-gradient-to-r from-[var(--color-orange-800)] to-[var(--color-orange-400)] bg-clip-text text-transparent"
                   cursor={false}
                 />
                 <br></br>

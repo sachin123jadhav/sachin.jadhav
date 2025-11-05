@@ -1,80 +1,8 @@
 "use client";
-import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { FiArrowRight } from "react-icons/fi";
-
-const experiences = [
-  {
-    id: 1,
-    company: "Metamind Solutions Pvt. Ltd.",
-    role: "Senior Web Designer",
-    description:
-      "Full detailed content here instead of just short description. You can explain projects, responsibilities, achievements etc. Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
-    start: "2023",
-    end: "Present",
-    period: "July to Present",
-    bgColor: "bg-pink-500 dark:bg-slate-700",
-    arrowColor: "border-l-pink-500 dark:border-l-slate-700",
-    position: "left",
-    customClass: "custom-class-one",
-  },
-  {
-    id: 2,
-    company: "Metamind Solutions Pvt. Ltd.",
-    role: "Senior Web Designer",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
-    start: "2014",
-    end: "2023",
-    period: "Nov to June",
-    bgColor: "bg-yellow-400 dark:bg-slate-700",
-    arrowColor: "border-l-yellow-400 dark:border-l-slate-700",
-    position: "left",
-    customClass: "custom-class-two",
-  },
-  {
-    id: 3,
-    company: "Techguys247 IT Solution (P) Ltd.",
-    role: "Web Designer",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
-    start: "2014",
-    end: "2014",
-    period: "Aug to Oct",
-    bgColor: "bg-orange-500 dark:bg-slate-700",
-    arrowColor: "border-l-orange-500 dark:border-l-slate-700",
-    position: "right",
-    customClass: "custom-class-three",
-  },
-  {
-    id: 4,
-    company: "Prasanna Purple Mobility Solutions Pvt Ltd.",
-    role: "Graphic Web Designer",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
-    start: "2010",
-    end: "2014",
-    period: "March to Aug",
-    bgColor: "bg-cyan-500 dark:bg-slate-700",
-    arrowColor: "border-l-cyan-500 dark:border-l-slate-700",
-    position: "right",
-    customClass: "custom-class-four",
-  },
-  {
-    id: 5,
-    company: "Remote Control Media INC.",
-    role: "Flash Designer",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
-    start: "2009",
-    end: "2010",
-    period: "June to Feb",
-    bgColor: "bg-purple-600 dark:bg-slate-700",
-    arrowColor: "border-l-purple-600 dark:border-l-slate-700",
-    position: "left",
-    customClass: "custom-class-five",
-  },
-];
+import { FaArrowRight } from 'react-icons/fa';
+import { experiences } from "../data/experienceData"; 
 
 function Experience() {
   const [selectedExp, setSelectedExp] = useState(null);
@@ -96,12 +24,28 @@ function Experience() {
     };
   }, [selectedExp]);
 
+  useEffect(() => {
+  if (selectedExp) {
+    // Disable scroll
+    document.body.style.overflow = "hidden";
+  } else {
+    // Enable scroll
+    document.body.style.overflow = "auto";
+  }
+
+  // Cleanup on unmount
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [selectedExp]);
+
+
   return (
     <section id="Experience" className="relative md:py-24 py-16">
       <div className="container lg mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-6">
           {experiences.map((exp, index) => (
-            <div className="" key={exp.id}>
+            <div key={exp.id}>
               <div
                 className={`flex flex-col md:flex-row w-full gap-6 wow animate__animated animate__fadeInRight ${exp.customClass}`}
                 data-wow-delay={`${0.3 + index * 0.2}s`}
@@ -126,9 +70,7 @@ function Experience() {
                   <p className="text-gray-600 dark:text-gray-400 transition duration-300">
                     {exp.company}
                   </p>
-                  <p className="text-black mt-2 line-clamp-2 dark:text-gray-200 transition duration-500">
-                    {exp.description}
-                  </p>
+                  <div className="text-black mt-2 line-clamp-2 dark:text-gray-200 transition duration-500" dangerouslySetInnerHTML={{ __html: exp.summery }} />
 
                   <button
                     onClick={() => setSelectedExp(exp)}
@@ -158,30 +100,44 @@ function Experience() {
       </div>
 
       {selectedExp && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/70 z-[999] flex items-center justify-center p-4">
           <div
             ref={modalRef}
-            className="bg-white dark:bg-slate-800 rounded-lg max-w-2xl w-full p-6 relative"
+            className="bg-white dark:bg-slate-800 rounded-lg max-w-3xl w-full p-6 relative max-h-[90vh] overflow-y-auto"
           >
             <button
               onClick={() => setSelectedExp(null)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-red-500 cursor-pointer "
+              className="absolute top-4 right-4 text-gray-500 hover:text-red-500 cursor-pointer"
             >
               X
             </button>
             <h2 className="text-2xl font-bold mb-2">{selectedExp.role}</h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
-              {selectedExp.company}
-            </p>
-            <p className="text-sm mb-4">
-              {selectedExp.start} – {selectedExp.end} ({selectedExp.period})
-            </p>
-            <p className="text-gray-700 dark:text-gray-200">
-              {selectedExp.description}
-            </p>
+
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 border-b border-gray-200 dark:border-slate-700 pb-2">
+              <p className="text-gray-700 dark:text-gray-300 font-medium">
+                {selectedExp.company}
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 italic mt-1 md:mt-0">
+                {selectedExp.totalPeriod}
+              </p>
+            </div>
+
+            <div className="text-gray-700 dark:text-gray-200 space-y-4">
+              <div className=""
+                dangerouslySetInnerHTML={{ __html: selectedExp.summery }}
+              />
+
+              <div
+                className="prose dark:prose-invert max-w-none"
+                dangerouslySetInnerHTML={{ __html: selectedExp.description }}
+              />
+              
+            </div>
           </div>
         </div>
       )}
+
+      
     </section>
   );
 }

@@ -94,4 +94,17 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    'list-none',
+    'space-y-4',
+    'pl-6',
+    'flex',
+    'items-start',
+    'hidden',
+    'bg-pink-500',
+    'border-l-pink-500',
+    'flex',
+    'items-start',
+    // ...all other classes you use dynamically
+  ],
 };
