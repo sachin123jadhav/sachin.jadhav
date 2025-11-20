@@ -107,7 +107,7 @@ function Experience() {
           >
             <button
               onClick={() => setSelectedExp(null)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-red-500 cursor-pointer"
+              className="absolute top-4 right-4 text-gray-500 hover:text-red-500 cursor-pointer "
             >
               X
             </button>

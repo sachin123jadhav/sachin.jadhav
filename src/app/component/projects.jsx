@@ -3,62 +3,11 @@ import React, { useMemo, useState } from "react";
 import Image from "next/image";
 import { FiX, FiExternalLink } from "react-icons/fi";
 
+import { PROJECTS } from "../data/experienceData";   // adjust path based on your folder
+
+
 // Sample data — replace imageSrc with your own images (public/ or remote)
-const PROJECTS = [
-  {
-    id: "p1",
-    title: "E-Commerce Dashboard",
-    category: "Wordpress",
-    tags: ["React", "Tailwind", "Next.js"],
-    year: 2024,
-    imageSrc: "/projects/p1.jpg",
-    description:
-      "Admin dashboard for multi-vendor e-commerce with analytics, role-based access and realtime charts.",
-    url: "#",
-  },
-  {
-    id: "p2",
-    title: "Branding & Web Design",
-    category: "Design",
-    tags: ["Figma", "Illustration"],
-    year: 2023,
-    imageSrc: "/projects/p2.jpg",
-    description:
-      "Full identity system and marketing site for a fintech startup.",
-    url: "#",
-  },
-  {
-    id: "p3",
-    title: "Mobile Wallet App",
-    category: "Mobile",
-    tags: ["React Native", "Payments"],
-    year: 2022,
-    imageSrc: "/projects/p3.jpg",
-    description:
-      "Secure mobile wallet with QR payments and transaction history.",
-    url: "#",
-  },
-  {
-    id: "p4",
-    title: "Marketing Landing",
-    category: "Web Site",
-    tags: ["Next.js", "Animation"],
-    year: 2024,
-    imageSrc: "/projects/p4.jpg",
-    description: "Conversion-optimized marketing landing with A/B variations.",
-    url: "#",
-  },
-  {
-    id: "p5",
-    title: "Illustration Pack",
-    category: "Design",
-    tags: ["Illustrator", "Concept"],
-    year: 2021,
-    imageSrc: "/projects/p5.jpg",
-    description: "Custom illustrations for onboarding and empty states.",
-    url: "#",
-  },
-];
+
 
 export default function PortfolioFilter() {
  

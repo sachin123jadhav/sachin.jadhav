@@ -7,6 +7,7 @@ import { FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import AnimatedButton from "./button";
 
+
 export default function Navbar({ navdark }) {
   const [isOpen, setMenu] = useState(true);
 
@@ -208,7 +209,7 @@ export default function Navbar({ navdark }) {
               </Link2>
           
              
-              <AnimatedButton href="#" label="Download CV" icon={<FiDownload className="inline ms-2 text-xl" />} />
+              <AnimatedButton target="_new" href="/images/SachinJadhavWebDesigner.pdf" label="Download CV" icon={<FiDownload className="inline ms-2 text-xl" />} />
             </ul>
           </div>
         </div>

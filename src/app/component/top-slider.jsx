@@ -49,7 +49,7 @@ function TopSlider() {
               </p>
 
              
-             <AnimatedButton href="#" label="Download CV" icon={<FiDownload className="inline ms-2 text-xl" />} />
+             <AnimatedButton  target="_new" href="/images/SachinJadhavWebDesigner.pdf" label="Download CV" icon={<FiDownload className="inline ms-2 text-xl" />} />
             </div>
 
             <div

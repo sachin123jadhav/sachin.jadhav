@@ -6,10 +6,12 @@ export default function AnimatedButton({
   href = "#",
   label = "Resume",
   icon = null,
+  target="",
 }) {
   return (
     <Link
       href={href}
+      target={target}
       className="
         relative inline-block z-[1] overflow-hidden 
         bg-[#5B6CFF] text-white dark:bg-slate-500 dark:text-white 
