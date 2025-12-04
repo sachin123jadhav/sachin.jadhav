@@ -103,7 +103,7 @@ const categories = useMemo(() => {
                       src={p.imageSrc}
                       alt={p.title}
                       fill
-                      className="object-cover"
+                      className="object-cover object-top"
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                   </div>
@@ -170,7 +170,7 @@ const categories = useMemo(() => {
                     src={selected.imageSrc}
                     alt={selected.title}
                     fill
-                    className="object-cover rounded-t-lg"
+                    className="object-cover rounded-t-lg object-top"
                   />
                 </div>
 

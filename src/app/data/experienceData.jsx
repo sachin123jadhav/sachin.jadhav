@@ -3,7 +3,7 @@
 export const experiences = [
  {
     id: 1,
-    company: "Metamind Solutions Pvt. Ltd.",
+    company: "Metamind Systems Pvt. Ltd.",
     role: "Senior Web Designer",
     summery: `
      <p class="text-justify">
@@ -499,51 +499,64 @@ Results-driven <strong>UI/UX Designer</strong> and <strong>Front-End Developer</
 // /data/projectsData.jsx
 
 export const PROJECTS = [
-  {
-    id: "p1",
-    title: "The Organic Skin Co.",
-    category: "Wordpress",
-    tags: ["Wordpress", "WooCommerce", "Figma"],
-    year: 2024,
-    imageSrc: "/images/websites/The-Organic-Skin-Co..jpg",
-    description:
-      "Admin dashboard for multi-vendor e-commerce with analytics, role-based access and realtime charts.",
-    url: "https://theorganicskinco.com",
-  },
-  {
-    id: "p2",
-    title: "Branding & Web Design",
-    category: "Design",
-    tags: ["Figma", "Illustration"],
-    year: 2023,
-    imageSrc: "/projects/p2.jpg",
-    description:
-      "Full identity system and marketing site for a fintech startup.",
-    url: "#",
-  },
-  {
-    id: "p3",
-    title: "Mobile Wallet App",
-    category: "Mobile",
-    tags: ["React Native", "Payments"],
-    year: 2022,
-    imageSrc: "/projects/p3.jpg",
-    description:
-      "Secure mobile wallet with QR payments and transaction history.",
-    url: "#",
-  },
+//  {
+//   id: "p1",
+//   title: "The Organic Skin Co.",
+//   category: "Wordpress",
+//   tags: ["Wordpress", "WooCommerce", "Figma"],
+//   year: 2016,
+//   imageSrc: "/images/websites/The-Organic-Skin-Co..jpg",
+//   description:
+//     "I designed and developed the complete e-commerce website in WordPress and WooCommerce, created responsive UI layouts, optimized product images, improved page speed with best practices, and ensured a smooth and user-friendly shopping experience.",
+//   url: "https://theorganicskinco.com",
+// },
+
+   {
+  id: "p2",
+  title: "Barva Skin Therapie",
+  category: "Wordpress",
+  tags: ["Wordpress", "WooCommerce", "Figma"],
+  year: 2018,
+  imageSrc: "/images/websites/Barva.jpg",
+  description:
+    "I designed and developed the complete e-commerce website in WordPress and WooCommerce, created responsive UI layouts, optimized product images, improved page speed with best practices, and ensured a smooth and user-friendly shopping experience.",
+  url: "https://barvaskintherapie.com/",
+},
+    {
+ id: "p3",
+  title: "Medilaser Pioneer Eye Hospital",
+  category: "Wordpress",
+  tags: ["Wordpress", "SEO", "Security", "Design"],
+  year: 2024,
+  imageSrc: "/images/websites/Medilaser-Pioneer-Eye-Hospital.jpg",
+  description:
+     "I designed and developed the hospital website in WordPress, integrated custom appointment and inquiry forms, optimized the site structure and content for SEO, improved performance, and implemented essential security measures to ensure a safe and reliable user experience.",
+  url: "https://medilaserpioneer.com",
+},
   {
     id: "p4",
-    title: "Marketing Landing",
-    category: "Web Site",
-    tags: ["Next.js", "Animation"],
-    year: 2024,
-    imageSrc: "/projects/p4.jpg",
-    description: "Conversion-optimized marketing landing with A/B variations.",
-    url: "#",
+    title: "Proline Laser",
+    category: "Wordpress",
+      tags: ["Wordpress", "SEO", "Security", "Design"],
+    year: 2022,
+  imageSrc: "/images/websites/prolinelaser.jpg",
+    description:  "I designed and developed the hospital website in WordPress, integrated custom appointment and inquiry forms, optimized the site structure and content for SEO, improved performance, and implemented essential security measures to ensure a safe and reliable user experience.",
+    url: "https://prolinelaser.com/",
   },
   {
-    id: "p5",
+  id: "p5",
+  title: "Positivty Blogs",
+  category: "Wordpress",
+  tags: ["Wordpress", "Plugins", "Design", "Optimization"],
+  year: 2024,
+  imageSrc: "/images/websites/Positivty-Blogs.jpg",
+  description:
+    "I developed the blog website in WordPress, customized and modified plugins, matched the UI closely with the provided Figma design, and optimized the overall layout for a smooth and visually consistent user experience.",
+  url: "https://positivty.com/blogs/",
+},
+
+  {
+    id: "p6",
     title: "Illustration Pack",
     category: "Design",
     tags: ["Illustrator", "Concept"],
@@ -553,3 +566,4 @@ export const PROJECTS = [
     url: "#",
   },
 ];
+
