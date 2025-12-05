@@ -3,38 +3,27 @@ import React, { useMemo, useState } from "react";
 import Image from "next/image";
 import { FiX, FiExternalLink } from "react-icons/fi";
 
-import { PROJECTS } from "../data/experienceData";   // adjust path based on your folder
-
-
-// Sample data — replace imageSrc with your own images (public/ or remote)
-
+import { PROJECTS } from "../data/experienceData";
 
 export default function PortfolioFilter() {
- 
-  const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(null);
 
-const categories = useMemo(() => {
-  const set = new Set(PROJECTS.map((p) => p.category));
-  return Array.from(set); // no "All"
-}, []);
-   const [activeCategory, setActiveCategory] = useState(categories[0]);
-  
- const filtered = useMemo(() => {
-   return PROJECTS.filter((p) => {
-     const byCategory = p.category === activeCategory;
-     const byQuery = [p.title, p.description, p.tags.join(" ")]
-       .join(" ")
-       .toLowerCase()
-       .includes(query.toLowerCase());
-     return byCategory && byQuery;
-   });
- }, [activeCategory, query]);
+  // Generate unique categories
+  const categories = useMemo(() => {
+    const set = new Set(PROJECTS.map((p) => p.category));
+    return Array.from(set);
+  }, []);
 
+  const [activeCategory, setActiveCategory] = useState(categories[0]);
+
+  // Filter only by category
+  const filtered = useMemo(() => {
+    return PROJECTS.filter((p) => p.category === activeCategory);
+  }, [activeCategory]);
 
   return (
     <>
-      <section id="projects" className="relative md:py-24 py-16">
+      <section id="projects" className="relative md:py-4 py-16 md:pb-12">
         <div className="container lg mx-auto">
           <div className="flex flex-col justify-between items-center mb-10">
             <h6 className="text-orange-600 text-base font-medium mb-2 ">
@@ -46,47 +35,26 @@ const categories = useMemo(() => {
             </h3>
           </div>
 
+          {/* Category Filters (Search Removed) */}
           <header className="mb-8 flex flex-col md:flex-row md:items-center md:justify-center gap-4">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-              <div
-                className="flex flex-wrap gap-2"
-                role="tablist"
-                aria-label="Project categories"
-              >
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 cursor-pointer ${
-                      activeCategory === cat
-                        ? "bg-indigo-600 text-white shadow"
-                        : "bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-slate-700"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
-
-              <div className="flex items-center bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-md px-3 py-1">
-                <input
-                  aria-label="Search projects"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search projects..."
-                  className="bg-transparent outline-none text-sm text-gray-700 dark:text-gray-200 w-48"
-                />
+            <div className="flex flex-wrap gap-2" role="tablist">
+              {categories.map((cat) => (
                 <button
-                  onClick={() => setQuery("")}
-                  className="ml-2 text-sm text-gray-400 hover:text-gray-600"
-                  aria-label="Clear search"
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
+                    activeCategory === cat
+                      ? "bg-indigo-600 text-white shadow"
+                      : "bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 border"
+                  }`}
                 >
-                  Clear
+                  {cat}
                 </button>
-              </div>
+              ))}
             </div>
           </header>
 
+          {/* Projects Grid */}
           <main>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {filtered.map((p) => (
@@ -94,9 +62,6 @@ const categories = useMemo(() => {
                   key={p.id}
                   className="group bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow cursor-pointer"
                   onClick={() => setSelected(p)}
-                  tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && setSelected(p)}
-                  aria-label={`Open project ${p.title}`}
                 >
                   <div className="relative w-full h-48">
                     <Image
@@ -104,22 +69,14 @@ const categories = useMemo(() => {
                       alt={p.title}
                       fill
                       className="object-cover object-top"
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                   </div>
 
                   <div className="p-4">
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h3 className="text-lg font-semibold">{p.title}</h3>
-                        <p className="text-xs text-gray-500 mt-1">
-                          {p.category} • {p.year}
-                        </p>
-                      </div>
-                      <div className="text-sm text-gray-400 group-hover:text-indigo-600 transition-colors">
-                        ›
-                      </div>
-                    </div>
+                    <h3 className="text-lg font-semibold">{p.title}</h3>
+                    <p className="text-xs text-gray-500 mt-1">
+                      {p.category} • {p.year}
+                    </p>
 
                     <p className="text-sm text-gray-600 dark:text-gray-300 mt-3 line-clamp-3">
                       {p.description}
@@ -150,17 +107,12 @@ const categories = useMemo(() => {
 
         {/* Modal */}
         {selected && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
-            role="dialog"
-            aria-modal="true"
-          >
-            <div className="bg-white dark:bg-slate-900 rounded-lg max-w-3xl w-full overflow-auto shadow-xl">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60">
+            <div className="bg-white dark:bg-slate-900 rounded-lg max-w-3xl w-full shadow-xl">
               <div className="relative">
                 <button
                   className="absolute top-4 right-4 p-2 rounded-md text-gray-500 hover:bg-gray-100 dark:hover:bg-slate-800"
                   onClick={() => setSelected(null)}
-                  aria-label="Close modal"
                 >
                   <FiX size={20} />
                 </button>
@@ -179,6 +131,7 @@ const categories = useMemo(() => {
                   <p className="text-sm text-gray-500 mt-1">
                     {selected.category} • {selected.year}
                   </p>
+
                   <p className="mt-4 text-gray-700 dark:text-gray-200">
                     {selected.description}
                   </p>
