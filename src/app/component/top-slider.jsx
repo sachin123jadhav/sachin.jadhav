@@ -63,7 +63,8 @@ function TopSlider() {
               <Image
                 src={heroSachin}
                 alt="Sachin Jadhav"
-                className="mx-auto w-full max-w-[460px] mt-10"
+                className="mx-auto w-full max-w-[460px] mt-10  rounded-tl-[50%] rounded-br-[50%] shadow-lg  border-l-[5px]
+      border-r-[8px] border-r-orange-500 border-l-red-300"
               />
             </div>
           </div>
