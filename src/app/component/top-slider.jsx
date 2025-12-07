@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react'
 import { FiDownload } from 'react-icons/fi';
 import { TypeAnimation } from "react-type-animation";
-import heroSachin from '../../../public/images/hero-img.png'
+import heroSachin from "../../../public/images/Sachin-jadhav.jpg";
 import AnimatedButton from './button';
 
 function TopSlider() {
@@ -48,15 +48,23 @@ function TopSlider() {
                 experiences that stay ahead of industry trends.
               </p>
 
-             
-             <AnimatedButton  target="_new" href="/images/SachinJadhavWebDesigner.pdf" label="Download CV" icon={<FiDownload className="inline ms-2 text-xl" />} />
+              <AnimatedButton
+                target="_new"
+                href="/images/SachinJadhavWebDesigner.pdf"
+                label="Download CV"
+                icon={<FiDownload className="inline ms-2 text-xl" />}
+              />
             </div>
 
             <div
-              className="lg:col-span-6  wow animate__animated animate__fadeInRight"
-              data-wow-delay="1.1s "
+              className="lg:col-span-6 wow animate__animated animate__fadeInRight"
+              data-wow-delay="1.1s"
             >
-              <Image src={heroSachin} alt="Sachin Kumar" className="mx-auto" />
+              <Image
+                src={heroSachin}
+                alt="Sachin Jadhav"
+                className="mx-auto w-full max-w-[460px] mt-10"
+              />
             </div>
           </div>
         </div>
