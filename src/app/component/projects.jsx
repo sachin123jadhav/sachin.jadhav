@@ -23,7 +23,7 @@ export default function PortfolioFilter() {
 
   return (
     <>
-      <section id="projects" className="relative md:py-4 py-16 md:pb-12">
+      <section id="projects" className="relative md:py-4 py-16 md:pb-12"> 
         <div className="container lg mx-auto">
           <div className="flex flex-col justify-between items-center mb-10">
             <h6 className="text-orange-600 text-base font-medium mb-2 ">
