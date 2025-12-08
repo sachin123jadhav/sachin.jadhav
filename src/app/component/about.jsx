@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedButton from "./button";
-import { FiDownload } from "react-icons/fi";
+
 
 export default function About() {
   const [isOpen, setOpen] = useState(false)
@@ -22,7 +22,7 @@ export default function About() {
             <div className="lg:col-span-5">
               <div className="relative">
                 <Image
-                  src={"/images/about.jpg"}
+                  src={"/images/websites/tech.png"}
                   className="rounded-lg shadow-lg relative "
                   alt=""
                   width={0}
@@ -31,16 +31,7 @@ export default function About() {
                   style={{ width: "100%", height: "auto" }}
                   loading="lazy" // optional
                 />
-                <div className="absolute bottom-2/4 translate-y-2/4 start-0 end-0 text-center">
-                  <Link
-                    href="#"
-                    scroll={false}
-                    onClick={() => setOpen(!isOpen)}
-                    className="lightbox h-20 w-20 rounded-full shadow-lg shadow-slate-100 dark:shadow-slate-800 inline-flex items-center justify-center bg-white dark:bg-slate-900 text-orange-600 cursor-pointer"
-                  >
-                    <i className="mdi mdi-play inline-flex items-center justify-center text-2xl"></i>
-                  </Link>
-                </div>
+              
               </div>
             </div>
             {/* end col */}

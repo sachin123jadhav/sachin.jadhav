@@ -510,6 +510,17 @@ export const PROJECTS = [
 //     "I designed and developed the complete e-commerce website in WordPress and WooCommerce, created responsive UI layouts, optimized product images, improved page speed with best practices, and ensured a smooth and user-friendly shopping experience.",
 //   url: "https://theorganicskinco.com",
 // },
+ {
+  id: "p1",
+  title: "Workfusion HRMS",
+  category: "Figma",
+  tags: ["Figma", "App Design", "Prototyping", "Workflow Design"],
+  year: 2023,
+  imageSrc: "/images/websites/HRMS.jpg",
+  description:
+    "I designed the complete UI for the Workfusion HRMS application in Figma, including dashboard, employee lifecycle, attendance, leave, and approval flows. I defined end-to-end workflows, structured user journeys, and designed a consistent component system to streamline the product experience. I also created the marketing website UI to align with brand guidelines, ensuring a modern, responsive design with clear messaging and conversion-focused layouts. My work involved requirement discussions, UX planning, visual design, prototyping, and handoff to development.",
+  url: "#",
+},
 
    {
   id: "p2",
