@@ -50,7 +50,7 @@ function TopSlider() {
 
               <AnimatedButton
                 target="_new"
-                href="/images/SachinJadhavWebDesigner.pdf"
+                href="/images/SachinJadhavWebDeveloper.pdf"
                 label="Download CV"
                 icon={<FiDownload className="inline ms-2 text-xl" />}
               />

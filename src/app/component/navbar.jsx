@@ -209,7 +209,7 @@ export default function Navbar({ navdark }) {
               </Link2>
           
              
-              <AnimatedButton target="_new" href="/images/SachinJadhavWebDesigner.pdf" label="Download CV" icon={<FiDownload className="inline ms-2 text-xl" />} />
+              <AnimatedButton target="_new" href="/images/SachinJadhavWebDeveloper.pdf" label="Download CV" icon={<FiDownload className="inline ms-2 text-xl" />} />
             </ul>
           </div>
         </div>
