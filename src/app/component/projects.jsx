@@ -42,7 +42,7 @@ export default function PortfolioFilter() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
+                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all cursor-pointer ${
                     activeCategory === cat
                       ? "bg-indigo-600 text-white shadow"
                       : "bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 border"
@@ -107,7 +107,7 @@ export default function PortfolioFilter() {
 
         {/* Modal */}
         {selected && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60">
+          <div className="fixed inset-0 z-999 flex items-center justify-center p-4 bg-black/60">
             <div className="bg-white dark:bg-slate-900 rounded-lg max-w-3xl w-full shadow-xl">
               <div className="relative">
                 <button
@@ -162,7 +162,7 @@ export default function PortfolioFilter() {
                   <div className="mt-6 flex justify-end">
                     <button
                       onClick={() => setSelected(null)}
-                      className="px-4 py-2 rounded-md border text-sm"
+                      className="px-4 py-2 rounded-md border text-sm cursor-pointer"
                     >
                       Close
                     </button>

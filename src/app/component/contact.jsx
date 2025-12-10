@@ -12,7 +12,7 @@ export default function Contact() {
                        
                         <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">Get In Touch !</h3>
 
-                        <p className="text-slate-400 max-w-xl mx-auto">Launch your campaign and benefit from our expertise on designing and managing conversion centered Tailwind CSS html page.</p>
+                        <p className="text-slate-400 max-w-xl mx-auto">Need UI/UX expertise? Let’s connect</p>
                     </div>
 
 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 items-start">

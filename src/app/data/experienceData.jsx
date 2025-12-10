@@ -501,7 +501,7 @@ Results-driven <strong>UI/UX Designer</strong> and <strong>Front-End Developer</
 export const PROJECTS = [
 //  {
 //   id: "p1",
-//   title: "The Organic Skin Co.",
+//   title: "The Organic Skin Co.",Medilaser Pioneer Eye Hospital
 //   category: "Wordpress",
 //   tags: ["Wordpress", "WooCommerce", "Figma"],
 //   year: 2016,
@@ -515,11 +515,11 @@ export const PROJECTS = [
   title: "Workfusion HRMS",
   category: "Figma",
   tags: ["Figma", "App Design", "Prototyping", "Workflow Design"],
-  year: 2023,
+  year: 2022,
   imageSrc: "/images/websites/HRMS.jpg",
   description:
     "I designed the complete UI for the Workfusion HRMS application in Figma, including dashboard, employee lifecycle, attendance, leave, and approval flows. I defined end-to-end workflows, structured user journeys, and designed a consistent component system to streamline the product experience. I also created the marketing website UI to align with brand guidelines, ensuring a modern, responsive design with clear messaging and conversion-focused layouts. My work involved requirement discussions, UX planning, visual design, prototyping, and handoff to development.",
-  url: "#",
+  url: "https://play.google.com/store/apps/details?id=com.workfusion",
 },
 
    {
@@ -538,7 +538,7 @@ export const PROJECTS = [
   title: "Medilaser Pioneer Eye Hospital",
   category: "Wordpress",
   tags: ["Wordpress", "SEO", "Security", "Design"],
-  year: 2024,
+  year: 2022,
   imageSrc: "/images/websites/Medilaser-Pioneer-Eye-Hospital.jpg",
   description:
      "I designed and developed the hospital website in WordPress, integrated custom appointment and inquiry forms, optimized the site structure and content for SEO, improved performance, and implemented essential security measures to ensure a safe and reliable user experience.",
@@ -559,7 +559,7 @@ export const PROJECTS = [
   title: "Positivty Blogs",
   category: "Wordpress",
   tags: ["Wordpress", "Plugins", "Design", "Optimization"],
-  year: 2024,
+  year: 2025,
   imageSrc: "/images/websites/Positivty-Blogs.jpg",
   description:
     "I developed the blog website in WordPress, customized and modified plugins, matched the UI closely with the provided Figma design, and optimized the overall layout for a smooth and visually consistent user experience.",
@@ -657,5 +657,46 @@ export const PROJECTS = [
     description: "Bartakke Electrofab specializes in mild steel, stainless steel (SS304, SS316), and ATEX-certified explosion-proof enclosures under their flagship series — encloINOX, encloPRIME, and encloSHIELD. I handled both the UI design and OpenCart development, creating a modern, industry-focused website that showcases their product lines clearly and professionally. I designed the full layout, refined the UI/UX based on client requirements, and then developed the site into a custom OpenCart theme with clean HTML/CSS, responsive structure, and full cross-browser compatibility. The result is a high-performance, product-driven website tailored for industrial buyers.",
     url: "https://bartakkeenclosures.com/",
   },
+   {
+  id: "p15",
+  title: "Positivty",
+  category: "Figma",
+  tags: ["Figma", "UI/UX", "Web Design", "Blog Design",],
+  year: 2025,
+  imageSrc: "/images/websites/positivty-Figma.jpg",
+  description:
+    "Designed a complete UI for Positivty, focused on inspiring and motivational content. I created a modern and uplifting website interface using Figma, ensuring visually appealing layouts, proper typography, optimized readability and mobile responsiveness. The design follows a clean aesthetic with positive visual elements, consistent brand colors, and user-friendly navigation to enhance user engagement and browsing time.",
+  url: "https://positivty.com/",
+},
+ {
+  id: "p16",
+  title: "Xtended Space",
+  category: "Figma",
+  tags: ["Figma", "UI/UX", "WordPress", "Blog Design",],
+  year: 2023,
+  imageSrc: "/images/websites/xtendedspaceBlogs.jpg",
+  description:
+    "I designed the complete XtendedSpace Blog section in Figma and successfully converted the UI into a fully functional WordPress website. The goal was to make the blog visually engaging, easy to navigate, and optimized for reading. The design follows a modern layout with clean typography, category filtering, and improved article readability. The WordPress implementation matches the Figma design pixel-to-pixel, ensuring consistency across devices.",
+  url: "https://www.xtendedspace.com/blog/",
+},
+{
+  id: "p17",
+  title: "Document Management System",
+  category: "Figma",
+  tags: [
+    "Figma",
+    "UI/UX",
+    "Workflow Design",
+    "Information Architecture",
+    "Enterprise UX",
+    "Document Management"
+  ],
+  year: 2023,
+  imageSrc: "/images/websites/DMS.jpg",
+  description:
+    "I designed the complete workflow and Figma UI for a custom Document Management System. This includes advanced file permissions such as open, update, share, assign workflow, version history, audit log, configuration, and secure collaboration. The system also supports custom forms, workflows, reminders, document signatures, and version control with a user-friendly interface optimized for enterprise use.",
+  url: "",
+}
+
 ];
 
