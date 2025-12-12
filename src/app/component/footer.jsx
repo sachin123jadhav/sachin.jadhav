@@ -23,27 +23,11 @@ export default function Footer() {
       {/* Right column */}
       <div className="mt-8 md:mt-0 flex justify-center md:justify-end">
         <ul className="flex flex-wrap gap-2">
+        
+         
           <li>
             <Link
-              href="https://dribbble.com/shreethemes"
-              target="_blank"
-              className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
-            >
-              <FiDribbble width="17px" />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="https://www.behance.net/shreethemes"
-              target="_blank"
-              className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
-            >
-              <FaBehance width="17px" />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="http://linkedin.com/company/shreethemes"
+              href="https://www.linkedin.com/in/sachin123jadhav/"
               target="_blank"
               className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
             >
@@ -52,7 +36,7 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              href="https://www.facebook.com/shreethemes"
+              href="https://www.facebook.com/sachin123jadhav/"
               target="_blank"
               className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
             >
@@ -61,22 +45,14 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              href="https://www.instagram.com/shreethemes/"
+              href="https://www.instagram.com/sachin_jadhav1234/"
               target="_blank"
               className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
             >
               <FiInstagram width="17px" />
             </Link>
           </li>
-          <li>
-            <Link
-              href="https://twitter.com/shreethemes"
-              target="_blank"
-              className="btn btn-icon btn-sm border rounded-md border-slate-700 dark:border-slate-800 hover:border-orange-600 bg-slate-800 dark:bg-gray-900 hover:bg-orange-600 dark:hover:bg-orange-600 text-gray-400 hover:text-white"
-            >
-              <FiTwitter width="17px"/>
-            </Link>
-          </li>
+         
         </ul>
       </div>
 

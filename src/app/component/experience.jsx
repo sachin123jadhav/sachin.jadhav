@@ -42,7 +42,7 @@ function Experience() {
 
   return (
     <section id="Experience" className="relative md:py-24 py-16">
-      <div className="container lg mx-auto">
+      <div className="container lg mx-auto ">
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-6">
           {experiences.map((exp, index) => (
             <div key={exp.id}>

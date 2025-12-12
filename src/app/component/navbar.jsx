@@ -56,12 +56,12 @@ export default function Navbar({ navdark }) {
             <Link className="navbar-brand max-w-[150px]" href="/">
               <span>
                 <img
-                  src="/images/SachinJadhavLogo.png"
+                  src="/images/SachinJadhav.svg"
                   className="inline-block dark:hidden"
                   alt=""
                 />
                 <img
-                  src="/images/SachinJadhavLogo.png"
+                  src="/images/SachinJadhav.svg"
                   className="hidden dark:inline-block"
                   alt=""
                 />
@@ -72,18 +72,18 @@ export default function Navbar({ navdark }) {
             <Link className="navbar-brand max-w-[250px]" href="/">
               <span className="inline-block dark:hidden">
                 <img
-                  src="/images/SachinJadhavLogo.png"
+                  src="/images/SachinJadhav.svg"
                   className="l-dark"
                   alt=""
                 />
                 <img
-                  src="/images/SachinJadhavLogo.png"
+                  src="/images/SachinJadhav.svg"
                   className="l-light"
                   alt=""
                 />
               </span>
               <img
-                src="/images/SachinJadhavLogo.png"
+                src="/images/SachinJadhav.svg"
                 className="hidden dark:inline-block"
                 alt=""
               />

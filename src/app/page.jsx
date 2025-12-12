@@ -1,47 +1,68 @@
-"use client"; // This is a client component 👈🏽
+"use client";
 
-import { TypeAnimation } from 'react-type-animation';
+import React, { useEffect, useState } from "react";
 
-import Services from "./component/services";
 import About from "./component/about";
-import Pricing from "./component/pricing";
-import Blog from "./component/blog";
 import Contact from "./component/contact";
 import Footer from "./component/footer";
-import Portfolio from "./component/portfolio";
-import Review from "./component/testimonial";
 import Switcher from "./component/switcher";
 import Navbar from "./component/navbar";
-import Link from 'next/link';
-import TopSlider from './component/top-slider';
-import Experience from './component/experience';
-import Projects from './component/projects';
-import MySkills from './component/my-skills';
+import TopSlider from "./component/top-slider";
+import Experience from "./component/experience";
+import Projects from "./component/projects";
+import MySkills from "./component/my-skills";
+import CreativeLoader from "./component/creative-loader";
 
-function Home() {
+export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let minTimer;
+    const MIN_MS = 350;
+
+    function finishLoading() {
+      clearTimeout(minTimer);
+      minTimer = setTimeout(() => setLoading(false), 70);
+    }
+
+    function onWindowLoad() {
+      setTimeout(() => finishLoading(), MIN_MS);
+    }
+
+    if (typeof window !== "undefined") {
+      if (document.readyState === "complete") {
+        onWindowLoad();
+      } else {
+        window.addEventListener("load", onWindowLoad);
+      }
+    } else {
+      setTimeout(() => setLoading(false), MIN_MS + 50);
+    }
+
+    return () => {
+      clearTimeout(minTimer);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("load", onWindowLoad);
+      }
+    };
+  }, []);
+
   return (
     <>
-      <Navbar />
-      <TopSlider />
+      <div aria-hidden={loading} className={` ${loading ? "pointer-events-none" : ""}`}  >
+        <Navbar />
+        <TopSlider />
+        <About />
+        <Experience />
+        <Projects />
+        <MySkills />
+        <Contact />
+        <Footer />
+        <Switcher />
+      </div>
 
-      <About />
-      <Experience />
-      <Projects />
-      <MySkills />
-     
-
- 
-
-
-
-
-      <Contact />
-
-      <Footer />
-
-      <Switcher />
+      {/* Creative loader */}
+      <CreativeLoader show={loading} />
     </>
   );
 }
-
-export default Home;

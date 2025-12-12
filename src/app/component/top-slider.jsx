@@ -10,10 +10,10 @@ function TopSlider() {
   return (
     <>
       <section
-        className="py-36 lg:py-12 w-full table relative bg-center bg-cover bg-blue-50 dark:bg-slate-800  dark:bg-none bg-[url('/images/hero-bg.jpg')]"
+        className="py-36 lg:py-12 w-full table relative bg-center bg-cover bg-blue-50 dark:bg-slate-800  dark:bg-none bg-[url('/images/hero-bg.jpg')] overflow-hidden"
         id="home"
       >
-        <div className="container relative">
+        <div className="container relative  overflow-x-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10 items-center ">
             <div
               className="lg:col-span-6 wow animate__animated animate__fadeInLeft"

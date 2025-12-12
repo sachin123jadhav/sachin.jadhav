@@ -83,7 +83,7 @@ export default function Portfolio() {
       >
         <div className="container">
           <div className="grid grid-cols-1 pb-8 text-center">
-            <h6 className="text-orange-600 text-base font-medium uppercase mb-2">
+            <h6 className="text-purple-600 text-base font-medium uppercase mb-2">
               Portfolio
             </h6>
             <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white ">

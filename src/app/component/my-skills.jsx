@@ -2,8 +2,8 @@
 import { useState } from "react";
 import Image from "next/image";
 // import TopShape from "../../../public/assets/images/offter-item-shape-top.png";
-import TopShape from "../../../public/images/offter-item-shape-top.png";
-import BottomShape from "../../../public/images/offter-item-shape-bottom.png";
+import TopShape from "../../../public/images/top.svg";
+import BottomShape from "../../../public/images/bottom.svg";
 import bgImg from "../../../public/images/about_bg1.jpg";
 import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 
@@ -75,13 +75,13 @@ function MySkills() {
     {
       name: "Figma",
       svg: (
-       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="currentColor"  d="M8.667 9.417a2.583 2.583 0 1 0 0 5.166h2.583V9.417zm2.583-1.5H8.667a2.583 2.583 0 0 1 0-5.167h2.583zm1.5-5.167v5.167h2.583a2.584 2.584 0 0 0 0-5.167zm2.583 6.666a2.583 2.583 0 0 0-2.583 2.542v.083a2.583 2.583 0 1 0 2.583-2.625m-6.666 6.667a2.584 2.584 0 1 0 2.583 2.584v-2.584z" clip-rule="evenodd"/></svg>
+       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="currentColor"  d="M8.667 9.417a2.583 2.583 0 1 0 0 5.166h2.583V9.417zm2.583-1.5H8.667a2.583 2.583 0 0 1 0-5.167h2.583zm1.5-5.167v5.167h2.583a2.584 2.584 0 0 0 0-5.167zm2.583 6.666a2.583 2.583 0 0 0-2.583 2.542v.083a2.583 2.583 0 1 0 2.583-2.625m-6.666 6.667a2.584 2.584 0 1 0 2.583 2.584v-2.584z" /></svg>
       ),
     },
     {
       name: "Photoshop",
       svg: (
-       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M21.75 17A4.75 4.75 0 0 1 17 21.75H7A4.75 4.75 0 0 1 2.25 17V7A4.75 4.75 0 0 1 7 2.25h10A4.75 4.75 0 0 1 21.75 7zM7 16.75a.75.75 0 0 1-.75-.75V8A.75.75 0 0 1 7 7.25h2a2.75 2.75 0 1 1 0 5.5H7.75V16a.75.75 0 0 1-.75.75m.75-5.5H9a1.25 1.25 0 1 0 0-2.5H7.75zm8.579.085a.75.75 0 1 0 1.342-.67a2.56 2.56 0 0 0-2.29-1.415H15a2.25 2.25 0 0 0 0 4.5h.5a.75.75 0 0 1 0 1.5h-.382a1.06 1.06 0 0 1-.947-.585a.75.75 0 0 0-1.342.67a2.56 2.56 0 0 0 2.289 1.415h.382a2.25 2.25 0 1 0 0-4.5H15a.75.75 0 0 1 0-1.5h.382c.4 0 .768.227.947.585" clip-rule="evenodd"/></svg>
+       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="currentColor"  d="M21.75 17A4.75 4.75 0 0 1 17 21.75H7A4.75 4.75 0 0 1 2.25 17V7A4.75 4.75 0 0 1 7 2.25h10A4.75 4.75 0 0 1 21.75 7zM7 16.75a.75.75 0 0 1-.75-.75V8A.75.75 0 0 1 7 7.25h2a2.75 2.75 0 1 1 0 5.5H7.75V16a.75.75 0 0 1-.75.75m.75-5.5H9a1.25 1.25 0 1 0 0-2.5H7.75zm8.579.085a.75.75 0 1 0 1.342-.67a2.56 2.56 0 0 0-2.29-1.415H15a2.25 2.25 0 0 0 0 4.5h.5a.75.75 0 0 1 0 1.5h-.382a1.06 1.06 0 0 1-.947-.585a.75.75 0 0 0-1.342.67a2.56 2.56 0 0 0 2.289 1.415h.382a2.25 2.25 0 1 0 0-4.5H15a.75.75 0 0 1 0-1.5h.382c.4 0 .768.227.947.585" /></svg>
       ),
     },
     {
@@ -103,7 +103,7 @@ function MySkills() {
     {
       name: "Bootstrap",
       svg: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M12.882 12c1.17 0 2.118.895 2.118 2s-.948 2-2.118 2H10.6c-.754 0-1.131 0-1.366-.234C9 15.53 9 15.154 9 14.4V12m3.882 0c1.17 0 2.118-.895 2.118-2s-.948-2-2.118-2H10.6c-.754 0-1.131 0-1.366.234C9 8.47 9 8.846 9 9.6V12m3.882 0H9"/><path d="M22 12a2 2 0 0 1-2-2V8c0-3.31-.69-4-4-4H8c-3.31 0-4 .69-4 4v2a2 2 0 0 1-2 2m0 0a2 2 0 0 1 2 2v2c0 3.31.69 4 4 4h8c3.31 0 4-.69 4-4v-2a2 2 0 0 1 2-2"/></g></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"   strokeWidth="1.5"><path d="M12.882 12c1.17 0 2.118.895 2.118 2s-.948 2-2.118 2H10.6c-.754 0-1.131 0-1.366-.234C9 15.53 9 15.154 9 14.4V12m3.882 0c1.17 0 2.118-.895 2.118-2s-.948-2-2.118-2H10.6c-.754 0-1.131 0-1.366.234C9 8.47 9 8.846 9 9.6V12m3.882 0H9"/><path d="M22 12a2 2 0 0 1-2-2V8c0-3.31-.69-4-4-4H8c-3.31 0-4 .69-4 4v2a2 2 0 0 1-2 2m0 0a2 2 0 0 1 2 2v2c0 3.31.69 4 4 4h8c3.31 0 4-.69 4-4v-2a2 2 0 0 1 2-2"/></g></svg>
       ),
     },
     {
@@ -193,8 +193,8 @@ function MySkills() {
       <div className="container mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h6 className="text-orange-600 text-base font-medium mb-2 ">
-            <span className="inline-block w-[20px] h-[1.5px] bg-orange-600 transform translate-y-[-5px] mr-2.5"></span>{" "}
+          <h6 className="text-cyan-600 text-base font-medium mb-2 ">
+            <span className="inline-block w-[20px] h-[1.5px] bg-cyan-600 transform translate-y-[-5px] mr-2.5"></span>{" "}
             My Skills
           </h6>
           <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">
@@ -202,7 +202,7 @@ function MySkills() {
           </h3>
        
         </div>
-        <div className="border border-dashed border-[#ff3c82]   px-9 pb-9 rounded-[15px]">
+        <div className="border border-dashed border-[#6f42c1]   px-9 pb-9 rounded-[15px]">
           {/* Tabs */}
           <div className="flex justify-center gap-4 mb-10 flex-wrap -mt-5">
             {tabs.map((tab) => (
@@ -211,8 +211,8 @@ function MySkills() {
                 onClick={() => setActiveTab(tab.key)}
                 className={`px-5 py-3 rounded-sm text-sm font-medium transition cursor-pointer flex items-center justify-center gap-2 ${
                   activeTab === tab.key
-                    ? "bg-orange-600 text-white shadow-md"
-                    : "bg-gray-300 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-orange-600 hover:text-white"
+                    ? "bg-purple-800 text-white shadow-md"
+                    : "bg-gray-300 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-purple-600 hover:text-white"
                 }`}
               >
                 {tab.label}
@@ -252,7 +252,7 @@ function MySkills() {
                   </div>
 
                   {/* Icon */}
-                  <div className="w-[70px] relative h-[70px] rounded-full text-center border border-[#ff3c82] bg-white mt-[-55px] translate-y-1 mx-auto transition-all duration-1000 text-[#ff3c82] flex items-center justify-center mb-4 group-hover:transform group-hover:rotate-y-[360deg] group-hover:bg-[#ff3c82] group-hover:text-white ">
+                  <div className="w-[70px] relative h-[70px] rounded-full text-center border border-[#6f42c1] bg-white mt-[-55px] translate-y-1 mx-auto transition-all duration-1000 text-[#6f42c1] flex items-center justify-center mb-4 group-hover:transform group-hover:rotate-y-[360deg] group-hover:bg-[#6f42c1] group-hover:text-white ">
                     {skill.svg}
                   </div>
 
@@ -295,7 +295,7 @@ function MySkills() {
                   </div>
 
                   {/* Icon */}
-                  <div className="w-[70px] relative h-[70px] rounded-full text-center border border-[#ff3c82] bg-white mt-[-55px] translate-y-1 mx-auto transition-all duration-1000 text-[#ff3c82] flex items-center justify-center mb-4 group-hover:transform group-hover:rotate-y-[360deg] group-hover:bg-[#ff3c82] group-hover:text-white ">
+                  <div className="w-[70px] relative h-[70px] rounded-full text-center border border-[#6f42c1] bg-white mt-[-55px] translate-y-1 mx-auto transition-all duration-1000 text-[#6f42c1] flex items-center justify-center mb-4 group-hover:transform group-hover:rotate-y-[360deg] group-hover:bg-[#6f42c1] group-hover:text-white ">
                     {skill.svg}
                   </div>
 
@@ -337,7 +337,7 @@ function MySkills() {
                   </div>
 
                   {/* Icon */}
-                  <div className="w-[70px] relative h-[70px] rounded-full text-center border border-[#ff3c82] bg-white mt-[-55px] translate-y-1 mx-auto transition-all duration-1000 text-[#ff3c82] flex items-center justify-center mb-4 group-hover:transform group-hover:rotate-y-[360deg] group-hover:bg-[#ff3c82] group-hover:text-white ">
+                  <div className="w-[70px] relative h-[70px] rounded-full text-center border border-[#6f42c1] bg-white mt-[-55px] translate-y-1 mx-auto transition-all duration-1000 text-[#6f42c1] flex items-center justify-center mb-4 group-hover:transform group-hover:rotate-y-[360deg] group-hover:bg-[#6f42c1] group-hover:text-white ">
                     {skill.svg}
                   </div>
 
@@ -379,7 +379,7 @@ function MySkills() {
                   </div>
 
                   {/* Icon */}
-                  <div className="w-[70px] relative h-[70px] rounded-full text-center border border-[#ff3c82] bg-white mt-[-55px] translate-y-1 mx-auto transition-all duration-1000 text-[#ff3c82] flex items-center justify-center mb-4 group-hover:transform group-hover:rotate-y-[360deg] group-hover:bg-[#ff3c82] group-hover:text-white ">
+                  <div className="w-[70px] relative h-[70px] rounded-full text-center border border-[#6f42c1] bg-white mt-[-55px] translate-y-1 mx-auto transition-all duration-1000 text-[#6f42c1] flex items-center justify-center mb-4 group-hover:transform group-hover:rotate-y-[360deg] group-hover:bg-[#6f42c1] group-hover:text-white ">
                     {skill.svg}
                   </div>
 
@@ -420,7 +420,7 @@ function MySkills() {
                   </div>
 
                   {/* Icon */}
-                  <div className="w-[70px] relative h-[70px] rounded-full text-center border border-[#ff3c82] bg-white mt-[-55px] translate-y-1 mx-auto transition-all duration-1000 text-[#ff3c82] flex items-center justify-center mb-4 group-hover:transform group-hover:rotate-y-[360deg] group-hover:bg-[#ff3c82] group-hover:text-white ">
+                  <div className="w-[70px] relative h-[70px] rounded-full text-center border border-[#6f42c1] bg-white mt-[-55px] translate-y-1 mx-auto transition-all duration-1000 text-[#6f42c1] flex items-center justify-center mb-4 group-hover:transform group-hover:rotate-y-[360deg] group-hover:bg-[#6f42c1] group-hover:text-white ">
                     {skill.svg}
                   </div>
 

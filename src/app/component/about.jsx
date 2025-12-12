@@ -38,8 +38,8 @@ export default function About() {
 
             <div className="lg:col-span-7">
               <div className="lg:ms-7">
-                <h6 className="text-orange-600 text-base font-medium mb-2 ">
-                  <span className="inline-block w-[20px] h-[1.5px] bg-orange-600 transform translate-y-[-5px] mr-2.5"></span>{" "}
+                <h6 className="text-cyan-600 text-base font-medium mb-2 ">
+                  <span className="inline-block w-[20px] h-[1.5px] bg-cyan-600 transform translate-y-[-5px] mr-2.5"></span>{" "}
                   About Me
                 </h6>
                 <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">

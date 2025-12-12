@@ -26,8 +26,8 @@ export default function PortfolioFilter() {
       <section id="projects" className="relative md:py-4 py-16 md:pb-12"> 
         <div className="container lg mx-auto">
           <div className="flex flex-col justify-between items-center mb-10">
-            <h6 className="text-orange-600 text-base font-medium mb-2 ">
-              <span className="inline-block w-[20px] h-[1.5px] bg-orange-600 transform translate-y-[-5px] mr-2.5"></span>{" "}
+            <h6 className="text-cyan-600 text-base font-medium mb-2 ">
+              <span className="inline-block w-[20px] h-[1.5px] bg-cyan-600 transform translate-y-[-5px] mr-2.5"></span>{" "}
               Portfolio
             </h6>
             <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">
@@ -44,7 +44,7 @@ export default function PortfolioFilter() {
                   onClick={() => setActiveCategory(cat)}
                   className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all cursor-pointer ${
                     activeCategory === cat
-                      ? "bg-indigo-600 text-white shadow"
+                      ? "bg-purple-800 text-white shadow"
                       : "bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 border"
                   }`}
                 >
