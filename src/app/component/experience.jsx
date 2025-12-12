@@ -89,7 +89,7 @@ function Experience() {
                     <p>{exp.period}</p>
                     <h2 className="text-3xl font-bold">{exp.end}</h2>
                     <div
-                      className={`hidden md:block absolute top-1/2 -left-[30px] translate-x-1/2 -translate-y-1/2 rotate-180 w-0 h-0 border-l-[20px] ${exp.arrowColor} border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent z-[6]`}
+                      className={`hidden md:block absolute top-1/2 -left-[29px] translate-x-1/2 -translate-y-1/2 rotate-180 w-0 h-0 border-l-[20px] ${exp.arrowColor} border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent z-[6]`}
                     ></div>
                   </div>
                 )}

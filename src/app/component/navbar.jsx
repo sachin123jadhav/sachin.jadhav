@@ -104,7 +104,7 @@ export default function Navbar({ navdark }) {
             id="menu-collapse"
           >
             <ul
-              className={`navbar-nav lg:gap-8 py-4 items-center ${
+              className={`navbar-nav lg:gap-8 py-1 items-center ${
                 navdark ? "" : "nav-light"
               }`}
               id="navbar-navlist"
