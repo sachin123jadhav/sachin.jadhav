@@ -36,7 +36,7 @@ export default function Navbar({ navdark }) {
         "is-sticky",
         "wow",
         "animate__animated",
-        "animate__fadeInUp"
+        "animate__fadeInUp", "p-0",
       );
     } else {
       navbar.classList.remove(

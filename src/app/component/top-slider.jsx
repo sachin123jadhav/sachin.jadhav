@@ -63,7 +63,7 @@ function TopSlider() {
               <Image
                 src={heroSachin}
                 alt="Sachin Jadhav"
-                className=" mx-auto w-full max-w-[460px] mt-10 rounded-tl-[50%] rounded-br-[50%] shadow-lg
+                className=" mx-auto w-full max-w-[460px] mt-10 rounded-tl-[50%] rounded-br-[50%] shadow-lg animate-[color-change_6s_linear_infinite]
 
       border-l-[5px] border-l-red-300
       border-r-[8px] border-r-orange-500

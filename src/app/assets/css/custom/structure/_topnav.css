@@ -106,7 +106,7 @@
             }
         }
         &.is-sticky {
-            @apply py-3;
+            @apply py-1;
             .navbar-nav {
                 .nav-link {
                     @apply text-slate-900 dark:text-white;

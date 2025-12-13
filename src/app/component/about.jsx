@@ -11,7 +11,7 @@ export default function About() {
   return (
     <>
       <section
-        className="relative md:py-3 py-16  dark:bg-slate-800"
+        className="relative md:py-[50px] py-16  dark:bg-slate-800"
         id="about"
       >
         <div className="container mx-auto">

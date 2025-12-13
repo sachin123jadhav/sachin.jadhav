@@ -23,14 +23,14 @@ export default function PortfolioFilter() {
 
   return (
     <>
-      <section id="projects" className="relative md:py-4 py-16 md:pb-12"> 
+      <section id="projects" className="relative md:py-[60px] py-16 md:pb-12 pb-[100px]"> 
         <div className="container lg mx-auto">
           <div className="flex flex-col justify-between items-center mb-10">
             <h6 className="text-cyan-600 text-base font-medium mb-2 ">
               <span className="inline-block w-[20px] h-[1.5px] bg-cyan-600 transform translate-y-[-5px] mr-2.5"></span>{" "}
               Portfolio
             </h6>
-            <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">
+            <h3 className="mb-1 md:text-2xl text-xl font-medium dark:text-white">
               Merging Design Thinking with Front-End Precision
             </h3>
           </div>

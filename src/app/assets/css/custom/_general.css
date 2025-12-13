@@ -164,3 +164,22 @@ a{
   .glass { width: 64px; height: 64px }
   .blob { opacity: 0.95 }
 }
+
+
+@keyframes color-change {
+    0%,100% {
+        border-color: #2fb4ae
+    }
+
+    25% {
+        border-color: #2558ab
+    }
+
+    50% {
+        border-color: #c71f1f
+    }
+
+    75% {
+        border-color: #ffcd00
+    }
+}
