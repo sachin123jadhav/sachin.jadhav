@@ -190,7 +190,7 @@ function MySkills() {
       className="relative py-[100px]  bg-white dark:bg-gray-900   bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImg.src})` }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto py-8"  >
         {/* Heading */}
         <div className="text-center mb-12">
           <h6 className="text-cyan-600 text-base font-medium mb-2 ">
