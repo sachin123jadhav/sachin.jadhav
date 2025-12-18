@@ -5,6 +5,9 @@ import { FiDownload } from 'react-icons/fi';
 import { TypeAnimation } from "react-type-animation";
 import heroSachin from "../../../public/images/Sachin-jadhav.jpg";
 import AnimatedButton from './button';
+import figma from "../../../public/images/svg/figma.svg";
+import html from "../../../public/images/svg/html-5.svg";
+import css from "../../../public/images/svg/css-3.svg";
 
 function TopSlider() {
   return (
@@ -57,9 +60,13 @@ function TopSlider() {
             </div>
 
             <div
-              className="lg:col-span-6 wow animate__animated animate__fadeInRight"
+              className="lg:col-span-6 wow animate__animated animate__fadeInRight relative"
               data-wow-delay="1.1s"
             >
+<Image src={html} alt='HTML' className='w-[50px] absolute top-8 translate-x-[140px]' />   
+<Image src={css} alt='CSS' className='w-[50px] absolute top-[90px] translate-x-[80px]' />  
+<Image src={figma} alt='figma' className='w-[70px] absolute top-[160px] translate-x-[40px]' />      
+ 
               <Image
                 src={heroSachin}
                 alt="Sachin Jadhav"
