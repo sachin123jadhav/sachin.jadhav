@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedButton from "./button";
+import { FiArrowRight } from "react-icons/fi";
 
 
 export default function About() {
@@ -31,7 +32,6 @@ export default function About() {
                   style={{ width: "100%", height: "auto" }}
                   loading="lazy" // optional
                 />
-              
               </div>
             </div>
             {/* end col */}
@@ -47,28 +47,27 @@ export default function About() {
                 </h3>
 
                 <p className="text-gray-600 max-w-2xl text-lg dark:text-gray-400">
-                  I'm a passionate UI/UX Developer with a strong eye for detail
-                  and a deep love for creating seamless digital experiences. My
-                  expertise spans a diverse range of technologies, including
-                  HTML, CSS, JavaScript, React, and SASS, as well as platforms
-                  like WordPress, Shopify, Ghost, and OpenCart. With a solid
-                  background in both design and development, I bridge the gap
-                  between aesthetics and functionality. I’m highly proficient
-                  with tools like Photoshop and Figma, and I thrive on
-                  transforming concepts into fully responsive, user-centered
-                  designs.
+                  I am a Senior UI/UX Designer and Frontend Developer with over
+                  15 years of experience designing and developing user-friendly,
+                  scalable web applications. My background spans UI/UX design,
+                  frontend development, and platform implementation.
                 </p>
 
                 <h6 className=" text-lg font-medium mt-4 text-gray-800 dark:text-gray-200">
-                  Driven by innovation and always tuned into emerging trends,
-                  I’m committed to delivering modern web solutions that are not
-                  just visually appealing, but also purposeful and
-                  user-friendly.
+                  I have worked extensively on B2B SaaS products, dashboards,
+                  and workflow-driven enterprise systems, handling everything
+                  from user flows and high-fidelity UI design in Figma to
+                  frontend implementation.
                 </h6>
 
                 <div className="relative mt-10"></div>
 
-                <AnimatedButton href="#" label="View Portfolio" />
+                <AnimatedButton
+                  href="#"
+                  label="Learn More About Me"
+                  icon={<FiArrowRight className="inline ms-2 text-xl" />}
+                />
+               
               </div>
             </div>
           </div>

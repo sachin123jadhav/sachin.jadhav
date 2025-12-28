@@ -6,22 +6,24 @@ export default function AnimatedButton({
   href = "#",
   label = "Resume",
   icon = null,
-  target="",
+  target = "",
+  className=""
 }) {
   return (
     <Link
       href={href}
       target={target}
-      className="
-        relative inline-block z-[1] overflow-hidden 
-        bg-[#6F42C1] text-white dark:bg-slate-500 dark:text-white 
-        font-urban h-[60px] leading-[61px] px-[35px]
-        rounded-full shadow-[inset_-2px_-2px_2px_rgba(7,13,29,0.3)] 
-        dark:shadow-[inset_-2px_-2px_2px_rgba(255,255,255,0.1)]
-        font-bold text-[16px] tracking-[0.02em] transition-all duration-1000
-        xs:h-[50px] xs:leading-[50px] xs:px-[25px]
-        group
-      "
+      className={`
+    relative inline-block z-[1] overflow-hidden 
+    bg-[#6F42C1] text-white dark:bg-slate-500 dark:text-white 
+    font-urban h-[60px] leading-[61px] px-[35px]
+    rounded-md shadow-[inset_-2px_-2px_2px_rgba(7,13,29,0.3)] 
+    dark:shadow-[inset_-2px_-2px_2px_rgba(255,255,255,0.1)]
+    font-bold text-[16px] tracking-[0.02em] transition-all duration-1000
+    xs:h-[50px] xs:leading-[50px] xs:px-[25px]
+    group
+    ${className}
+  `}
     >
       <span
         className="

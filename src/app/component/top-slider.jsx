@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
-import { FiDownload } from 'react-icons/fi';
+import { FiArrowRight, FiDownload } from 'react-icons/fi';
 import { TypeAnimation } from "react-type-animation";
 import heroSachin from "../../../public/images/Sachin-jadhav.jpg";
 import AnimatedButton from './button';
@@ -22,34 +22,44 @@ function TopSlider() {
               className="lg:col-span-6 wow animate__animated animate__fadeInLeft"
               data-wow-delay=".90s "
             >
-              <h4 className="text-black lg:text-4xl text-3xl lg:leading-normal leading-normal font-medium mb-2 position-relative text-4xl font-bold bg-gradient-to-r from-[var(--color-orange-800)] to-[var(--color-orange-400)] bg-clip-text text-transparent">
+              <h4 className="text-black lg:text-4xl text-3xl lg:leading-normal leading-normal font-medium mb-2 position-relative text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-800 bg-clip-text text-transparent">
                 {" "}
-                Hi, I'm a Web
+                Hi, I'm Senior
                 <TypeAnimation
                   sequence={[
                     // Same substring at the start will only be typed out once, initially
-                    "Designer",
+                    "UI/UX Designer",
                     2000, // wait 1s before replacing "Mice" with "Hamsters"
-                    "Developer",
+                    "Frontend Developer",
                     2000,
                   ]}
                   wrapper="span"
                   speed={20}
                   repeat={Infinity}
-                  className="typewrite relative text-type-element ms-2  bg-gradient-to-r from-[var(--color-orange-800)] to-[var(--color-orange-400)] bg-clip-text text-transparent"
+                  className="typewrite relative text-type-element ms-2  bg-gradient-to-r from-purple-600 to-blue-800 bg-clip-text text-transparent"
                   cursor={false}
                 />
                 <br></br>
                 with 15+ Years of Experience
               </h4>
+              <h2 className="text-xl font-medium py-2">
+                B2B SaaS • Dashboards • Enterprise Platforms • Web Applications
+              </h2>
               <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-5">
-                I craft dynamic, visually engaging, and user-friendly websites
-                using technologies like HTML, CSS, JavaScript, React, and SASS.
-                With deep experience in platforms like WordPress, Shopify,
-                Ghost, and OpenCart — plus design tools like Photoshop and Figma
-                — I transform concepts into responsive, functional web
-                experiences that stay ahead of industry trends.
+                Senior UI/UX Designer and Frontend Developer with 15+ years of
+                experience designing and building B2B SaaS platforms,
+                dashboards, data-heavy interfaces, and enterprise web
+                applications. Strong expertise in Figma, UI systems, and
+                frontend technologies including HTML, CSS, JavaScript, and
+                React.
               </p>
+              <AnimatedButton
+                target="_new"
+                href="/images/SachinJadhavWebDeveloper.pdf"
+                label="View Case Studies"
+                icon={<FiArrowRight className="inline ms-2 text-xl" />}
+                className="bg-blue-600 mr-8"
+              />
 
               <AnimatedButton
                 target="_new"
@@ -63,10 +73,44 @@ function TopSlider() {
               className="lg:col-span-6 wow animate__animated animate__fadeInRight relative"
               data-wow-delay="1.1s"
             >
-<Image src={html} alt='HTML' className='w-[50px] absolute top-8 translate-x-[140px]' />   
-<Image src={css} alt='CSS' className='w-[50px] absolute top-[90px] translate-x-[80px]' />  
-<Image src={figma} alt='figma' className='w-[70px] absolute top-[160px] translate-x-[40px]' />      
- 
+              <div className="absolute top-8 translate-x-[140px] group">
+                {/* Icon */}
+                <Image
+                  src={html}
+                  alt="HTML"
+                  className="w-[50px] cursor-pointer transition-transform duration-300 group-hover:scale-110"
+                />
+
+                {/* Sliding Text */}
+                <span
+                  className="
+      absolute left-full top-1/2 -translate-y-1/2
+      ml-3
+      whitespace-nowrap
+      rounded-md bg-black/80 px-3 py-1 text-sm text-white
+      opacity-0
+      -translate-x-3
+      transition-all duration-300 ease-out
+      group-hover:opacity-100
+      group-hover:translate-x-0
+      pointer-events-none
+    "
+                >
+                  HTML5
+                </span>
+              </div>
+
+              <Image
+                src={css}
+                alt="CSS"
+                className="w-[50px] absolute top-[90px] translate-x-[80px]"
+              />
+              <Image
+                src={figma}
+                alt="figma"
+                className="w-[70px] absolute top-[160px] translate-x-[40px]"
+              />
+
               <Image
                 src={heroSachin}
                 alt="Sachin Jadhav"

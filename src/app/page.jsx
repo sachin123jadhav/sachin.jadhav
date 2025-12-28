@@ -12,6 +12,7 @@ import Experience from "./component/experience";
 import Projects from "./component/projects";
 import MySkills from "./component/my-skills";
 import CreativeLoader from "./component/creative-loader";
+import Highlights from "./component/highlights";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -52,6 +53,7 @@ export default function Home() {
       <div aria-hidden={loading} className={` ${loading ? "pointer-events-none" : ""}`}  >
         <Navbar />
         <TopSlider />
+        <Highlights/>
         <About />
         <Experience />
         <Projects />

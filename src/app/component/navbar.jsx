@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FiDownload } from "react-icons/fi";
 import AnimatedButton from "./button";
 
+
 export default function Navbar({ navdark }) {
   const [isOpen, setMenu] = useState(true);
 
@@ -47,7 +48,6 @@ export default function Navbar({ navdark }) {
   return (
     <nav className="navbar" id="navbar">
       <div className="container flex flex-wrap items-center justify-between">
-
         {/* Logo */}
         <Link className="navbar-brand max-w-[200px]" href="/">
           <img src="/images/SachinJadhav.svg" alt="Sachin Jadhav" />
@@ -65,15 +65,11 @@ export default function Navbar({ navdark }) {
 
         {/* Menu */}
         <div
-          className={`${
-            isOpen ? "hidden" : "block"
-          } navigation lg_992:flex`}
+          className={`${isOpen ? "hidden" : "block"} navigation lg_992:flex`}
         >
           <ul className="navbar-nav lg:gap-8 py-1 items-center">
-
             {/* HOME */}
             <Link2
-              to="home"
               activeClass="active"
               spy
               hashSpy
@@ -81,11 +77,15 @@ export default function Navbar({ navdark }) {
               duration={500}
               offset={-10}
               className="nav-item relative inline-block"
+              href=""
             >
               <span className="nav-link">Home</span>
             </Link2>
 
             {/* ABOUT */}
+            <Link className="navbar-brand" href='index-six'>
+              About Me
+            </Link>
             <Link2
               to="about"
               activeClass="active"
