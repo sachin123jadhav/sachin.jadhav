@@ -83,7 +83,7 @@ export default function Navbar({ navdark }) {
             </Link2>
 
             {/* ABOUT */}
-            <Link className="navbar-brand" href='index-six'>
+            <Link className="navbar-brand" href="about">
               About Me
             </Link>
             <Link2
