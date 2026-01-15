@@ -1,32 +1,19 @@
 "use client";
 
 import { useEffect } from "react";
+import WOW from "wowjs";
 
-export default function WowProvider({ children }) {
+export default function WowJsProvider({ children }) {
   useEffect(() => {
-    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
-      return;
-    }
+    const wow = new WOW.WOW({
+      boxClass: "wow",
+      animateClass: "animate__animated",
+      offset: 80,
+      mobile: true,
+      live: false,
+    });
 
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(
-              "animate__animated",
-              "animate__fadeInUp"
-            );
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll(".animate-on-scroll");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
+    wow.init();
   }, []);
 
   return children;

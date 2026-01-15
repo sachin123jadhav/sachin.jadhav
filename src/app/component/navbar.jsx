@@ -1,165 +1,97 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { Link as Link2, scrollSpy } from "react-scroll";
+
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FiDownload } from "react-icons/fi";
 import AnimatedButton from "./button";
 
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const navbarRef = useRef(null);
+  const hasAnimated = useRef(false);
+  const pathname = usePathname();
 
-export default function Navbar({ navdark }) {
-  const [isOpen, setMenu] = useState(true);
-
-  useEffect(() => {
-    window.addEventListener("scroll", windowScroll);
-    scrollSpy.update();
-
-    return () => {
-      window.removeEventListener("scroll", windowScroll);
-    };
-  }, []);
-
-  const toggleMenu = () => {
-    setMenu(!isOpen);
-  };
-
-  function windowScroll() {
-    const navbar = document.getElementById("navbar");
+  // Sticky navbar animation
+  const handleScroll = useCallback(() => {
+    const navbar = navbarRef.current;
     if (!navbar) return;
 
     if (window.scrollY >= 50) {
-      navbar.classList.add(
-        "is-sticky",
-        "wow",
-        "animate__animated",
-        "animate__fadeInUp",
-        "p-0"
-      );
+      navbar.classList.add("is-sticky", "p-0");
+
+      if (!hasAnimated.current) {
+        navbar.classList.add("animate__animated", "animate__fadeInDown");
+        hasAnimated.current = true;
+      }
     } else {
-      navbar.classList.remove(
-        "is-sticky",
-        "wow",
-        "animate__animated",
-        "animate__fadeInUp",
-        "p-0"
-      );
+      navbar.classList.remove("is-sticky", "p-0");
+      hasAnimated.current = false;
+      navbar.classList.remove("animate__animated", "animate__fadeInDown");
     }
-  }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  const toggleMenu = () => setIsOpen((prev) => !prev);
+  const closeMenu = () => setIsOpen(false);
+
+  const isActive = (path) => pathname === path;
 
   return (
-    <nav className="navbar" id="navbar">
+    <nav className="navbar" ref={navbarRef}>
       <div className="container flex flex-wrap items-center justify-between">
         {/* Logo */}
-        <Link className="navbar-brand max-w-[200px]" href="/">
+        <Link href="/" className="navbar-brand max-w-[200px]" onClick={closeMenu}>
           <img src="/images/SachinJadhav.svg" alt="Sachin Jadhav" />
         </Link>
 
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="collapse-btn inline-flex items-center ms-3 text-dark dark:text-white lg_992:hidden"
+          className="collapse-btn inline-flex items-center ms-3 text-dark dark:text-white lg:hidden"
           onClick={toggleMenu}
+          aria-label="Toggle navigation"
         >
-          <span className="sr-only">Navigation Menu</span>
           <i className="mdi mdi-menu mdi-24px"></i>
         </button>
 
         {/* Menu */}
-        <div
-          className={`${isOpen ? "hidden" : "block"} navigation lg_992:flex`}
-        >
+        <div className={`${isOpen ? "block" : "hidden"} navigation lg_992:flex`}>
           <ul className="navbar-nav lg:gap-8 py-1 items-center">
-            {/* HOME */}
-            <Link2
-              activeClass="active"
-              spy
-              hashSpy
-              smooth
-              duration={500}
-              offset={-10}
-              className="nav-item relative inline-block"
-              href=""
-            >
+            <Link href="/" className={`nav-item ${isActive("/") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">Home</span>
-            </Link2>
-
-            {/* ABOUT */}
-            <Link className="navbar-brand" href="about">
-              About Me
             </Link>
-            <Link2
-              to="about"
-              activeClass="active"
-              spy
-              hashSpy
-              smooth
-              duration={500}
-              offset={-10}
-              className="nav-item relative inline-block"
-            >
+
+            <Link href="/about" className={`nav-item ${isActive("/about") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">About Me</span>
-            </Link2>
+            </Link>
 
-            {/* EXPERIENCE */}
-            <Link2
-              to="Experience"
-              activeClass="active"
-              spy
-              hashSpy
-              smooth
-              duration={500}
-              offset={-10}
-              className="nav-item relative inline-block"
-            >
+            <Link href="/experience" className={`nav-item ${isActive("/experience") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">Experience</span>
-            </Link2>
+            </Link>
 
-            {/* PORTFOLIO */}
-            <Link2
-              to="projects"
-              activeClass="active"
-              spy
-              hashSpy
-              smooth
-              duration={500}
-              offset={-10}
-              className="nav-item relative inline-block"
-            >
+            <Link href="/projects" className={`nav-item ${isActive("/projects") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">Portfolio</span>
-            </Link2>
+            </Link>
 
-            {/* SKILLS */}
-            <Link2
-              to="skills"
-              activeClass="active"
-              spy
-              hashSpy
-              smooth
-              duration={500}
-              offset={-10}
-              className="nav-item relative inline-block"
-            >
+            <Link href="/skills" className={`nav-item ${isActive("/skills") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">Skills</span>
-            </Link2>
+            </Link>
 
-            {/* CONTACT */}
-            <Link2
-              to="contact"
-              activeClass="active"
-              spy
-              hashSpy
-              smooth
-              duration={500}
-              className="nav-item relative inline-block"
-            >
+            <Link href="/contact" className={`nav-item ${isActive("/contact") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">Contact</span>
-            </Link2>
+            </Link>
 
-            {/* DOWNLOAD CV */}
             <AnimatedButton
               target="_blank"
               href="/images/SachinJadhavWebDeveloper.pdf"
               label="Download CV"
               icon={<FiDownload className="inline ms-2 text-xl" />}
+              className="ml-2"
             />
           </ul>
         </div>

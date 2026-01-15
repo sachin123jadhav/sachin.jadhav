@@ -58,7 +58,7 @@ function TopSlider() {
                 href="/images/SachinJadhavWebDeveloper.pdf"
                 label="View Case Studies"
                 icon={<FiArrowRight className="inline ms-2 text-xl" />}
-                className="bg-blue-600 mr-8"
+                className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"
               />
 
               <AnimatedButton
@@ -114,7 +114,7 @@ function TopSlider() {
               <Image
                 src={heroSachin}
                 alt="Sachin Jadhav"
-                className=" mx-auto w-full max-w-[460px] mt-10 rounded-tl-[50%] rounded-br-[50%] shadow-lg animate-[color-change_6s_linear_infinite]
+                className=" mx-auto w-full max-w-[400px] mt-10 rounded-tl-[50%] rounded-br-[50%] shadow-lg animate-[color-change_6s_linear_infinite]
 
       border-l-[5px] border-l-red-300
       border-r-[8px] border-r-orange-500

@@ -11,7 +11,7 @@ export default function Contact() {
     <>
       {/* Start */}
       <section
-        className="relative md:py-24 py-16 bg-gray-50 dark:bg-slate-800"
+        className="relative md:py-24 py-16 bg-gray-50 dark:bg-black-800"
         id="contact"
       >
         <div className="container">
@@ -20,7 +20,7 @@ export default function Contact() {
               Get In Touch !
             </h3>
 
-            <p className="text-slate-400 max-w-xl mx-auto">
+            <p className="text-black-400 max-w-xl mx-auto">
               Need UI/UX expertise? Let’s connect
             </p>
           </div>
@@ -36,7 +36,7 @@ export default function Contact() {
                 <h5 className="text-lg dark:text-white mb-2 font-medium">
                   Phone
                 </h5>
-                <a href="tel:+919890122027" className="text-slate-400">
+                <a href="tel:+919890122027" className="text-black-400">
                   +91 9890122027
                 </a>
               </div>
@@ -53,7 +53,7 @@ export default function Contact() {
                 </h5>
                 <a
                   href="mailto:sachin123jadhav@gmail.com"
-                  className="text-slate-400"
+                  className="text-black-400"
                 >
                   sachin123jadhav@gmail.com
                 </a>
@@ -70,7 +70,7 @@ export default function Contact() {
                 <h5 className="text-lg dark:text-white mb-2 font-medium">
                   Location
                 </h5>
-                <p className="text-slate-400 mb-2">Bhugaon, Pune-412115</p>
+                <p className="text-black-400 mb-2">Bhugaon, Pune-412115</p>
               </div>
             </div>
           </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   MdBusinessCenter,
@@ -34,15 +36,25 @@ function Highlights() {
     <section id="projects" className="relative py-24">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {highlights.map(({ title, desc, icon: Icon }) => (
+          {highlights.map(({ title, desc, icon: Icon }, index) => (
             <div
               key={title}
-              className="group border border-gray-200 bg-[#f5f9ff] p-5 rounded-md transition-all duration-300 hover:bg-blue-800"
+              className="group border border-gray-200 bg-[#f5f9ff] p-5 rounded-md
+                         transition-all duration-300 hover:bg-blue-800
+                         wow animate__animated animate__fadeInUp"
+              data-wow-delay={`${index * 0.15}s`}
             >
-              <div className="w-[50px] h-[50px] bg-blue-800 rounded-sm grid place-items-center transition-all duration-300 group-hover:bg-white group-hover:rounded-[15px] group-hover:rotate-45">
+              <div
+                className="w-[50px] h-[50px] bg-blue-800 rounded-sm grid place-items-center
+                           transition-all duration-300 group-hover:bg-white
+                           group-hover:rounded-[15px] group-hover:rotate-45
+                           wow animate__animated animate__zoomIn"
+                data-wow-delay={`${index * 0.15 + 0.2}s`}
+              >
                 <Icon
                   size={28}
-                  className="text-white transition-colors duration-300 group-hover:text-blue-800 transform group-hover:-rotate-45"
+                  className="text-white transition-colors duration-300
+                             group-hover:text-blue-800 transform group-hover:-rotate-45"
                 />
               </div>
 
