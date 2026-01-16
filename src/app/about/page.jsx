@@ -1,13 +1,18 @@
 import React from "react";
 
-import BreadCrumb from "./breadcrumb";
+
 import About from "./about-me"
+import BreadCrumb from "../component/breadcrumb";
 
 function AboutMe() {
   return <>
 
+<BreadCrumb
+  title="About Me"
+  description="A Senior UI/UX Designer and Frontend Developer with a passion for creating beautiful, functional, and user-centric digital experiences."
+/>
 
-<BreadCrumb/>
+
 <About/>
 
 

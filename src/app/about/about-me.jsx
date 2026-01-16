@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import React from 'react'
-import { FiCheckCircle } from "react-icons/fi";
+import { FiArrowRight, FiCheckCircle, FiDownload } from "react-icons/fi";
+import AnimatedButton from '../component/button';
+import { FaUserTie } from "react-icons/fa6";
 
 function About() {
   const items = [
@@ -17,18 +19,18 @@ function About() {
           <div className="grid grid-cols-1 pb-8">
 
 <div className='grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10'>
-  <div className="lg:col-span-6 wow animate__animated animate__fadeInLeft">
+  <div className="lg:col-span-8 wow animate__animated animate__fadeInLeft">
 
     <p className='mb-2'>I am a Senior UI/UX Designer and Frontend Developer with over 15 years of experience designing and developing user-friendly, scalable web applications.</p>
 <p className='mb-2'>My background spans UI/UX design, frontend development, and platform implementation. I have worked extensively on B2B SaaS products, dashboards, and workflow-driven enterprise systems, handling everything from user flows and high-fidelity UI design in Figma to frontend implementation using HTML, CSS, JavaScript, React, and modern frameworks.</p>
 <p className='mb-2'>I work closely with product managers, developers, and stakeholders to translate complex business requirements into clear, usable interfaces and production-ready solutions.
 
 </p>
-<h3 className='mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold'>My Approach</h3>
+<h3 className='mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold text-purple-700 mb-2'>My Approach</h3>
 
 <p>I believe in designing with purpose. Every decision—from color choices to interaction patterns—should serve the user and the business goals. My process involves deep collaboration with cross-functional teams to understand requirements, iterate quickly, and deliver solutions that work in the real world.</p>
   
-  <h3 className='mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold'>What I Do Best</h3>
+  <h3 className='mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold  text-purple-700 mb-2'>What I Do Best</h3>
    <ul className="space-y-3 mt-2">
       {items.map((item) => (
         <li key={item} className="flex items-start gap-3">
@@ -39,14 +41,32 @@ function About() {
         </li>
       ))}
     </ul>
+
+<div className='mt-15'>
+     <AnimatedButton
+                    target="_new"
+                    href="/portfolio"
+                    label="View My Work"
+                    icon={<FiArrowRight className="inline ms-2 text-xl" />}
+                    className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"
+                  />
+    
+                  <AnimatedButton
+                    target="_new"
+                    href="/images/SachinJadhavWebDeveloper.pdf"
+                    label="See Experience"
+                    icon={ <FaUserTie className="inline ms-2 text-xl"/> }
+                  />
+
+                  </div>
   
   
   </div>
-  <div className='lg:col-span-6 wow animate__animated animate__fadeInRight relative'>
+  <div className='lg:col-span-4 wow animate__animated animate__fadeInRight relative'>
     <div className="sticky top-24 space-y-6">
       {/* Profile Card */}
       <div className="p-8 rounded-2xl bg-white border border-border">
-        <div className="w-20 h-20 rounded-2xl bg-accent/10 flex items-center justify-center mb-6">
+        <div className="w-20 h-20 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center mb-6">
           <span className="font-display font-bold text-2xl text-accent">
             SJ
           </span>
@@ -79,7 +99,7 @@ function About() {
       </div>
 
       {/* CTA Card */}
-      <div className="p-8 rounded-2xl bg-secondary/50 border border-border">
+      <div className="p-8 rounded-2xl bg-slate-200 border border-slate-300 dark:bg-black-500 dark:border-gray-700">
         <h4 className="font-display font-semibold text-primary mb-4">
           Let&apos;s Connect
         </h4>
@@ -88,21 +108,15 @@ function About() {
           Interested in working together? I&apos;d love to hear about your project.
         </p>
 
-        <Link
-          href="/contact"
-          className="
-            inline-flex items-center justify-center gap-2
-            w-full h-10 px-5 rounded-lg
-            text-sm font-medium
-            bg-primary text-primary-foreground
-            hover:bg-primary/90
-            transition-all duration-200
-            focus-visible:outline-none focus-visible:ring-2
-            focus-visible:ring-ring focus-visible:ring-offset-2
-          "
-        >
-          Get in Touch
-        </Link>
+      <div className='flex justify-center mt-8'>
+         <AnimatedButton
+                    target="_new"
+                    href="/contact"
+                    label="Get in Touch"
+                    icon={<FiArrowRight className="inline ms-2 text-xl" />}
+                    className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"
+                  />
+                  </div>
       </div>
     </div>
      </div>
