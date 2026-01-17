@@ -14,125 +14,137 @@ function About() {
     "Frontend Development Support",
   ];
   return (
-   <section className='relative md:py-8 py-8  bg-slate-100  dark:bg-black-800 '>
+    <section className="relative md:py-8 py-8  bg-slate-100  dark:bg-black-800 ">
       <div className="container">
-          <div className="grid grid-cols-1 pb-8">
+        <div className="grid grid-cols-1 pb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10">
+            <div className="lg:col-span-8 wow animate__animated animate__fadeInLeft">
+              <p className="mb-2">
+                I am a Senior UI/UX Designer and Frontend Developer with over 15
+                years of experience designing and developing user-friendly,
+                scalable web applications.
+              </p>
+              <p className="mb-2">
+                My background spans UI/UX design, frontend development, and
+                platform implementation. I have worked extensively on B2B SaaS
+                products, dashboards, and workflow-driven enterprise systems,
+                handling everything from user flows and high-fidelity UI design
+                in Figma to frontend implementation using HTML, CSS, JavaScript,
+                React, and modern frameworks.
+              </p>
+              <p className="mb-2">
+                I work closely with product managers, developers, and
+                stakeholders to translate complex business requirements into
+                clear, usable interfaces and production-ready solutions.
+              </p>
+              <h3 className="mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold text-purple-700 mb-2">
+                My Approach
+              </h3>
 
-<div className='grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10'>
-  <div className="lg:col-span-8 wow animate__animated animate__fadeInLeft">
+              <p>
+                I believe in designing with purpose. Every decision—from color
+                choices to interaction patterns—should serve the user and the
+                business goals. My process involves deep collaboration with
+                cross-functional teams to understand requirements, iterate
+                quickly, and deliver solutions that work in the real world.
+              </p>
 
-    <p className='mb-2'>I am a Senior UI/UX Designer and Frontend Developer with over 15 years of experience designing and developing user-friendly, scalable web applications.</p>
-<p className='mb-2'>My background spans UI/UX design, frontend development, and platform implementation. I have worked extensively on B2B SaaS products, dashboards, and workflow-driven enterprise systems, handling everything from user flows and high-fidelity UI design in Figma to frontend implementation using HTML, CSS, JavaScript, React, and modern frameworks.</p>
-<p className='mb-2'>I work closely with product managers, developers, and stakeholders to translate complex business requirements into clear, usable interfaces and production-ready solutions.
+              <h3 className="mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold  text-purple-700 mb-2">
+                What I Do Best
+              </h3>
+              <ul className="space-y-3 mt-2">
+                {items.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <FiCheckCircle className="text-emerald-500 mt-1 text-lg shrink-0" />
+                    <span className="text-gray-800 dark:text-gray-200">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
 
-</p>
-<h3 className='mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold text-purple-700 mb-2'>My Approach</h3>
+              <div className="mt-15">
+                <AnimatedButton
+                  href="/portfolio"
+                  label="View My Work"
+                  icon={<FiArrowRight className="inline ms-2 text-xl" />}
+                  className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"
+                />
 
-<p>I believe in designing with purpose. Every decision—from color choices to interaction patterns—should serve the user and the business goals. My process involves deep collaboration with cross-functional teams to understand requirements, iterate quickly, and deliver solutions that work in the real world.</p>
-  
-  <h3 className='mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold  text-purple-700 mb-2'>What I Do Best</h3>
-   <ul className="space-y-3 mt-2">
-      {items.map((item) => (
-        <li key={item} className="flex items-start gap-3">
-          <FiCheckCircle className="text-emerald-500 mt-1 text-lg shrink-0" />
-          <span className="text-gray-800 dark:text-gray-200">
-            {item}
-          </span>
-        </li>
-      ))}
-    </ul>
-
-<div className='mt-15'>
-     <AnimatedButton
-                    target="_new"
-                    href="/portfolio"
-                    label="View My Work"
-                    icon={<FiArrowRight className="inline ms-2 text-xl" />}
-                    className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"
-                  />
-    
-                  <AnimatedButton
-                    target="_new"
-                    href="/images/SachinJadhavWebDeveloper.pdf"
-                    label="See Experience"
-                    icon={ <FaUserTie className="inline ms-2 text-xl"/> }
-                  />
-
+                <AnimatedButton
+                  href="/experience"
+                  label="See Experience"
+                  icon={<FaUserTie className="inline ms-2 text-xl" />}
+                />
+              </div>
+            </div>
+            <div className="lg:col-span-4 wow animate__animated animate__fadeInRight relative">
+              <div className="sticky top-24 space-y-6">
+                {/* Profile Card */}
+                <div className="p-8 rounded-2xl bg-white border border-border">
+                  <div className="w-20 h-20 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center mb-6">
+                    <span className="font-display font-bold text-2xl text-accent">
+                      SJ
+                    </span>
                   </div>
-  
-  
-  </div>
-  <div className='lg:col-span-4 wow animate__animated animate__fadeInRight relative'>
-    <div className="sticky top-24 space-y-6">
-      {/* Profile Card */}
-      <div className="p-8 rounded-2xl bg-white border border-border">
-        <div className="w-20 h-20 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center mb-6">
-          <span className="font-display font-bold text-2xl text-accent">
-            SJ
-          </span>
-        </div>
 
-        <h3 className="font-display font-bold text-xl text-primary mb-2">
-          Sachin Jadhav
-        </h3>
+                  <h3 className="font-display font-bold text-xl text-primary mb-2">
+                    Sachin Jadhav
+                  </h3>
 
-        <p className="text-muted-foreground mb-6">
-          Senior UI/UX Designer & Frontend Developer
-        </p>
+                  <p className="text-muted-foreground mb-6">
+                    Senior UI/UX Designer & Frontend Developer
+                  </p>
 
-        <div className="space-y-3 text-sm">
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Experience</span>
-            <span className="font-medium text-primary">15+ Years</span>
-          </div>
+                  <div className="space-y-3 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Experience</span>
+                      <span className="font-medium text-primary">
+                        15+ Years
+                      </span>
+                    </div>
 
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Location</span>
-            <span className="font-medium text-primary">India</span>
-          </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Location</span>
+                      <span className="font-medium text-primary">India</span>
+                    </div>
 
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Specialization</span>
-            <span className="font-medium text-primary">B2B SaaS</span>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">
+                        Specialization
+                      </span>
+                      <span className="font-medium text-primary">B2B SaaS</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA Card */}
+                <div className="p-8 rounded-2xl bg-slate-200 border border-slate-300 dark:bg-black-500 dark:border-gray-700">
+                  <h4 className="font-display font-semibold text-primary mb-4">
+                    Let&apos;s Connect
+                  </h4>
+
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Interested in working together? I&apos;d love to hear about
+                    your project.
+                  </p>
+
+                  <div className="flex justify-center mt-8">
+                    <AnimatedButton
+                      href="/contact"
+                      label="Get in Touch"
+                      icon={<FiArrowRight className="inline ms-2 text-xl" />}
+                      className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* CTA Card */}
-      <div className="p-8 rounded-2xl bg-slate-200 border border-slate-300 dark:bg-black-500 dark:border-gray-700">
-        <h4 className="font-display font-semibold text-primary mb-4">
-          Let&apos;s Connect
-        </h4>
-
-        <p className="text-sm text-muted-foreground mb-4">
-          Interested in working together? I&apos;d love to hear about your project.
-        </p>
-
-      <div className='flex justify-center mt-8'>
-         <AnimatedButton
-                    target="_new"
-                    href="/contact"
-                    label="Get in Touch"
-                    icon={<FiArrowRight className="inline ms-2 text-xl" />}
-                    className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"
-                  />
-                  </div>
-      </div>
-    </div>
-     </div>
-
-</div>
-
-           
-          </div>
-
-
-          
-
-          </div>
-
     </section>
-  )
+  );
 }
 
 export default About
