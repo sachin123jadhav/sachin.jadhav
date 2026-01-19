@@ -74,7 +74,7 @@ export default function Navbar() {
               <span className="nav-link">Experience</span>
             </Link>
 
-            <Link href="/projects" className={`nav-item ${isActive("/projects") ? "active" : ""}`} onClick={closeMenu}>
+            <Link href="/portfolio" className={`nav-item ${isActive("/portfolio") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">Portfolio</span>
             </Link>
 
