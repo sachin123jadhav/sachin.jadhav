@@ -2,6 +2,7 @@ import React from 'react'
 import BreadCrumb from '../component/breadcrumb'
 import PortfolioSection from './portfolio-section'
 
+
 function portfolio() {
   return (
     <>
@@ -11,6 +12,7 @@ function portfolio() {
   description="Selected work from SaaS platforms, dashboards, enterprise systems, and frontend implementations."
 />
 <PortfolioSection/>
+
     
     </>
   )
