@@ -107,7 +107,54 @@ function MySkills() {
 
           </div>
 
-          
+          {/* -------------------- CORE COMPETENCIES -------------------- */}
+
+<div className="max-w-3xl mx-auto mt-20">
+
+  <h2 className="text-3xl font-bold text-center text-purple-700">
+    Core Competencies
+  </h2>
+
+  <p className="text-center text-gray-500 mt-2 mb-10">
+    Key areas where I deliver the most value
+  </p>
+
+  <div className="space-y-8">
+
+    {[
+      { name: "UI/UX Design", level: 95 },
+      { name: "Figma & Design Tools", level: 90 },
+      { name: "Dashboard Design", level: 92 },
+      { name: "Frontend Development", level: 80 },
+      { name: "Design Systems", level: 88 },
+      { name: "WordPress / CMS", level: 85 },
+    ].map((skill) => (
+
+      <div key={skill.name}>
+
+        <div className="flex justify-between mb-2">
+          <span className="font-medium text-purple-700">
+            {skill.name}
+          </span>
+          <span className="text-gray-500">
+            {skill.level}%
+          </span>
+        </div>
+
+        <div className="h-2 rounded-full bg-gray-200 overflow-hidden">
+          <div
+            className="h-full rounded-full bg-gradient-to-r from-purple-600 to-blue-500 transition-all duration-1000"
+            style={{ width: `${skill.level}%` }}
+          />
+        </div>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</div>
 
 
 
