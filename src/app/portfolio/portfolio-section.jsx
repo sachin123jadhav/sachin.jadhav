@@ -7,6 +7,8 @@ import Image from 'next/image';
 import PortfolioFilter from '../component/projects';
 
 function PortfolioSection() {
+  const [activeCaseStudy, setActiveCaseStudy] = useState(null);
+
   return (
     <section className="bg-[#faf9fb] py-20">
 
