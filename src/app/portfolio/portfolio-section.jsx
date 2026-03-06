@@ -1,13 +1,19 @@
-import React from 'react'
-import Badge from '../component/badge'
-import { FaSearch, FaSitemap, FaPaintBrush, FaRocket } from "react-icons/fa";
-import hrms from './../../../public/images/HRMS.jpg'
-import jaivique from './../../../public/images/HRMS.jpg'
-import Image from 'next/image';
-import PortfolioFilter from '../component/projects';
+"use client";
 
+
+import React, { useState } from "react";
+import Badge from "../component/badge";
+import { FaSearch, FaRocket, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
+
+import Image from "next/image";
+import hrms from "./../../../public/images/HRMS.jpg";
+import jaivique from './../../../public/images/HRMS.jpg'
+
+import HRMSCaseStudy from "./HRMSCaseStudy";
+import DMSCaseStudy from "./DMSCaseStudy"; 
 function PortfolioSection() {
-  const [activeCaseStudy, setActiveCaseStudy] = useState(null);
+
+  const [activeCaseStudy, setActiveCaseStudy] = useState(null)
 
   return (
     <section className="bg-[#faf9fb] py-20">
@@ -237,12 +243,9 @@ function PortfolioSection() {
 
 
       </div>
-    </section>
 
-   
-    
+    </section>
   )
 }
 
 export default PortfolioSection
-
