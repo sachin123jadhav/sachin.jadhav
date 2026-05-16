@@ -42,7 +42,7 @@ export default function Footer() {
                         {item}
                       </span>
                     </li>
-                  )
+                  ),
                 )}
               </ul>
             </div>
@@ -67,7 +67,7 @@ export default function Footer() {
               </a>
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/in/your-linkedin-username"
+                href="https://www.linkedin.com/in/sachin123jadhav/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-purple-400 transition mb-2"
@@ -77,7 +77,7 @@ export default function Footer() {
               </a>
               {/* GitHub */}
               <a
-                href="https://github.com/your-github-username"
+                href="https://github.com/sachin123jadhav"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-purple-400 transition"
@@ -91,14 +91,16 @@ export default function Footer() {
               <h3 className="font-medium text-2xl mb-4">Follow Me</h3>
               <div className="flex gap-4 text-gray-400">
                 <a
-                  href="https://instagram.com/your_username"
+                  href="https://www.instagram.com/sachin_jadhav1234/"
                   className="hover:text-pink-500 transition"
+                  target="_blank"
                 >
                   <FaInstagram size={20} />
                 </a>
                 <a
-                  href="https://facebook.com/your_username"
+                  href="https://facebook.com/sachin123jadhav"
                   className="hover:text-blue-600 transition"
+                  target="_blank"
                 >
                   <FaFacebookF size={20} />
                 </a>
@@ -116,7 +118,6 @@ export default function Footer() {
             </div>
 
             {/* Right column */}
-           
           </div>
         </div>
       </footer>

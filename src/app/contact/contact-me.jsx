@@ -28,7 +28,7 @@ function Contact() {
     {
       icon: FiMapPin,
       label: "Location",
-      value: "India",
+      value: "Pune, India",
       href: null,
     },
   ];
