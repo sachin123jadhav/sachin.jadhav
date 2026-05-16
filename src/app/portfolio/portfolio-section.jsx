@@ -7,7 +7,7 @@ import { FaSearch, FaRocket, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 
 import Image from "next/image";
 import hrms from "./../../../public/images/HRMS.jpg";
-import jaivique from './../../../public/images/HRMS.jpg'
+import barva from "./../../../public/images/Barva.jpg";
 
 import HRMSCaseStudy from "./HRMSCaseStudy";
 import DMSCaseStudy from "./DMSCaseStudy"; 
@@ -124,7 +124,7 @@ function PortfolioSection() {
 
 
 
-        {/* -------------------- SECOND PROJECT : JAIVIQUE -------------------- */}
+        {/* -------------------- SECOND PROJECT : Barva Skin Therapie -------------------- */}
 
         <div className="grid lg:grid-cols-12 gap-10 items-center mt-24">
 
@@ -141,7 +141,7 @@ function PortfolioSection() {
             </div>
 
             <h2 className="text-2xl text-purple-700 mt-6 font-semibold">
-              Jaivique
+              Barva Skin Therapie
             </h2>
 
             <p className="text-[#07bdd5]">
@@ -157,7 +157,7 @@ function PortfolioSection() {
             </p>
 
             <p className="text-gray-700 mt-2">
-              Jaivique is a Shopify-based e-commerce platform designed to
+              Barva Skin Therapie is a Shopify-based e-commerce platform designed to
               showcase premium products through a clean and modern online
               shopping experience.
             </p>
@@ -185,8 +185,8 @@ function PortfolioSection() {
           <div className="lg:col-span-6">
             <div className="aspect-video rounded-2xl border overflow-hidden group">
               <Image
-                src={jaivique}
-                alt="Jaivique Shopify Project"
+                src={barva}
+                alt="Barva Skin Therapie Shopify Project"
                 className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
               />
             </div>
@@ -195,7 +195,7 @@ function PortfolioSection() {
         </div>
 
 
-        {/* JAIVIQUE DETAILS */}
+        {/* Barva Skin Therapie DETAILS */}
 
         <div className="grid lg:grid-cols-3 gap-10 mt-12">
 
