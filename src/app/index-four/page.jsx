@@ -42,7 +42,7 @@ useEffect(() => {
                 
                     <div className="relative mt-10">
                         <Link href="/contact" className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-full me-1">Get Started</Link>
-                        <Link href="#!" scroll={false} onClick={()=>setModal(!videoModal)} className="btn btn-icon btn-lg bg-purple-700/5 hover:bg-purple-700 border-purple-700/10 hover:border-purple-700 text-purple-700 hover:text-white rounded-full lightbox"><i className="mdi mdi-play text-xl align-middle"></i></Link><small className="font-medium text-sm uppercase align-middle ms-2 dark:text-white/70">Watch Now</small>
+                        <Link href="#!" scroll={false} onClick={()=>setModal(!videoModal)} className="btn btn-icon btn-lg bg-purple-700/5 hover:bg-purple-700 border-purple-700/10 hover:border-purple-700 text-purple-700 dark:text-purple-300 hover:text-white rounded-full lightbox"><i className="mdi mdi-play text-xl align-middle"></i></Link><small className="font-medium text-sm uppercase align-middle ms-2 dark:text-white/70">Watch Now</small>
                     </div>
                 </div>
             </div>
@@ -51,9 +51,9 @@ useEffect(() => {
               {videoModal && 
                 <div className="flex bg-[#00000099] overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                     <div className="relative p-1 w-full max-w-2xl max-h-full">
-                        <div className="relative bg-white rounded-lg shadow-xs dark:bg-gray-700">
+                        <div className="relative bg-white rounded-lg shadow-xs dark:bg-slate-700">
                             <div className="flex items-center justify-between p-1 border-b rounded-t dark:border-gray-600 border-gray-200">
-                                <button type="button" onClick={()=>setModal(!videoModal)} className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                                <button type="button" onClick={()=>setModal(!videoModal)} className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-slate-600 dark:hover:text-white" data-modal-hide="default-modal">
                                     <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>

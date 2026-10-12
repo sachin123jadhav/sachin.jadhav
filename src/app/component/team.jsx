@@ -46,7 +46,7 @@ export default function Team() {
       >
         <div className="container">
           <div className="grid grid-cols-1 pb-8 text-center">
-            <h6 className="text-purple-700 text-base font-medium uppercase mb-2">
+            <h6 className="text-purple-700 dark:text-purple-300 text-base font-medium uppercase mb-2">
               Our Team
             </h6>
             <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">
@@ -102,7 +102,7 @@ export default function Team() {
                   </li>
                 </ul>
 
-                <div className="content absolute start-4 end-4 bottom-4 bg-white dark:bg-slate-900 opacity-0 group-hover:opacity-100 p-4 rounded-md text-center transition-all duration-500">
+                <div className="content absolute start-4 end-4 bottom-4 bg-white dark:bg-slate-700 opacity-0 group-hover:opacity-100 p-4 rounded-md text-center transition-all duration-500">
                   <Link
                     href="#"
                     className="h5 text-md dark:text-white hover:text-purple-700 dark:hover:text-purple-700 font-medium"

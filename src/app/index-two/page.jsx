@@ -59,7 +59,7 @@ function Home2() {
                 </div>
 
                 <div className="lg:col-span-5 mt-8 md:mt-0">
-                  <div className="bg-white dark:bg-slate-900 rounded-xl shadow-smmd:p-10 p-6 lg:ms-10 z-10 relative">
+                  <div className="bg-white dark:bg-slate-700 rounded-xl shadow-smmd:p-10 p-6 lg:ms-10 z-10 relative">
                     <h4 className="mb-5 font-medium text-2xl dark:text-white">
                       We are offering 14 <br /> days free trial
                     </h4>
@@ -72,7 +72,7 @@ function Home2() {
                             name="name"
                             id="fName"
                             type="text"
-                            className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none mt-2"
+                            className="form-input w-full py-2 px-3 border border-gray-200 dark:border-slate-600 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-700 dark:text-slate-200 rounded h-10 outline-none mt-2"
                             placeholder="Name :"
                           />
                         </div>
@@ -82,7 +82,7 @@ function Home2() {
                             name="email"
                             id="yEmail"
                             type="email"
-                            className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none mt-2"
+                            className="form-input w-full py-2 px-3 border border-gray-200 dark:border-slate-600 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-700 dark:text-slate-200 rounded h-10 outline-none mt-2"
                             placeholder="Email :"
                           />
                         </div>
@@ -91,7 +91,7 @@ function Home2() {
                           <input
                             name="number"
                             id="phNumber"
-                            className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none mt-2"
+                            className="form-input w-full py-2 px-3 border border-gray-200 dark:border-slate-600 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-700 dark:text-slate-200 rounded h-10 outline-none mt-2"
                             placeholder="+12 12458 854"
                           />
                         </div>
@@ -112,9 +112,9 @@ function Home2() {
           {isOpen && 
             <div className="flex bg-[#00000099] overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                 <div className="relative p-1 w-full max-w-2xl max-h-full">
-                    <div className="relative bg-white rounded-lg shadow-xs dark:bg-gray-700">
+                    <div className="relative bg-white rounded-lg shadow-xs dark:bg-slate-700">
                         <div className="flex items-center justify-between p-1 border-b rounded-t dark:border-gray-600 border-gray-200">
-                            <button type="button" onClick={()=>setOpen(!isOpen)} className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                            <button type="button" onClick={()=>setOpen(!isOpen)} className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-slate-600 dark:hover:text-white" data-modal-hide="default-modal">
                                 <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                 </svg>

@@ -20,7 +20,7 @@ export default function CreativeLoader({ show = true }) {
       aria-hidden={!show}
     >
       {/* overlay */}
-      <div className="absolute inset-0 bg-white/95 dark:bg-gray-900/92 backdrop-blur-sm transition-opacity" />
+      <div className="absolute inset-0 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm transition-opacity" />
 
       {/* svg goo + logo */}
       <div className="relative z-10 flex flex-col items-center gap-6 px-6">

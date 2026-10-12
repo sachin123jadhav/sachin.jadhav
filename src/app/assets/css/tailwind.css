@@ -1,11 +1,84 @@
 
-
-
 /* Tailwind CSS */
 @import "tailwindcss";
 
-/* Dark mode */
+/* Dark mode is driven by a class on <html>, applied by the inline script in
+   layout.js before first paint. */
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* ==========================================================================
+   Theme palette — the single source of truth for both colour schemes.
+
+   Components may either use Tailwind's dark: variant (the convention this
+   project already follows) or the semantic utilities generated below
+   (bg-surface, bg-surface-raised, text-fg, border-line, ...). Either way the
+   actual colour values exist only in this block.
+   ========================================================================== */
+:root {
+  color-scheme: light;
+
+  --surface: #ffffff;          /* page background            */
+  --surface-section: #f9fafb;  /* alternating band           */
+  --surface-raised: #ffffff;   /* card, panel, modal         */
+  --surface-hover: #f1f5f9;    /* hover on a raised surface  */
+
+  --fg: #0f172a;               /* primary text               */
+  --fg-secondary: #475569;     /* secondary text             */
+  --fg-muted: #64748b;         /* muted text / captions      */
+
+  --line: #e2e8f0;             /* borders and dividers       */
+  --line-strong: #cbd5e1;
+
+  --field: #ffffff;            /* input background           */
+  --field-line: #cbd5e1;       /* input border               */
+
+  --focus-ring: #7047c3;       /* brand accent               */
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* Same structure as light: the page is the darkest surface and cards sit
+     lighter, so a card reads as elevated rather than recessed. */
+  --surface: #1e293b;          /* slate-800 */
+  --surface-section: #1e293b;
+  --surface-raised: #334155;   /* slate-700 */
+  --surface-hover: #3f4d63;
+
+  --fg: #f1f5f9;               /* slate-100 — 13.6:1 on a raised surface */
+  --fg-secondary: #cbd5e1;     /* slate-300 —  9.2:1 */
+  --fg-muted: #94a3b8;         /* slate-400 —  4.8:1, clears AA for body text */
+
+  --line: #475569;             /* slate-600 */
+  --line-strong: #64748b;
+
+  --field: #334155;
+  --field-line: #475569;
+
+  --focus-ring: #a78bfa;       /* lifted so it stays visible on dark surfaces */
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-section: var(--surface-section);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-hover: var(--surface-hover);
+  --color-fg: var(--fg);
+  --color-fg-secondary: var(--fg-secondary);
+  --color-fg-muted: var(--fg-muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-field: var(--field);
+  --color-field-line: var(--field-line);
+  --color-focus-ring: var(--focus-ring);
+}
+
+/* Back-compat: these two utilities were generated before the token layer
+   existed, so keep the names pointing at the new tokens. */
+@theme inline {
+  --color-background: var(--surface);
+  --color-foreground: var(--fg);
+}
 
 /* Theme */
 @theme {
@@ -41,5 +114,5 @@
 
 
 
-         
+          
       

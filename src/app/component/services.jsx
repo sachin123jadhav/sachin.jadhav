@@ -48,7 +48,7 @@ export default function Services() {
         <div className="container lg mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 pb-8 items-center">
             <div>
-              <h6 className="text-purple-700 text-base font-medium uppercase mb-2">
+              <h6 className="text-purple-700 dark:text-purple-300 text-base font-medium uppercase mb-2">
                 What We Do ?
               </h6>
               <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white md:mb-0">
@@ -76,7 +76,7 @@ export default function Services() {
                      : "shadow-xl shadow-slate-100 dark:shadow-slate-800"
                  } transition duration-500 rounded-3xl mt-8`}
                >
-                 <div className="size-20 bg-purple-700/5 text-purple-700 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm">
+                 <div className="size-20 bg-purple-700/5 text-purple-700 dark:text-purple-300 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm">
                    <Icon width="30px" height="30px" />
                  </div>
 
@@ -104,7 +104,7 @@ export default function Services() {
 
         <div className="container md:mt-24 mt-16">
           <div className="grid grid-cols-1 pb-8 text-center">
-            <h6 className="text-purple-700 text-base font-medium uppercase mb-2">
+            <h6 className="text-purple-700 dark:text-purple-300 text-base font-medium uppercase mb-2">
               Work Process
             </h6>
             <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">

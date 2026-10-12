@@ -12,7 +12,7 @@ function BreadCrumb({
         relative
         pt-16 pb-12 md:pt-24 md:pb-14
         bg-gradient-to-br from-[#faf8fd] via-[#f2edf8] to-[#edf6f7]
-        dark:bg-slate-900
+        dark:from-[#0f172a] dark:via-[#172554] dark:to-[#1e293b]
       "
     >
       <div className="container">

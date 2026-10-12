@@ -1,28 +1,57 @@
-@import "tailwindcss";
+/*
+ * This file deliberately does NOT @import "tailwindcss".
+ *
+ * Importing it here as well made Tailwind run twice: once from this file, which
+ * has no @custom-variant, so dark: fell back to its default
+ * `@media (prefers-color-scheme: dark)`; and once from assets/css/tailwind.css,
+ * which defines the class-based variant. The two passes emitted conflicting
+ * rules, and the media-query copies landed later in the bundle — so `.dark` lost
+ * the cascade and sections silently stayed light whenever the visitor's
+ * operating system was set to light.
+ *
+ * assets/css/tailwind.css is now the single Tailwind entry point.
+ */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/*
+ * The palette itself is defined as theme tokens in assets/css/tailwind.css.
+ * This file only consumes it, so there is one place to change either scheme.
+ *
+ * These rules are unlayered, which means they outrank Tailwind's layered
+ * utilities — intentional for the base page colour, but worth knowing: a bg-*
+ * utility placed on <body> would not win against it.
+ */
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--surface);
+  color: var(--fg);
 
   /* ✅ Consume the font injected by next/font */
   font-family: var(--font-rubik), Arial, Helvetica, sans-serif;
+}
+
+/* A keyboard focus ring that stays visible on both themes.
+   Pointer users are unaffected because this is :focus-visible, not :focus. */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/*
+ * Honour the operating system's "reduce motion" setting.
+ *
+ * A near-zero duration rather than `animation: none` on purpose: animate.css
+ * runs with fill-mode "both", so elements start at opacity 0. Cancelling the
+ * animation outright would leave them invisible; collapsing its duration lets
+ * it finish instantly instead.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .roles-details {

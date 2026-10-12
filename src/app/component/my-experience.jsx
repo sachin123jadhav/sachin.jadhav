@@ -50,7 +50,7 @@ export default function MyExperience() {
                   </div>
 
                   <div className="mt-4 md:mt-0">
-                    <div className="border border-gray-300 p-6 rounded-2xl event event-description-right ltr:float-left rtl:float-right ltr:text-left rtl:text-right md:ms-7">
+                    <div className="border border-gray-300 dark:border-slate-600 dark:bg-slate-700 p-6 rounded-2xl event event-description-right ltr:float-left rtl:float-right ltr:text-left rtl:text-right md:ms-7">
                       <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
                         <li>
                           Led end-to-end <strong>UI/UX design</strong> for a{" "}
@@ -110,7 +110,7 @@ export default function MyExperience() {
               <div className="timeline-item mt-5 pt-4">
                 <div className="grid sm:grid-cols-2">
                   <div className="md:order-1 order-2">
-                    <div className="event   md:me-7 border border-gray-300 p-6 rounded-2xl">
+                    <div className="event   md:me-7 border border-gray-300 dark:border-slate-600 dark:bg-slate-700 p-6 rounded-2xl">
                       <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
                         <li>
                           Delivered <strong>20+ web applications</strong> and{" "}
@@ -219,10 +219,10 @@ export default function MyExperience() {
                   </div>
 
                   <div className=" md:mt-0">
-                    <div className="border border-gray-300 p-6 rounded-2xl event event-description-right ltr:float-left rtl:float-right ltr:text-left rtl:text-right md:ms-7">
+                    <div className="border border-gray-300 dark:border-slate-600 dark:bg-slate-700 p-6 rounded-2xl event event-description-right ltr:float-left rtl:float-right ltr:text-left rtl:text-right md:ms-7">
                       <ul className="space-y-5 text-gray-700 dark:text-gray-300">
                         <li>
-                          <h6 className="text-2xl text-purple-800">
+                          <h6 className="text-2xl text-purple-800 dark:text-purple-300">
                             Prasanna Purple Mobility Solutions
                           </h6>
                           <ul className="list-disc list-inside space-y-2 mt-2">
@@ -243,7 +243,7 @@ export default function MyExperience() {
                         </li>
 
                         <li>
-                          <h6 className="text-2xl text-purple-800">
+                          <h6 className="text-2xl text-purple-800 dark:text-purple-300">
                             Remote Control Media Inc.
                           </h6>
                           <ul className="list-disc list-inside space-y-2 mt-2">

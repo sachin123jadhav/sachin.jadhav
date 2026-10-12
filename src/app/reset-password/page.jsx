@@ -21,7 +21,7 @@ export default function ResetPassword() {
                                 <Link href="/"><img src="/images/SachinJadhavWhite.svg" alt="Sachin Jadhav" className="h-8 w-auto mx-auto" /></Link>
                                 </div>
                                 <div className=" my-auto">
-                                    <div className="mt-5 w-full max-w-sm m-auto px-6 py-8 bg-white dark:bg-slate-900 rounded-md shadow-lg shadow-slate-500 dark:shadow-slate-800">
+                                    <div className="mt-5 w-full max-w-sm m-auto px-6 py-8 bg-white dark:bg-slate-700 rounded-md shadow-lg shadow-slate-500 dark:shadow-slate-800">
                                         <div className="grid grid-cols-1">
                                             <h5 className="mb-8 text-xl dark:text-white font-semibold text-center">Reset Your Password</h5>
                                             <p className="text-slate-400 dark:text-slate-300 mb-6 text-center">Please enter your email address. You will receive a link to create a new password via email.</p>
@@ -29,7 +29,7 @@ export default function ResetPassword() {
                                                 <div className="grid grid-cols-1">
                                                     <div className="mb-4">
                                                         <label className="dark:text-white" htmlFor="LoginEmail">Email Address:</label>
-                                                        <input id="LoginEmail" type="email" className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none mt-3" placeholder="name@example.com" />
+                                                        <input id="LoginEmail" type="email" className="form-input w-full py-2 px-3 border border-gray-200 dark:border-slate-600 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-700 dark:text-slate-200 rounded h-10 outline-none mt-3" placeholder="name@example.com" />
                                                     </div>
 
                                                     <div className="mb-4">

@@ -54,7 +54,7 @@
       }
   }
   &.is-sticky {
-      @apply bg-white dark:bg-slate-900 shadow-sm dark:shadow-slate-800;
+      @apply bg-white dark:bg-slate-800 shadow-sm dark:shadow-slate-800;
       .navbar-brand {
         @apply max-w-[180px];
           .l-dark {
@@ -136,7 +136,7 @@
 
 @media (max-width: 991px) {
   .navbar {
-      @apply bg-white dark:bg-slate-900 !shadow-sm dark:shadow-slate-800;
+      @apply bg-white dark:bg-slate-800 !shadow-sm dark:shadow-slate-800;
       .navigation {
           .navbar-nav {
               @apply flex h-[21.25rem] flex-col;

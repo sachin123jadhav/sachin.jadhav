@@ -16,7 +16,7 @@ export default function HoverCard({ children }) {
   return (
     <div
       onMouseMove={handleMouseMove}
-      className="relative overflow-hidden rounded-lg bg-white p-6 group transition-shadow duration-300 hover:shadow-[0px_16px_50px_0px_rgba(13,14,29,0.12)]"
+      className="relative overflow-hidden rounded-lg bg-white dark:bg-slate-700 p-6 group transition-shadow duration-300 hover:shadow-[0px_16px_50px_0px_rgba(13,14,29,0.12)]"
       style={{
         "--x": `${pos.x}px`,
         "--y": `${pos.y}px`,
@@ -36,7 +36,7 @@ export default function HoverCard({ children }) {
       />
 
       {/* Inner background */}
-      <div className="absolute inset-[2px] bg-white rounded-lg"></div>
+      <div className="absolute inset-[2px] bg-white dark:bg-slate-700 rounded-lg"></div>
 
       {/* Dynamic Content */}
       <div className="relative z-10">

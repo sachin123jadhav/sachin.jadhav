@@ -40,7 +40,8 @@ function Highlights() {
             <div
               key={title}
               className="group border border-gray-200 bg-[#f5f9ff] p-5 rounded-md
-                         transition-all duration-300 hover:bg-blue-800
+                         dark:border-slate-600 dark:bg-slate-700
+                         transition-all duration-300 hover:bg-blue-800 dark:hover:bg-blue-700
                          wow animate__animated animate__fadeInUp"
               data-wow-delay={`${index * 0.15}s`}
             >

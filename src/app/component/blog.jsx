@@ -30,7 +30,7 @@ export default function Blog() {
       <section className="relative md:py-24 py-16" id="blog">
         <div className="container">
           <div className="grid grid-cols-1 pb-8 text-center">
-            <h6 className="text-purple-700 text-base font-medium uppercase mb-2">
+            <h6 className="text-purple-700 dark:text-purple-300 text-base font-medium uppercase mb-2">
               Blogs
             </h6>
             <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">

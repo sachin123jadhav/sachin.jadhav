@@ -50,10 +50,10 @@ function CaseStudyModal({ caseKey, onClose }) {
       aria-label={`${title} case study`}
     >
       <div
-        className="relative bg-white dark:bg-slate-900 rounded-2xl w-full max-w-4xl my-8 shadow-xl"
+        className="relative bg-white dark:bg-slate-700 rounded-2xl w-full max-w-4xl my-8 shadow-xl"
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="flex items-center justify-between gap-4 p-6 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-10 bg-white dark:bg-slate-900 rounded-t-2xl">
+        <div className="flex items-center justify-between gap-4 p-6 border-b border-slate-200 dark:border-slate-600 sticky top-0 z-10 bg-white dark:bg-slate-700 rounded-t-2xl">
           <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white">
             {title} — Case Study
           </h2>
@@ -62,7 +62,7 @@ function CaseStudyModal({ caseKey, onClose }) {
             type="button"
             onClick={onClose}
             aria-label="Close case study"
-            className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+            className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors cursor-pointer"
           >
             <FiX size={20} />
           </button>
@@ -80,14 +80,14 @@ function PortfolioSection() {
   const closeCaseStudy = () => setActiveCaseStudy(null);
 
   return (
-    <section className="bg-[#faf9fb] py-20">
+    <section className="bg-[#faf9fb] dark:bg-slate-800 py-20">
       <div className="container mx-auto px-4">
         {/* -------------------- HRMS PROJECT -------------------- */}
 
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           {/* Image */}
           <div className="lg:col-span-6">
-            <div className="aspect-video rounded-2xl border overflow-hidden group">
+            <div className="aspect-video rounded-2xl border dark:border-slate-600 overflow-hidden group">
               <Image
                 src={hrms}
                 alt="Workfusion HRMS project"
@@ -99,15 +99,15 @@ function PortfolioSection() {
           {/* Content */}
           <div className="lg:col-span-6">
             <div className="flex flex-wrap gap-2">
-              <Badge label="Figma" textColor="#442673" />
-              <Badge label="Photoshop" textColor="#442673" />
-              <Badge label="UI/UX" textColor="#442673" />
-              <Badge label="React" textColor="#442673" />
-              <Badge label="Tailwind CSS" textColor="#442673" />
-              <Badge label="JavaScript" textColor="#442673" />
+              <Badge label="Figma" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="Photoshop" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="UI/UX" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="React" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="Tailwind CSS" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="JavaScript" textColor="text-purple-700 dark:text-purple-300" />
             </div>
 
-            <h2 className="text-2xl text-purple-700 mt-6 font-semibold">
+            <h2 className="text-2xl text-purple-700 dark:text-purple-300 mt-6 font-semibold">
               Workfusion HRMS
             </h2>
 
@@ -115,22 +115,22 @@ function PortfolioSection() {
               UI Team Lead, UI/UX Designer &amp; Frontend Developer
             </p>
 
-            <p className="text-gray-500 text-sm mt-1">
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
               Enterprise HR Management System (HRMS)
             </p>
 
-            <p className="text-purple-700 mt-6 font-semibold">
+            <p className="text-purple-700 dark:text-purple-300 mt-6 font-semibold">
               Project Overview
             </p>
 
-            <p className="text-gray-700 mt-2">
+            <p className="text-gray-700 dark:text-gray-300 mt-2">
               Workfusion HRMS is a comprehensive Human Resource Management
               System designed to streamline and automate HR operations including
               employee records, attendance, leave requests, payroll insights and
               internal communication.
             </p>
 
-            <p className="text-gray-700 mt-3">
+            <p className="text-gray-700 dark:text-gray-300 mt-3">
               The goal was to create a scalable and intuitive HR platform that
               simplifies complex HR workflows for both employees and
               administrators.
@@ -149,9 +149,9 @@ function PortfolioSection() {
 
         <div className="grid lg:grid-cols-3 gap-10 mt-12">
           <div>
-            <p className="text-purple-700 font-semibold">UI/UX Design</p>
+            <p className="text-purple-700 dark:text-purple-300 font-semibold">UI/UX Design</p>
 
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-2">
+            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
               <li>Led the UI/UX design team and ensured design consistency.</li>
               <li>Designed complete UI flows using Figma.</li>
               <li>Created wireframes and reusable design systems.</li>
@@ -161,11 +161,11 @@ function PortfolioSection() {
           </div>
 
           <div>
-            <p className="text-purple-700 font-semibold">
+            <p className="text-purple-700 dark:text-purple-300 font-semibold">
               Frontend Development
             </p>
 
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-2">
+            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
               <li>Converted Figma designs into responsive UI.</li>
               <li>Built reusable React components.</li>
               <li>Ensured cross-browser compatibility.</li>
@@ -174,9 +174,9 @@ function PortfolioSection() {
           </div>
 
           <div>
-            <p className="text-purple-700 font-semibold">Key Features</p>
+            <p className="text-purple-700 dark:text-purple-300 font-semibold">Key Features</p>
 
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-2">
+            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
               <li>
                 <strong>Employee Dashboard</strong> – Overview of employees.
               </li>
@@ -203,15 +203,15 @@ function PortfolioSection() {
           {/* Content */}
           <div className="lg:col-span-6">
             <div className="flex flex-wrap gap-2">
-              <Badge label="Figma" textColor="#442673" />
-              <Badge label="Photoshop" textColor="#442673" />
-              <Badge label="Shopify" textColor="#442673" />
-              <Badge label="Liquid" textColor="#442673" />
-              <Badge label="HTML/CSS" textColor="#442673" />
-              <Badge label="JavaScript" textColor="#442673" />
+              <Badge label="Figma" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="Photoshop" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="Shopify" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="Liquid" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="HTML/CSS" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="JavaScript" textColor="text-purple-700 dark:text-purple-300" />
             </div>
 
-            <h2 className="text-2xl text-purple-700 mt-6 font-semibold">
+            <h2 className="text-2xl text-purple-700 dark:text-purple-300 mt-6 font-semibold">
               Barva Skin Therapie
             </h2>
 
@@ -219,31 +219,31 @@ function PortfolioSection() {
               UI/UX Designer &amp; Frontend Developer
             </p>
 
-            <p className="text-gray-500 text-sm mt-1">
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
               Shopify E-commerce Website
             </p>
 
-            <p className="text-purple-700 mt-6 font-semibold">
+            <p className="text-purple-700 dark:text-purple-300 mt-6 font-semibold">
               Project Overview
             </p>
 
-            <p className="text-gray-700 mt-2">
+            <p className="text-gray-700 dark:text-gray-300 mt-2">
               Barva Skin Therapie is a Shopify-based e-commerce platform
               designed to showcase premium products through a clean and modern
               online shopping experience.
             </p>
 
-            <p className="text-gray-700 mt-3">
+            <p className="text-gray-700 dark:text-gray-300 mt-3">
               The project focused on building an engaging storefront while
               improving UI elements during development to enhance product
               visibility, layout balance, and customer interaction.
             </p>
 
-            <p className="text-purple-700 mt-6 font-semibold">
+            <p className="text-purple-700 dark:text-purple-300 mt-6 font-semibold">
               My Role &amp; Responsibilities
             </p>
 
-            <p className="text-gray-700 mt-2">
+            <p className="text-gray-700 dark:text-gray-300 mt-2">
               Designed the homepage UI mockup and enhanced the interface during
               development to improve usability, visual hierarchy, and product
               presentation.
@@ -252,7 +252,7 @@ function PortfolioSection() {
 
           {/* Image */}
           <div className="lg:col-span-6">
-            <div className="aspect-video rounded-2xl border overflow-hidden group">
+            <div className="aspect-video rounded-2xl border dark:border-slate-600 overflow-hidden group">
               <Image
                 src={barva}
                 alt="Barva Skin Therapie Shopify project"
@@ -266,9 +266,9 @@ function PortfolioSection() {
 
         <div className="grid lg:grid-cols-3 gap-10 mt-12">
           <div>
-            <p className="text-purple-700 font-semibold">UI/UX Design</p>
+            <p className="text-purple-700 dark:text-purple-300 font-semibold">UI/UX Design</p>
 
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-2">
+            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
               <li>Created homepage UI mockup using Figma.</li>
               <li>Improved typography, spacing and layout balance.</li>
               <li>Enhanced product card UI.</li>
@@ -278,11 +278,11 @@ function PortfolioSection() {
           </div>
 
           <div>
-            <p className="text-purple-700 font-semibold">
+            <p className="text-purple-700 dark:text-purple-300 font-semibold">
               Frontend Development
             </p>
 
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-2">
+            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
               <li>Developed Shopify storefront using Liquid.</li>
               <li>Implemented responsive layouts.</li>
               <li>Improved UI components during development.</li>
@@ -291,9 +291,9 @@ function PortfolioSection() {
           </div>
 
           <div>
-            <p className="text-purple-700 font-semibold">Key Features</p>
+            <p className="text-purple-700 dark:text-purple-300 font-semibold">Key Features</p>
 
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-2">
+            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
               <li>
                 <strong>Modern Homepage</strong> – Brand-focused hero section.
               </li>
@@ -318,7 +318,7 @@ function PortfolioSection() {
         <div className="grid lg:grid-cols-12 gap-10 items-center mt-24">
           {/* Image */}
           <div className="lg:col-span-6">
-            <div className="aspect-video rounded-2xl border overflow-hidden group">
+            <div className="aspect-video rounded-2xl border dark:border-slate-600 overflow-hidden group">
               <Image
                 src={dms}
                 alt="B2B SaaS Document Management System"
@@ -330,14 +330,14 @@ function PortfolioSection() {
           {/* Content */}
           <div className="lg:col-span-6">
             <div className="flex flex-wrap gap-2">
-              <Badge label="Figma" textColor="#442673" />
-              <Badge label="React" textColor="#442673" />
-              <Badge label="UI/UX" textColor="#442673" />
-              <Badge label="Design Systems" textColor="#442673" />
-              <Badge label="Dashboards" textColor="#442673" />
+              <Badge label="Figma" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="React" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="UI/UX" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="Design Systems" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="Dashboards" textColor="text-purple-700 dark:text-purple-300" />
             </div>
 
-            <h2 className="text-2xl text-purple-700 mt-6 font-semibold">
+            <h2 className="text-2xl text-purple-700 dark:text-purple-300 mt-6 font-semibold">
               Document Management System
             </h2>
 
@@ -345,21 +345,21 @@ function PortfolioSection() {
               UI/UX &amp; Frontend Lead
             </p>
 
-            <p className="text-gray-500 text-sm mt-1">
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
               B2B SaaS Platform — Metamind Systems
             </p>
 
-            <p className="text-purple-700 mt-6 font-semibold">
+            <p className="text-purple-700 dark:text-purple-300 mt-6 font-semibold">
               Project Overview
             </p>
 
-            <p className="text-gray-700 mt-2">
+            <p className="text-gray-700 dark:text-gray-300 mt-2">
               A B2B SaaS Document Management System for centralising document
               storage, versioning, approval routing, and audit trails — built
               around complex, role-dependent workflows.
             </p>
 
-            <p className="text-gray-700 mt-3">
+            <p className="text-gray-700 dark:text-gray-300 mt-3">
               The goal was to make heavy, compliance-driven document workflows
               understandable for administrators, contributors, approvers, and
               auditors alike.
@@ -378,9 +378,9 @@ function PortfolioSection() {
 
         <div className="grid lg:grid-cols-3 gap-10 mt-12">
           <div>
-            <p className="text-purple-700 font-semibold">UI/UX Design</p>
+            <p className="text-purple-700 dark:text-purple-300 font-semibold">UI/UX Design</p>
 
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-2">
+            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
               <li>Led end-to-end UI/UX design for the platform.</li>
               <li>Mapped workflows and role-based access in Figma.</li>
               <li>Created 50+ wireframes and interactive prototypes.</li>
@@ -390,11 +390,11 @@ function PortfolioSection() {
           </div>
 
           <div>
-            <p className="text-purple-700 font-semibold">
+            <p className="text-purple-700 dark:text-purple-300 font-semibold">
               Frontend Development
             </p>
 
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-2">
+            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
               <li>Built reusable React components across modules.</li>
               <li>Optimized UI architecture and frontend performance.</li>
               <li>Implemented role-based UI rendering.</li>
@@ -403,9 +403,9 @@ function PortfolioSection() {
           </div>
 
           <div>
-            <p className="text-purple-700 font-semibold">Key Features</p>
+            <p className="text-purple-700 dark:text-purple-300 font-semibold">Key Features</p>
 
-            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-2">
+            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
               <li>
                 <strong>Document Repository</strong> – Centralised storage.
               </li>

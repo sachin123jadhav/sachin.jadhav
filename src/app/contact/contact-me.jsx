@@ -44,10 +44,10 @@ const contactInfo = [
 const emptyForm = { name: "", email: "", subject: "", message: "" };
 
 const fieldClass = (hasError) =>
-  `w-full h-12 px-4 rounded-xl border bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-purple-600 ${
+  `w-full h-12 px-4 rounded-xl border bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-600 ${
     hasError
       ? "border-red-500 dark:border-red-500"
-      : "border-slate-300 dark:border-slate-700"
+      : "border-slate-300 dark:border-slate-600"
   }`;
 
 export default function Contact() {
@@ -152,7 +152,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <div className="p-6 lg:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm">
+            <div className="p-6 lg:p-8 rounded-3xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 shadow-sm">
               <h2 className="font-bold text-2xl text-gray-900 dark:text-white mb-6">
                 Send a Message
               </h2>
@@ -330,10 +330,10 @@ export default function Contact() {
                       required
                       rows={6}
                       aria-invalid={Boolean(errors.message)}
-                      className={`w-full p-4 rounded-xl border bg-white dark:bg-slate-800 resize-none focus:outline-none focus:ring-2 focus:ring-purple-600 ${
+                      className={`w-full p-4 rounded-xl border bg-white dark:bg-slate-700 resize-none focus:outline-none focus:ring-2 focus:ring-purple-600 ${
                         errors.message
                           ? "border-red-500 dark:border-red-500"
-                          : "border-slate-300 dark:border-slate-700"
+                          : "border-slate-300 dark:border-slate-600"
                       }`}
                     />
 
@@ -362,7 +362,7 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="lg:col-span-2">
             <div className="sticky top-32 space-y-6">
-              <div className="p-6 lg:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm">
+              <div className="p-6 lg:p-8 rounded-3xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 shadow-sm">
                 <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-6">
                   Contact Information
                 </h3>
@@ -383,8 +383,8 @@ export default function Contact() {
                           }
                           className="flex items-start gap-4 group"
                         >
-                          <span className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-200 transition-colors">
-                            <item.icon className="w-5 h-5 text-purple-700" />
+                          <span className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-200 dark:group-hover:bg-purple-900/50 transition-colors">
+                            <item.icon className="w-5 h-5 text-purple-700 dark:text-purple-300" />
                           </span>
 
                           <div>
@@ -399,8 +399,8 @@ export default function Contact() {
                         </a>
                       ) : (
                         <div className="flex items-start gap-4">
-                          <span className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0">
-                            <item.icon className="w-5 h-5 text-purple-700" />
+                          <span className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+                            <item.icon className="w-5 h-5 text-purple-700 dark:text-purple-300" />
                           </span>
 
                           <div>
@@ -420,7 +420,7 @@ export default function Contact() {
               </div>
 
               {/* Quick Response */}
-              <div className="p-6 lg:p-8 rounded-3xl bg-purple-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+              <div className="p-6 lg:p-8 rounded-3xl bg-purple-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600">
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
                   Quick Response
                 </h4>

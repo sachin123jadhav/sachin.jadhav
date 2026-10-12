@@ -88,7 +88,7 @@ export default function DMSCaseStudy() {
           ].map((u) => (
             <div
               key={u.title}
-              className="p-4 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
+              className="p-4 rounded-xl bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600"
             >
               <h4 className="font-semibold mb-2 text-slate-900 dark:text-white">
                 {u.title}

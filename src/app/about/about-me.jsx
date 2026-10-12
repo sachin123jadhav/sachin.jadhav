@@ -37,7 +37,7 @@ function About() {
                 stakeholders to translate complex business requirements into
                 clear, usable interfaces and production-ready solutions.
               </p>
-              <h3 className="mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold text-purple-700 mb-2">
+              <h3 className="mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold text-purple-700 dark:text-purple-300 mb-2">
                 My Approach
               </h3>
 
@@ -49,7 +49,7 @@ function About() {
                 quickly, and deliver solutions that work in the real world.
               </p>
 
-              <h3 className="mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold  text-purple-700 mb-2">
+              <h3 className="mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold  text-purple-700 dark:text-purple-300 mb-2">
                 What I Do Best
               </h3>
               <ul className="space-y-3 mt-2">
@@ -81,9 +81,9 @@ function About() {
             <div className="lg:col-span-4 wow animate__animated animate__fadeInRight relative">
               <div className="sticky top-24 space-y-6">
                 {/* Profile Card */}
-                <div className="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
-                  <div className="w-20 h-20 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center mb-6">
-                    <span className="font-bold text-2xl text-purple-700">
+                <div className="p-8 rounded-2xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600">
+                  <div className="w-20 h-20 rounded-2xl bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 flex items-center justify-center mb-6">
+                    <span className="font-bold text-2xl text-purple-700 dark:text-purple-300">
                       SJ
                     </span>
                   </div>
@@ -127,7 +127,7 @@ function About() {
                 </div>
 
                 {/* CTA Card */}
-                <div className="p-8 rounded-2xl bg-slate-200 border border-slate-300 dark:bg-slate-900 dark:border-gray-700">
+                <div className="p-8 rounded-2xl bg-slate-200 border border-slate-300 dark:bg-slate-700 dark:border-slate-600">
                   <h4 className="font-semibold text-slate-900 dark:text-white mb-4">
                     Let&apos;s Connect
                   </h4>

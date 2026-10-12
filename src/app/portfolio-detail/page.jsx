@@ -42,7 +42,7 @@ export default function PortfolioDetail() {
                                 </div>
                                 
                                 <div className="lg:col-span-7">
-                                    <div className="bg-gray-50 dark:bg-slate-800 shadow-sm dark:shadow-gray-800 p-6 rounded-md">
+                                    <div className="bg-gray-50 dark:bg-slate-700 shadow-sm dark:shadow-gray-800 p-6 rounded-md">
                                         <h5 className="text-lg font-medium border-b border-gray-100 dark:border-gray-700 pb-3 mb-3">Project Info :</h5>
                                         <dl className="grid grid-cols-12 mb-0">
                                             <dt className="md:col-span-4 col-span-5 mt-2">Client :</dt>

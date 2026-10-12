@@ -45,15 +45,15 @@ export default function BlogDetail() {
                         <form className="mt-8">
                             <div className="grid lg:grid-cols-12 gap-6">
                                 <div className="lg:col-span-6">
-                                    <input name="name" id="name" type="text" className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none" placeholder="Name :"/>
+                                    <input name="name" id="name" type="text" className="form-input w-full py-2 px-3 border border-gray-200 dark:border-slate-600 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-700 dark:text-slate-200 rounded h-10 outline-none" placeholder="Name :"/>
                                 </div>
 
                                 <div className="lg:col-span-6">
-                                    <input name="email" id="email" type="email" className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none" placeholder="Email :"/>
+                                    <input name="email" id="email" type="email" className="form-input w-full py-2 px-3 border border-gray-200 dark:border-slate-600 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-700 dark:text-slate-200 rounded h-10 outline-none" placeholder="Email :"/>
                                 </div>
 
                                 <div className="lg:col-span-12">
-                                    <textarea name="comments" id="comments" className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-900 dark:text-slate-200 rounded outline-none textarea h-28" placeholder="Message :"></textarea>
+                                    <textarea name="comments" id="comments" className="form-input w-full py-2 px-3 border border-gray-200 dark:border-slate-600 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-700 dark:text-slate-200 rounded outline-none textarea h-28" placeholder="Message :"></textarea>
                                 </div>
 
                                 <div className="lg:col-span-12">
@@ -66,7 +66,7 @@ export default function BlogDetail() {
 
                 <div className="lg:col-span-4 md:col-span-6">
                     <div className="sticky top-20">
-                        <h5 className="text-lg font-medium bg-gray-50 dark:bg-slate-800 shadow-sm dark:shadow-gray-800 rounded-md p-2 text-center">Author</h5>
+                        <h5 className="text-lg font-medium bg-gray-50 dark:bg-slate-700 shadow-sm dark:shadow-gray-800 rounded-md p-2 text-center">Author</h5>
                         <div className="text-center mt-8">
                             <img src='/images/client/04.jpg' className="h-24 w-24 mx-auto rounded-full shadow-sm mb-4" alt=""/>
 
@@ -74,14 +74,14 @@ export default function BlogDetail() {
                             <p className="text-slate-400">Content Writer</p>
                         </div>
 
-                        <h5 className="text-lg font-medium bg-gray-50 dark:bg-slate-800 shadow-sm dark:shadow-gray-800 rounded-md p-2 text-center mt-8">Social sites</h5>
+                        <h5 className="text-lg font-medium bg-gray-50 dark:bg-slate-700 shadow-sm dark:shadow-gray-800 rounded-md p-2 text-center mt-8">Social sites</h5>
                         <ul className="list-none text-center mt-8 space-x-1">
-                            <li className="inline"><Link href="" className="h-8 w-8 inline-flex items-center text-center justify-center text-base font-normal tracking-wide align-middle transition duration-500 ease-in-out border border-gray-100 dark:border-gray-800 rounded-md text-slate-400 hover:border-purple-700 hover:text-white hover:bg-purple-700"><FiDribbble className="align-middle"/></Link></li>
-                            <li className="inline"><Link href="" className="h-8 w-8 inline-flex items-center text-center justify-center text-base font-normal tracking-wide align-middle transition duration-500 ease-in-out border border-gray-100 dark:border-gray-800 rounded-md text-slate-400 hover:border-purple-700 hover:text-white hover:bg-purple-700"><FaBehance className="align-middle"/></Link></li>
-                            <li className="inline"><Link href="" className="h-8 w-8 inline-flex items-center text-center justify-center text-base font-normal tracking-wide align-middle transition duration-500 ease-in-out border border-gray-100 dark:border-gray-800 rounded-md text-slate-400 hover:border-purple-700 hover:text-white hover:bg-purple-700"><FiLinkedin className="align-middle"/></Link></li>
-                            <li className="inline"><Link href="" className="h-8 w-8 inline-flex items-center text-center justify-center text-base font-normal tracking-wide align-middle transition duration-500 ease-in-out border border-gray-100 dark:border-gray-800 rounded-md text-slate-400 hover:border-purple-700 hover:text-white hover:bg-purple-700"><FiFacebook className="align-middle"/></Link></li>
-                            <li className="inline"><Link href="" className="h-8 w-8 inline-flex items-center text-center justify-center text-base font-normal tracking-wide align-middle transition duration-500 ease-in-out border border-gray-100 dark:border-gray-800 rounded-md text-slate-400 hover:border-purple-700 hover:text-white hover:bg-purple-700"><FiInstagram className="align-middle"/></Link></li>
-                            <li className="inline"><Link href="" className="h-8 w-8 inline-flex items-center text-center justify-center text-base font-normal tracking-wide align-middle transition duration-500 ease-in-out border border-gray-100 dark:border-gray-800 rounded-md text-slate-400 hover:border-purple-700 hover:text-white hover:bg-purple-700"><FiTwitter className="align-middle"/></Link></li>
+                            <li className="inline"><Link href="" className="h-8 w-8 inline-flex items-center text-center justify-center text-base font-normal tracking-wide align-middle transition duration-500 ease-in-out border border-gray-100 dark:border-slate-600 rounded-md text-slate-400 hover:border-purple-700 hover:text-white hover:bg-purple-700"><FiDribbble className="align-middle"/></Link></li>
+                            <li className="inline"><Link href="" className="h-8 w-8 inline-flex items-center text-center justify-center text-base font-normal tracking-wide align-middle transition duration-500 ease-in-out border border-gray-100 dark:border-slate-600 rounded-md text-slate-400 hover:border-purple-700 hover:text-white hover:bg-purple-700"><FaBehance className="align-middle"/></Link></li>
+                            <li className="inline"><Link href="" className="h-8 w-8 inline-flex items-center text-center justify-center text-base font-normal tracking-wide align-middle transition duration-500 ease-in-out border border-gray-100 dark:border-slate-600 rounded-md text-slate-400 hover:border-purple-700 hover:text-white hover:bg-purple-700"><FiLinkedin className="align-middle"/></Link></li>
+                            <li className="inline"><Link href="" className="h-8 w-8 inline-flex items-center text-center justify-center text-base font-normal tracking-wide align-middle transition duration-500 ease-in-out border border-gray-100 dark:border-slate-600 rounded-md text-slate-400 hover:border-purple-700 hover:text-white hover:bg-purple-700"><FiFacebook className="align-middle"/></Link></li>
+                            <li className="inline"><Link href="" className="h-8 w-8 inline-flex items-center text-center justify-center text-base font-normal tracking-wide align-middle transition duration-500 ease-in-out border border-gray-100 dark:border-slate-600 rounded-md text-slate-400 hover:border-purple-700 hover:text-white hover:bg-purple-700"><FiInstagram className="align-middle"/></Link></li>
+                            <li className="inline"><Link href="" className="h-8 w-8 inline-flex items-center text-center justify-center text-base font-normal tracking-wide align-middle transition duration-500 ease-in-out border border-gray-100 dark:border-slate-600 rounded-md text-slate-400 hover:border-purple-700 hover:text-white hover:bg-purple-700"><FiTwitter className="align-middle"/></Link></li>
                         </ul>
                     </div>
                 </div>

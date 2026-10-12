@@ -9,6 +9,7 @@ import Navbar from "./component/navbar";
 import Footer from "./component/footer";
 import Switcher from "./component/switcher";
 import PageLoaderProvider from "./providers/PageLoaderProvider";
+import { ThemeProvider } from "./providers/ThemeProvider";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -59,21 +60,46 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" dir="LTR" className="light scroll-smooth">
+    <html
+      lang="en"
+      dir="LTR"
+      className="scroll-smooth"
+      suppressHydrationWarning
+    >
       <body
         className={`
           ${rubik.variable}
           font-[var(--font-rubik)]
           text-base text-slate-900
-          dark:text-white dark:bg-slate-900
+          dark:text-white dark:bg-slate-800
         `}
       >
-        <PageLoaderProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <Switcher />
-        </PageLoaderProvider>
+        {/*
+          Resolves the saved theme (light / dark) and applies it before anything
+          paints, so there is no flash of the wrong theme on load.
+
+          The OS preference is deliberately not consulted: this site has two
+          explicit modes and defaults to light.
+
+          Kept inline and tiny because it has to run before first paint. It
+          mirrors applyTheme() in providers/ThemeProvider.jsx — keep the two in
+          step if the logic ever changes.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var k=localStorage.getItem('theme');var d=k==='dark';var r=document.documentElement;r.classList.toggle('dark',d);r.dataset.theme=d?'dark':'light';r.style.colorScheme=d?'dark':'light';}catch(e){}})();",
+          }}
+        />
+
+        <ThemeProvider>
+          <PageLoaderProvider>
+            <Navbar />
+            {children}
+            <Footer />
+            <Switcher />
+          </PageLoaderProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

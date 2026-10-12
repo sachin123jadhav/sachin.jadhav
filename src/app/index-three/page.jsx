@@ -39,7 +39,7 @@ function Index_three() {
                       type="email"
                       id="subemail"
                       name="email"
-                      className="rounded-full bg-white opacity-70 border border-gray-200"
+                      className="rounded-full bg-white dark:bg-slate-700 opacity-70 border border-gray-200 dark:border-slate-600"
                       placeholder="E-mail :"
                     />
                     <button

@@ -2,8 +2,8 @@ import React from 'react'
 
 const Badge = ({
   label = 'Badge',
-  bgColor = 'bg-[#f2f2f2]',
-  textColor = 'text-slate-600',
+  bgColor = 'bg-[#f2f2f2] dark:bg-slate-700',
+  textColor = 'text-slate-600 dark:text-slate-300',
   className = ''
 }) => {
   return (

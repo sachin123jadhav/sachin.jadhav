@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiDownload } from "react-icons/fi";
 import AnimatedButton from "./button";
+import ThemeToggle from "./theme-toggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,6 +95,10 @@ export default function Navbar() {
               className="ml-2"
             />
           </ul>
+
+          {/* Outside the <ul> on purpose: .navbar-nav is a scroll container on
+              mobile (overflow-y-scroll), which would clip this dropdown. */}
+          <ThemeToggle />
         </div>
       </div>
     </nav>

@@ -11,7 +11,7 @@ export default function About() {
     >
       <div className="container mx-auto">
         <div
-          className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10 items-center wow animate__animated animate__fadeInUp relative bg-center bg-cover dark:bg-none dark:bg-slate-900 bg-[url('/images/about_bg1.jpg')]  p-15 rounded-[40px] shadow-sm"
+          className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10 items-center wow animate__animated animate__fadeInUp relative bg-center bg-cover dark:bg-none dark:bg-slate-700 bg-[url('/images/about_bg1.jpg')]  p-15 rounded-[40px] shadow-sm"
           data-wow-delay=".90s "
         >
           <div className="lg:col-span-5">

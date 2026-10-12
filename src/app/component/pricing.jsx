@@ -52,7 +52,7 @@ export default function Pricing() {
       <section className="relative md:py-24 py-16" id="pricing">
         <div className="container">
           <div className="grid grid-cols-1 pb-8 text-center">
-            <h6 className="text-purple-700 text-base font-medium uppercase mb-2">
+            <h6 className="text-purple-700 dark:text-purple-300 text-base font-medium uppercase mb-2">
               Pricing
             </h6>
             <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">
@@ -71,7 +71,7 @@ export default function Pricing() {
                 className="w-full md:w-1/2 lg:w-1/3 px-0 md:px-3 mt-8"
                 key={key}
               >
-                <div className="flex flex-col pt-8 pb-8 bg-zinc-50 hover:bg-white dark:bg-gray-800 dark:hover:bg-black rounded-md shadow-sm shadow-slate-200 dark:shadow-slate-700 transition duration-500">
+                <div className="flex flex-col pt-8 pb-8 bg-zinc-50 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-600 rounded-md shadow-sm shadow-slate-200 dark:shadow-slate-700 transition duration-500">
                   <div className="px-8 pb-8">
                     <h3 className="mb-6 text-lg md:text-xl font-semibold dark:text-white">
                       {item.title}
@@ -110,7 +110,7 @@ export default function Pricing() {
             ))}
           </div>
           <div className="flex justify-center text-slate-400 mt-2">
-            <span className="text-purple-700">*</span>No credit card required
+            <span className="text-purple-700 dark:text-purple-300">*</span>No credit card required
           </div>
         </div>
       </section>

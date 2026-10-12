@@ -4,7 +4,7 @@
 .tns-controls {
     button[data-controls="prev"],
     button[data-controls="next"] {
-        @apply absolute top-1/2 -translate-y-1/2 text-base w-8 h-8 rounded-full bg-white dark:bg-slate-900 text-slate-900 dark:text-white border-none z-1 shadow-lg shadow-slate-200 dark:shadow-slate-700;
+        @apply absolute top-1/2 -translate-y-1/2 text-base w-8 h-8 rounded-full bg-white dark:bg-slate-700 text-slate-900 dark:text-white border-none z-1 shadow-lg shadow-slate-200 dark:shadow-slate-700;
         &:hover {
             @apply bg-purple-700 text-white;
         }
