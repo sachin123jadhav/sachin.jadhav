@@ -118,7 +118,7 @@ export default function Portfolio() {
                     <Link
                       href="#"
                       onClick={() => handleCLick(index)}
-                      className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white btn-icon rounded-full lightbox"
+                      className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white btn-icon rounded-full lightbox"
                     >
                        <FiCamera width="17px"/>
                     </Link>
@@ -126,7 +126,7 @@ export default function Portfolio() {
                   <div className="absolute z-10 opacity-0 group-hover:opacity-100 bottom-4 start-4 transition-all duration-500">
                     <Link
                       href="#"
-                      className="h6 text-md font-medium text-white hover:text-orange-600 transition duration-500"
+                      className="h6 text-md font-medium text-white hover:text-purple-700 transition duration-500"
                     >
                       {item.title}
                     </Link>
@@ -167,7 +167,7 @@ export default function Portfolio() {
             <div className="relative mt-10">
               <Link
                 href="#"
-                className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md"
+                className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-md"
               >
                 Get Started !
               </Link>

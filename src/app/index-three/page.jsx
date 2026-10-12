@@ -4,18 +4,15 @@ import About from "../component/about";
 import Pricing from "../component/pricing";
 import Blog from "../component/blog";
 import Contact from "../component/contact";
-import Footer from "../component/footer";
 import Portfolio from "../component/portfolio";
 import Review from "../component/testimonial";
-import Switcher from "../component/switcher";
-import Navbar from "../component/navbar";
 import { FiArrowRight } from "react-icons/fi";
 
 function Index_three() {
 
   return (
     <>
-          <Navbar/>
+          
           <section
             style={{ backgroundImage: `url(/images/bg/4.jpg)` }}
             className="py-36 md:py-72 w-full table relative bg-center bg-cover jarallax"
@@ -47,7 +44,7 @@ function Index_three() {
                     />
                     <button
                       type="submit"
-                      className="btn !inline-flex items-center bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full"
+                      className="btn !inline-flex items-center bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-full"
                     >
                       Submit <FiArrowRight className="ms-1"/>
                     </button>
@@ -71,9 +68,9 @@ function Index_three() {
 
           <Contact />
 
-          <Footer />
+          
 
-          <Switcher />
+          
     </>
   );
 }

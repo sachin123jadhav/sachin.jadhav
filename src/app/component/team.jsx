@@ -46,7 +46,7 @@ export default function Team() {
       >
         <div className="container">
           <div className="grid grid-cols-1 pb-8 text-center">
-            <h6 className="text-orange-600 text-base font-medium uppercase mb-2">
+            <h6 className="text-purple-700 text-base font-medium uppercase mb-2">
               Our Team
             </h6>
             <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">
@@ -79,7 +79,7 @@ export default function Team() {
                   <li className="mb-1">
                     <Link
                       href="#"
-                      className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white btn-icon btn-sm rounded-full"
+                      className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white btn-icon btn-sm rounded-full"
                     >
                       <FiFacebook width="17px" />
                     </Link>
@@ -87,7 +87,7 @@ export default function Team() {
                   <li className="mb-1">
                     <Link
                       href="#"
-                      className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white btn-icon btn-sm rounded-full"
+                      className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white btn-icon btn-sm rounded-full"
                     >
                       <FiInstagram width="17px"/>
                     </Link>
@@ -95,7 +95,7 @@ export default function Team() {
                   <li className="mb-1">
                     <Link
                       href="#"
-                      className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white btn-icon btn-sm rounded-full"
+                      className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white btn-icon btn-sm rounded-full"
                     >
                        <FiTwitter width="17px"/>
                     </Link>
@@ -105,7 +105,7 @@ export default function Team() {
                 <div className="content absolute start-4 end-4 bottom-4 bg-white dark:bg-slate-900 opacity-0 group-hover:opacity-100 p-4 rounded-md text-center transition-all duration-500">
                   <Link
                     href="#"
-                    className="h5 text-md dark:text-white hover:text-orange-600 dark:hover:text-orange-600 font-medium"
+                    className="h5 text-md dark:text-white hover:text-purple-700 dark:hover:text-purple-700 font-medium"
                   >
                     {member.name}
                   </Link>

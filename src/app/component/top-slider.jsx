@@ -22,7 +22,7 @@ function TopSlider() {
               className="lg:col-span-6 wow animate__animated animate__fadeInLeft"
               data-wow-delay=".90s "
             >
-              <h4 className="text-black lg:text-4xl text-3xl lg:leading-normal leading-normal font-medium mb-2 position-relative text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-800 bg-clip-text text-transparent">
+              <h4 className="text-black lg:text-4xl text-3xl lg:leading-normal leading-normal font-medium mb-2 text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-800 bg-clip-text text-transparent">
                 {" "}
                 Hi, I'm Senior
                 <TypeAnimation
@@ -54,15 +54,14 @@ function TopSlider() {
                 React.
               </p>
               <AnimatedButton
-                target="_new"
-                href="/images/SachinJadhavWebDeveloper.pdf"
+                href="/portfolio"
                 label="View Case Studies"
                 icon={<FiArrowRight className="inline ms-2 text-xl" />}
                 className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"
               />
 
               <AnimatedButton
-                target="_new"
+                target="_blank"
                 href="/images/SachinJadhavWebDeveloper.pdf"
                 label="Download CV"
                 icon={<FiDownload className="inline ms-2 text-xl" />}
@@ -114,11 +113,10 @@ function TopSlider() {
               <Image
                 src={heroSachin}
                 alt="Sachin Jadhav"
-                className=" mx-auto w-full max-w-[400px] mt-10 rounded-tl-[50%] rounded-br-[50%] shadow-lg animate-[color-change_6s_linear_infinite]
-
+                className=" mx-auto w-full max-w-[400px] mt-10 rounded-tl-[50%] rounded-br-[50%] shadow-lg
+      animate-[color-change_6s_linear_infinite]
       border-l-[5px] border-l-red-300
-      border-r-[8px] border-r-orange-500
-      animate-borderColorAnimation "
+      border-r-[8px] border-r-orange-500 "
               />
             </div>
           </div>

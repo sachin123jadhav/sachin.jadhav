@@ -8,11 +8,8 @@ import About from "../component/about";
 import Pricing from "../component/pricing";
 import Blog from "../component/blog";
 import Contact from "../component/contact";
-import Footer from "../component/footer";
 import Portfolio from "../component/portfolio";
 import Review from "../component/testimonial";
-import Switcher from "../component/switcher";
-import Navbar from "../component/navbar";
 
 function Index_three() {
   const [videoModal, setModal] = useState(false);
@@ -35,8 +32,8 @@ useEffect(() => {
 
   return (
     <>
-          <Navbar navdark={true}/>
-          <section className="py-36 md:py-64 w-full table relative bg-orange-600/5 dark:bg-orange-600/10" id="home" style={{backgroundImage:`url(${images[currentImageIndex]})`}}>
+          
+          <section className="py-36 md:py-64 w-full table relative bg-purple-700/5 dark:bg-purple-700/10" id="home" style={{backgroundImage:`url(${images[currentImageIndex]})`}}>
             <div className="container relative">
                 <div className="grid grid-cols-1 mt-12">
                     <h4 className="lg:text-5xl text-4xl lg:leading-normal leading-normal font-medium mb-7 position-relative dark:text-white">Business Growth <br/> Makes Your Company</h4>
@@ -44,8 +41,8 @@ useEffect(() => {
                     <p className="text-slate-400 dark:text-white/70 mb-0 max-w-2xl !text-lg">Launch your campaign and benefit from our expertise on designing and managing conversion centered Tailwind CSS html page.</p>
                 
                     <div className="relative mt-10">
-                        <Link href="" className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full me-1">Get Started</Link>
-                        <Link href="#!" scroll={false} onClick={()=>setModal(!videoModal)} className="btn btn-icon btn-lg bg-orange-600/5 hover:bg-orange-600 border-orange-600/10 hover:border-orange-600 text-orange-600 hover:text-white rounded-full lightbox"><i className="mdi mdi-play text-xl align-middle"></i></Link><small className="font-medium text-sm uppercase align-middle ms-2 dark:text-white/70">Watch Now</small>
+                        <Link href="/contact" className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-full me-1">Get Started</Link>
+                        <Link href="#!" scroll={false} onClick={()=>setModal(!videoModal)} className="btn btn-icon btn-lg bg-purple-700/5 hover:bg-purple-700 border-purple-700/10 hover:border-purple-700 text-purple-700 hover:text-white rounded-full lightbox"><i className="mdi mdi-play text-xl align-middle"></i></Link><small className="font-medium text-sm uppercase align-middle ms-2 dark:text-white/70">Watch Now</small>
                     </div>
                 </div>
             </div>
@@ -85,9 +82,9 @@ useEffect(() => {
 
           <Contact />
 
-          <Footer />
+          
 
-          <Switcher />
+          
     </>
   );
 }

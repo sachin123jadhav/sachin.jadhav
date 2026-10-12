@@ -7,17 +7,14 @@ import About from "../component/about";
 import Pricing from "../component/pricing";
 import Blog from "../component/blog";
 import Contact from "../component/contact";
-import Footer from "../component/footer";
 import Portfolio from "../component/portfolio";
 import Review from "../component/testimonial";
-import Switcher from "../component/switcher";
-import Navbar from "../component/navbar";
 
 function Home2() {
 
   return (
     <>
-          <Navbar/>
+          
           <section
             style={{ backgroundImage: `url(/images/bg/5.jpg)` }}
             className="py-36 lg:py-64 w-full table relative bg-no-repeat bg-center bg-cover"
@@ -37,15 +34,15 @@ function Home2() {
 
                 <div className="relative mt-10">
                   <Link
-                    href="#"
-                    className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md"
+                    href="/contact"
+                    className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-md"
                   >
                     Get Started
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="absolute lg:w-1/2 md:w-4/6 w-full h-full bg-gradient-to-t to-orange-600 from-orange-400 md:opacity-100 opacity-80 top-0"></div>
+            <div className="absolute lg:w-1/2 md:w-4/6 w-full h-full bg-gradient-to-t to-purple-700 from-purple-500 md:opacity-100 opacity-80 top-0"></div>
           </section>
 
           <About />
@@ -62,9 +59,9 @@ function Home2() {
 
           <Contact />
 
-          <Footer />
+          
 
-          <Switcher />
+          
     </>
   );
 }

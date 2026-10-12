@@ -4,6 +4,12 @@ import React from "react";
 import About from "./about-me"
 import BreadCrumb from "../component/breadcrumb";
 
+export const metadata = {
+  title: "About Me",
+  description:
+    "Senior UI/UX Designer and Frontend Developer with 15+ years of experience designing scalable B2B SaaS products, dashboards, and enterprise web applications.",
+};
+
 function AboutMe() {
   return <>
 

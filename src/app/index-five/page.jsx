@@ -8,18 +8,15 @@ import About from "../component/about";
 import Pricing from "../component/pricing";
 import Blog from "../component/blog";
 import Contact from "../component/contact";
-import Footer from "../component/footer";
 import Portfolio from "../component/portfolio";
 import Review from "../component/testimonial";
-import Switcher from "../component/switcher";
-import Navbar from "../component/navbar";
 
 function Index_three() {
   return (
     <>
-          <Navbar navdark={true}/>
+          
           <section
-            className="py-36 md:h-auto md:py-0 flex items-center relative bg-orange-600/5 dark:bg-orange-600/10"
+            className="py-36 md:h-auto md:py-0 flex items-center relative bg-purple-700/5 dark:bg-purple-700/10"
             id="home"
           >
             <div className="container relative">
@@ -38,8 +35,8 @@ function Index_three() {
 
                     <div className="relative mt-10">
                       <Link
-                        href="#"
-                        className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md"
+                        href="/contact"
+                        className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-md"
                       >
                         Start Free Trail !
                       </Link>
@@ -71,9 +68,9 @@ function Index_three() {
 
           <Contact />
 
-          <Footer />
+          
 
-          <Switcher />
+          
     </>
   );
 }

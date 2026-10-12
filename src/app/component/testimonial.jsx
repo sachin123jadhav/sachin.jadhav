@@ -73,7 +73,7 @@ export default function Review() {
       >
         <div className="container">
           <div className="grid grid-cols-1 pb-8 text-center">
-            <h6 className="text-orange-600 text-base font-medium uppercase mb-2">
+            <h6 className="text-purple-700 text-base font-medium uppercase mb-2">
               Testimonial
             </h6>
             <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">
@@ -109,7 +109,7 @@ export default function Review() {
                         </p>
 
                         <div>
-                          <span className="text-orange-600 block mb-1">
+                          <span className="text-purple-700 block mb-1">
                             {el.name}
                           </span>
                           <span className="text-slate-400 text-sm dark:text-white/60 block">

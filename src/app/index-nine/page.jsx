@@ -8,11 +8,8 @@ import About from "../component/about";
 import Pricing from "../component/pricing";
 import Blog from "../component/blog";
 import Contact from "../component/contact";
-import Footer from "../component/footer";
 import Portfolio from "../component/portfolio";
 import Review from "../component/testimonial";
-import Switcher from "../component/switcher";
-import Navbar from "../component/navbar";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -20,13 +17,13 @@ function Index_three() {
   const [isOpens, setOpen] = useState(false)
   return (
     <>
-          <Navbar navdark={true}/>
+          
           <section
             style={{ backgroundImage: `url(/images/bg/bg4.png)` }}
             className="py-36 md:h-screen h-auto items-center flex relative bg-bottom bg-cover active"
             id="home"
           >
-            <div className="absolute inset-0  bg-gradient-to-b from-orange-600/20 dark:from-orange-600/40 via-orange-600/10 dark:via-orange-600/20 to-transparent"></div>
+            <div className="absolute inset-0  bg-gradient-to-b from-purple-700/20 dark:from-purple-700/40 via-purple-700/10 dark:via-purple-700/20 to-transparent"></div>
             <div className="container relative">
               <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
                 <div className="lg:col-span-7 md:col-span-6 mt-14 md:mt-0">
@@ -51,7 +48,7 @@ function Index_three() {
                       />
                       <button
                         type="submit"
-                        className="btn !inline-flex items-center bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full"
+                        className="btn !inline-flex items-center bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-full"
                       >
                         Submit <FiArrowRight className="ms-1"/>
                       </button>
@@ -75,7 +72,7 @@ function Index_three() {
                           onClick={()=>setOpen(!isOpens)}
                           data-type="youtube"
                           data-id="S_CGed6E610"
-                          className="lightbox h-20 w-20 rounded-full shadow-lg shadow-slate-100 dark:shadow-slate-800 inline-flex items-center justify-center bg-white dark:bg-slate-900 text-orange-600 cursor-pointer"
+                          className="lightbox h-20 w-20 rounded-full shadow-lg shadow-slate-100 dark:shadow-slate-800 inline-flex items-center justify-center bg-white dark:bg-slate-900 text-purple-700 cursor-pointer"
                         >
                           <i className="mdi mdi-play inline-flex items-center justify-center text-2xl"></i>
                         </Link>
@@ -128,9 +125,9 @@ function Index_three() {
 
           <Contact />
 
-          <Footer />
+          
 
-          <Switcher />
+          
     </>
   );
 }

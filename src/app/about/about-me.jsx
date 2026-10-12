@@ -14,7 +14,7 @@ function About() {
     "Frontend Development Support",
   ];
   return (
-    <section className="relative md:py-8 py-8  bg-slate-100  dark:bg-black-800 ">
+    <section className="relative md:py-8 py-8  bg-slate-100  dark:bg-slate-800 ">
       <div className="container">
         <div className="grid grid-cols-1 pb-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10">
@@ -81,50 +81,58 @@ function About() {
             <div className="lg:col-span-4 wow animate__animated animate__fadeInRight relative">
               <div className="sticky top-24 space-y-6">
                 {/* Profile Card */}
-                <div className="p-8 rounded-2xl bg-white border border-border">
+                <div className="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
                   <div className="w-20 h-20 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center mb-6">
-                    <span className="font-display font-bold text-2xl text-accent">
+                    <span className="font-bold text-2xl text-purple-700">
                       SJ
                     </span>
                   </div>
 
-                  <h3 className="font-display font-bold text-xl text-primary mb-2">
+                  <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-2">
                     Sachin Jadhav
                   </h3>
 
-                  <p className="text-muted-foreground mb-6">
-                    Senior UI/UX Designer & Frontend Developer
+                  <p className="text-slate-600 dark:text-slate-400 mb-6">
+                    Senior UI/UX Designer &amp; Frontend Developer
                   </p>
 
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Experience</span>
-                      <span className="font-medium text-primary">
+                      <span className="text-slate-600 dark:text-slate-400">
+                        Experience
+                      </span>
+                      <span className="font-medium text-slate-900 dark:text-white">
                         15+ Years
                       </span>
                     </div>
 
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Location</span>
-                      <span className="font-medium text-primary">India</span>
+                      <span className="text-slate-600 dark:text-slate-400">
+                        Location
+                      </span>
+                      <span className="font-medium text-slate-900 dark:text-white">
+                        India
+                      </span>
                     </div>
 
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">
+                      <span className="text-slate-600 dark:text-slate-400">
                         Specialization
                       </span>
-                      <span className="font-medium text-primary">B2B SaaS</span>
+                      <span className="font-medium text-slate-900 dark:text-white">
+                        B2B SaaS
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 {/* CTA Card */}
-                <div className="p-8 rounded-2xl bg-slate-200 border border-slate-300 dark:bg-black-500 dark:border-gray-700">
-                  <h4 className="font-display font-semibold text-primary mb-4">
+                <div className="p-8 rounded-2xl bg-slate-200 border border-slate-300 dark:bg-slate-900 dark:border-gray-700">
+                  <h4 className="font-semibold text-slate-900 dark:text-white mb-4">
                     Let&apos;s Connect
                   </h4>
 
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
                     Interested in working together? I&apos;d love to hear about
                     your project.
                   </p>

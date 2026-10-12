@@ -30,7 +30,7 @@ export default function Blog() {
       <section className="relative md:py-24 py-16" id="blog">
         <div className="container">
           <div className="grid grid-cols-1 pb-8 text-center">
-            <h6 className="text-orange-600 text-base font-medium uppercase mb-2">
+            <h6 className="text-purple-700 text-base font-medium uppercase mb-2">
               Blogs
             </h6>
             <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">
@@ -60,7 +60,7 @@ export default function Blog() {
                 <div className="content p-6">
                   <Link
                     href="#"
-                    className="text-lg hover:text-orange-600 dark:text-white dark:hover:text-orange-600 transition-all duration-500 ease-in-out font-medium"
+                    className="text-lg hover:text-purple-700 dark:text-white dark:hover:text-purple-700 transition-all duration-500 ease-in-out font-medium"
                   >
                     Building Your Corporate Identity from Upwind
                   </Link>
@@ -70,7 +70,7 @@ export default function Blog() {
                   </p>
 
                   <div className="mt-5">
-                  <Link href="#" className="!inline-flex items-center btn btn-link hover:text-orange-600 dark:hover:text-orange-600 after:bg-orange-600 dark:text-white transition duration-500">
+                  <Link href="#" className="!inline-flex items-center btn btn-link hover:text-purple-700 dark:hover:text-purple-700 after:bg-purple-700 dark:text-white transition duration-500">
                     <span>
                        Read More
                     </span>

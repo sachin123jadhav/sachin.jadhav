@@ -6,7 +6,7 @@
     .timeline-item {
         .date-label-left,
         .duration-right {
-            @apply after:content-[''] after:absolute after:rounded-full after:z-10 after:top-[9px] after:w-2.5 after:h-2.5 after:bg-orange-600 before:content-[''] before:absolute before:rounded-full before:z-10 before:border-2 before:border-dashed before:border-gray-200 dark:before:border-gray-600 before:top-0 before:w-7 before:h-7 before:bg-white dark:before:bg-black;
+            @apply after:content-[''] after:absolute after:rounded-full after:z-10 after:top-[9px] after:w-2.5 after:h-2.5 after:bg-purple-700 before:content-[''] before:absolute before:rounded-full before:z-10 before:border-2 before:border-dashed before:border-gray-200 dark:before:border-gray-600 before:top-0 before:w-7 before:h-7 before:bg-white dark:before:bg-black;
         }
         .date-label-left {
             @apply ltr:float-right rtl:float-left me-6 after:-end-[29px] before:-end-[38px];

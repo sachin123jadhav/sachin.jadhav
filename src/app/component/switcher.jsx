@@ -81,7 +81,7 @@ export default function Switcher() {
       {/* <!-- LTR & RTL Mode Code --> */}
       
       {/* <!-- LTR & RTL Mode Code --> */}
-      <Link href="#" onClick={()=>scrollToTop()} id="back-to-top" className="back-to-top fixed items-center justify-center text-lg rounded-full z-10 bottom-5 end-5 h-9 w-9 text-center bg-orange-600 text-white leading-9"  style={{display: visible ? 'inline-flex' : 'none'}}><FiArrowUp className=""/></Link>
+      <Link href="#" onClick={()=>scrollToTop()} id="back-to-top" aria-label="Back to top" className="back-to-top fixed items-center justify-center text-lg rounded-full z-10 bottom-5 end-5 h-9 w-9 text-center bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] text-white leading-9 shadow-lg"  style={{display: visible ? 'inline-flex' : 'none'}}><FiArrowUp className=""/></Link>
     </>
   );
 }

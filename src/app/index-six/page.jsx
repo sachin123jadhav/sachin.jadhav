@@ -4,17 +4,14 @@ import About from "../component/about";
 import Pricing from "../component/pricing";
 import Blog from "../component/blog";
 import Contact from "../component/contact";
-import Footer from "../component/footer";
 import Portfolio from "../component/portfolio";
 import Review from "../component/testimonial";
-import Switcher from "../component/switcher";
-import Navbar from "../component/navbar";
 
 function Index_six() {
 
   return (
     <>
-          <Navbar/>
+          
           <section
             style={{ backgroundImage: `url(/images/bg/video.jpg)` }}
             className="py-36 lg:py-64 w-full table relative bg-center bg-cover"
@@ -38,8 +35,8 @@ function Index_six() {
 
                 <div className="relative mt-10">
                   <Link
-                    href="#"
-                    className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md"
+                    href="/contact"
+                    className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-md"
                   >
                     Get Started
                   </Link>
@@ -62,9 +59,9 @@ function Index_six() {
 
           <Contact />
 
-          <Footer />
+          
 
-          <Switcher />
+          
     </>
   );
 }

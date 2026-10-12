@@ -8,22 +8,15 @@ import About from "../component/about";
 import Pricing from "../component/pricing";
 import Blog from "../component/blog";
 import Contact from "../component/contact";
-import Footer from "../component/footer";
 import Portfolio from "../component/portfolio";
 import Review from "../component/testimonial";
-import Switcher from "../component/switcher";
-import Navbar from "../component/navbar";
 
 function Home2() {
    const [isOpen, setOpen] = useState(false)
 
-   const handleClick = () =>{
-    console.log('hello payal good morning ', isOpen);
-    
-   }
   return (
     <>
-          <Navbar/>
+          
           <section
             style={{ backgroundImage: `url(/images/bg/2.jpg)` }}
             className="py-36 lg:py-72 lg:pb-0 md:pb-8 w-full table relative bg-[url('/images/bg/2.jpg')] bg-center bg-cover"
@@ -45,9 +38,8 @@ function Home2() {
 
                   <div className="relative mt-10">
                     <Link
-                      href="#"
-                      onClick={handleClick()}
-                      className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full me-1"
+                      href="/contact"
+                      className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-full me-1"
                     >
                       Get Started
                     </Link>
@@ -56,7 +48,7 @@ function Home2() {
                       onClick={()=>setOpen(!isOpen)}
                       data-type="youtube"
                       data-id="S_CGed6E610"
-                      className="btn btn-icon btn-lg bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-full lightbox"
+                      className="btn btn-icon btn-lg bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-full lightbox"
                     >
                       <i className="mdi mdi-play text-xl align-middle"></i>
                     </Link>
@@ -80,7 +72,7 @@ function Home2() {
                             name="name"
                             id="fName"
                             type="text"
-                            className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-orange-600/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none mt-2"
+                            className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none mt-2"
                             placeholder="Name :"
                           />
                         </div>
@@ -90,7 +82,7 @@ function Home2() {
                             name="email"
                             id="yEmail"
                             type="email"
-                            className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-orange-600/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none mt-2"
+                            className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none mt-2"
                             placeholder="Email :"
                           />
                         </div>
@@ -99,14 +91,14 @@ function Home2() {
                           <input
                             name="number"
                             id="phNumber"
-                            className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-orange-600/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none mt-2"
+                            className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none mt-2"
                             placeholder="+12 12458 854"
                           />
                         </div>
                         <Link
                         scroll={false}
                           href="#"
-                          className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md w-full" 
+                          className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-md w-full" 
                         >
                           Free Trial
                         </Link>
@@ -165,9 +157,9 @@ function Home2() {
 
           <Contact />
 
-          <Footer />
+          
 
-          <Switcher />
+          
     </>
   );
 }

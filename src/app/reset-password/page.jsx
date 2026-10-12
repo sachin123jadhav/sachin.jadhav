@@ -1,8 +1,6 @@
 "use client"; // This is a client component 👈🏽
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import Switcher from "../component/switcher";
 
 /**
  * Reset Password Component
@@ -12,7 +10,7 @@ export default function ResetPassword() {
         <>
             <section
                  style={{ backgroundImage: `url(/images/bg/auth.jpg)` }}
-                className="position-relative bg-center bg-cover">
+                className="relative bg-center bg-cover">
                 <div className="absolute inset-0 bg-slate-900/90"></div>
                 <div className="container-fluid relative">
                     <div className="grid grid-cols-1">
@@ -20,7 +18,7 @@ export default function ResetPassword() {
                             <div className="flex flex-col min-h-screen md:px-12 py-12 px-3">
 
                                 <div className="text-center mx-auto">
-                                <Link href="/"><Image src={"/images/logo-light.png"} width={105} height={24} alt=""/></Link>
+                                <Link href="/"><img src="/images/SachinJadhavWhite.svg" alt="Sachin Jadhav" className="h-8 w-auto mx-auto" /></Link>
                                 </div>
                                 <div className=" my-auto">
                                     <div className="mt-5 w-full max-w-sm m-auto px-6 py-8 bg-white dark:bg-slate-900 rounded-md shadow-lg shadow-slate-500 dark:shadow-slate-800">
@@ -31,15 +29,15 @@ export default function ResetPassword() {
                                                 <div className="grid grid-cols-1">
                                                     <div className="mb-4">
                                                         <label className="dark:text-white" htmlFor="LoginEmail">Email Address:</label>
-                                                        <input id="LoginEmail" type="email" className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-orange-600/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none mt-3" placeholder="name@example.com" />
+                                                        <input id="LoginEmail" type="email" className="form-input w-full py-2 px-3 border border-gray-200 dark:border-gray-800 focus:ring-0 focus:border-purple-700/50 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none mt-3" placeholder="name@example.com" />
                                                     </div>
 
                                                     <div className="mb-4">
-                                                        <Link href="#" className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md w-full">Send</Link>
+                                                        <Link href="#" className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-md w-full">Send</Link>
                                                     </div>
 
                                                     <div className="text-center">
-                                                        <span className="text-slate-400 dark:text-slate-300 me-2">Remember your password ? </span> <Link href="/auth-login" className="text-dark dark:text-white fw-bold">Sign in</Link>
+                                                        <span className="text-slate-400 dark:text-slate-300 me-2">Remember your password ? </span> <Link href="/login" className="text-dark dark:text-white fw-bold">Sign in</Link>
                                                     </div>
                                                 </div>
                                             </form>
@@ -49,7 +47,7 @@ export default function ResetPassword() {
 
                                 {/* <!-- Start Footer --> */}
                                 <div className="text-center">
-                                    <p className="text-gray-400">© {new Date().getFullYear()} Upwind. Design & Develop with <i className="mdi mdi-heart text-orange-700"></i> by <Link href="https://shreethemes.in/" target="_blank" className="text-reset">Shreethemes</Link>.</p>
+                                    <p className="text-gray-400">© {new Date().getFullYear()} Sachin Jadhav</p>
                                 </div>
                                 {/* <!-- End Footer --> */}
                             </div>
@@ -57,8 +55,7 @@ export default function ResetPassword() {
                     </div>
                 </div>
             </section>
-            {/* Switcher section */}
-            <Switcher />
+            {/* Switcher section is rendered once by the root layout */}
         </>
     )
 }

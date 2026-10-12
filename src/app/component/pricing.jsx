@@ -52,7 +52,7 @@ export default function Pricing() {
       <section className="relative md:py-24 py-16" id="pricing">
         <div className="container">
           <div className="grid grid-cols-1 pb-8 text-center">
-            <h6 className="text-orange-600 text-base font-medium uppercase mb-2">
+            <h6 className="text-purple-700 text-base font-medium uppercase mb-2">
               Pricing
             </h6>
             <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">
@@ -83,12 +83,12 @@ export default function Pricing() {
                       </span>
                       <span className="inline-block ms-1">/ month</span>
                     </div>
-                    <p className="mb-6 text-slate-430 dark:text-slate-300">
+                    <p className="mb-6 text-slate-400 dark:text-slate-300">
                       Basic features for up to {item.user} users.
                     </p>
                     <Link
                       href="#"
-                      className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md w-full"
+                      className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-md w-full"
                     >
                       Started Now
                     </Link>
@@ -110,7 +110,7 @@ export default function Pricing() {
             ))}
           </div>
           <div className="flex justify-center text-slate-400 mt-2">
-            <span className="text-orange-600">*</span>No credit card required
+            <span className="text-purple-700">*</span>No credit card required
           </div>
         </div>
       </section>

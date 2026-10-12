@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { FaRegCalendarAlt } from "react-icons/fa";
 
 import { MdLocationOn } from "react-icons/md";
@@ -222,32 +220,42 @@ export default function MyExperience() {
 
                   <div className=" md:mt-0">
                     <div className="border border-gray-300 p-6 rounded-2xl event event-description-right ltr:float-left rtl:float-right ltr:text-left rtl:text-right md:ms-7">
-                      <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                        <li className="text-2xl  text-purple-800">
-                          Prasanna Purple Mobility Solutions
+                      <ul className="space-y-5 text-gray-700 dark:text-gray-300">
+                        <li>
+                          <h6 className="text-2xl text-purple-800">
+                            Prasanna Purple Mobility Solutions
+                          </h6>
+                          <ul className="list-disc list-inside space-y-2 mt-2">
+                            <li>
+                              Designed mock-ups, wireframes, and layout concepts
+                              for 20+ landing pages, improving visual hierarchy
+                              and user flow, resulting in ~18% higher engagement
+                              and time-on-page.
+                            </li>
+                            <li>
+                              Developed and enhanced HTML4/5 &amp; CSS2/3
+                              websites (Dreamweaver) with W3C compliance,
+                              cross-browser support, and full mobile
+                              responsiveness, upgrading 15+ sites and improving
+                              performance by up to 35%.
+                            </li>
+                          </ul>
                         </li>
-                        <p>
-                          Designed mock-ups, wireframes, and layout concepts for
-                          20+ landing pages, improving visual hierarchy and user
-                          flow, resulting in ~18% higher engagement and
-                          time-on-page.
-                        </p>
-                        <p>
-                          Developed and enhanced HTML4/5 & CSS2/3 websites
-                          (Dreamweaver) with W3C compliance, cross-browser
-                          support, and full mobile responsiveness, upgrading 15+
-                          sites and improving performance by up to 35%.
-                        </p>
 
-                        <li className="text-2xl  text-purple-800">
-                          Remote Control Media Inc.
+                        <li>
+                          <h6 className="text-2xl text-purple-800">
+                            Remote Control Media Inc.
+                          </h6>
+                          <ul className="list-disc list-inside space-y-2 mt-2">
+                            <li>
+                              Created 30+ website mock-ups and marketing assets
+                              (brochures, emailers), optimizing visuals in Adobe
+                              Photoshop and CorelDRAW to improve page load times
+                              by ~15% while maintaining consistent brand
+                              messaging.
+                            </li>
+                          </ul>
                         </li>
-                        <p>
-                          Created 30+ website mock-ups and marketing assets
-                          (brochures, emailers), optimizing visuals in Adobe
-                          Photoshop and CorelDRAW to improve page load times by
-                          ~15% while maintaining consistent brand messaging.
-                        </p>
                       </ul>
                     </div>
                   </div>
@@ -258,7 +266,7 @@ export default function MyExperience() {
 
           <div className="flex justify-center mt-8">
             <AnimatedButton
-              href="/projects"
+              href="/portfolio"
               label="View Portfolio"
               icon={<FiArrowRight className="inline ms-2 text-xl" />}
               className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"

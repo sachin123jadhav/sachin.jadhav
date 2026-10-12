@@ -7,11 +7,8 @@ import About from "../component/about";
 import Pricing from "../component/pricing";
 import Blog from "../component/blog";
 import Contact from "../component/contact";
-import Footer from "../component/footer";
 import Portfolio from "../component/portfolio";
 import Review from "../component/testimonial";
-import Switcher from "../component/switcher";
-import Navbar from "../component/navbar";
 import Link from 'next/link';
 
 function Home() {
@@ -33,7 +30,7 @@ function Home() {
     
   return (
     <>
-          <Navbar/>
+          
           <section style={{backgroundImage:`url(${images[currentImageIndex]})`}} className="py-36 lg:py-64 w-full table relative bg-center bg-cover" id="home" >
             <div className="absolute inset-0 bg-slate-900/80"></div>
             <div className="container relative">
@@ -62,7 +59,7 @@ function Home() {
                 <p className="text-white opacity-50 mb-0 max-w-2xl !text-lg"> Launch your campaign and benefit from our expertise on designing and managing conversion centered Tailwind CSS html page.</p>
 
                 <div className="relative mt-10">
-                  <Link href="#" className="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md">
+                  <Link href="/contact" className="btn bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] border-transparent hover:opacity-90 text-white rounded-md">
                     Get Started
                   </Link>
                 </div>
@@ -84,9 +81,9 @@ function Home() {
 
           <Contact />
 
-          <Footer />
+          
 
-          <Switcher />
+          
     </>
   );
 }
