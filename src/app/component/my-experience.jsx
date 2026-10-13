@@ -12,7 +12,7 @@ export default function MyExperience() {
   return (
     <>
       {/* Start */}
-      <section id="features" className="relative md:py-2 py-2">
+      <section id="features" className="relative py-[15px]">
         <div className="container md:mt-0 mt-1">
           <div className="grid grid-cols-1 mt-0  pb-10">
             <div className="timeline relative">

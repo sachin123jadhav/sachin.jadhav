@@ -3,13 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { FiArrowUp } from "react-icons/fi";
 import Link from "next/link";
+import ThemeToggle from "./theme-toggle";
 
 /**
  * Floating controls that do not belong in the header.
- *
- * The colour-theme switch used to live here as a rotated side pill. It now sits
- * in the navigation as <ThemeToggle />, so there is one source of truth for the
- * theme instead of two controls that could disagree.
  */
 export default function Switcher() {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -27,15 +24,18 @@ export default function Switcher() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <Link
-      href="#"
-      onClick={scrollToTop}
-      id="back-to-top"
-      aria-label="Back to top"
-      className="back-to-top fixed items-center justify-center text-lg rounded-full z-10 bottom-5 end-5 h-9 w-9 text-center bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] text-white leading-9 shadow-lg"
-      style={{ display: showBackToTop ? "inline-flex" : "none" }}
-    >
-      <FiArrowUp className="" />
-    </Link>
+    <>
+      <ThemeToggle />
+      <Link
+        href="#"
+        onClick={scrollToTop}
+        id="back-to-top"
+        aria-label="Back to top"
+        className="back-to-top fixed items-center justify-center text-lg rounded-full z-10 bottom-5 end-5 h-9 w-9 text-center bg-gradient-to-br from-[#0fb3d3] to-[#7047c3] text-white leading-9 shadow-lg"
+        style={{ display: showBackToTop ? "inline-flex" : "none" }}
+      >
+        <FiArrowUp className="" />
+      </Link>
+    </>
   );
 }

@@ -44,9 +44,9 @@ export default function Services() {
   return (
     <>
       {/* Start */}
-      <section id="features" className="relative md:py-24 py-16">
+      <section id="features" className="relative py-[15px]">
         <div className="container lg mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 pb-8 items-center">
+          <div className="grid grid-cols-1 items-center pb-8 lg:grid-cols-2">
             <div>
               <h6 className="text-purple-700 dark:text-purple-300 text-base font-medium uppercase mb-2">
                 What We Do ?
@@ -102,7 +102,7 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="container md:mt-24 mt-16">
+        <div className="container mt-[30px]">
           <div className="grid grid-cols-1 pb-8 text-center">
             <h6 className="text-purple-700 dark:text-purple-300 text-base font-medium uppercase mb-2">
               Work Process

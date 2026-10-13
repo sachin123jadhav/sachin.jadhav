@@ -80,13 +80,13 @@ function PortfolioSection() {
   const closeCaseStudy = () => setActiveCaseStudy(null);
 
   return (
-    <section className="bg-[#faf9fb] dark:bg-slate-800 py-20">
-      <div className="container mx-auto px-4">
+    <section className="bg-[#faf9fb] py-[15px] dark:bg-slate-800">
+      <div className="container mx-auto">
         {/* -------------------- HRMS PROJECT -------------------- */}
 
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
           {/* Image */}
-          <div className="lg:col-span-6">
+          <div className="order-2 lg:order-1 lg:col-span-6">
             <div className="aspect-video rounded-2xl border dark:border-slate-600 overflow-hidden group">
               <Image
                 src={hrms}
@@ -97,7 +97,7 @@ function PortfolioSection() {
           </div>
 
           {/* Content */}
-          <div className="lg:col-span-6">
+          <div className="order-1 lg:order-2 lg:col-span-6">
             <div className="flex flex-wrap gap-2">
               <Badge label="Figma" textColor="text-purple-700 dark:text-purple-300" />
               <Badge label="Photoshop" textColor="text-purple-700 dark:text-purple-300" />
@@ -147,7 +147,7 @@ function PortfolioSection() {
 
         {/* -------------------- DETAILS SECTION -------------------- */}
 
-        <div className="grid lg:grid-cols-3 gap-10 mt-12">
+        <div className="grid grid-cols-1 gap-10 mt-[30px] md:grid-cols-2 lg:grid-cols-3">
           <div>
             <p className="text-purple-700 dark:text-purple-300 font-semibold">UI/UX Design</p>
 
@@ -199,9 +199,9 @@ function PortfolioSection() {
 
         {/* -------------------- SECOND PROJECT : Barva Skin Therapie -------------------- */}
 
-        <div className="grid lg:grid-cols-12 gap-10 items-center mt-24">
+        <div className="mt-[30px] grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
           {/* Content */}
-          <div className="lg:col-span-6">
+          <div className="order-1 lg:col-span-6">
             <div className="flex flex-wrap gap-2">
               <Badge label="Figma" textColor="text-purple-700 dark:text-purple-300" />
               <Badge label="Photoshop" textColor="text-purple-700 dark:text-purple-300" />
@@ -251,7 +251,7 @@ function PortfolioSection() {
           </div>
 
           {/* Image */}
-          <div className="lg:col-span-6">
+          <div className="order-2 lg:col-span-6">
             <div className="aspect-video rounded-2xl border dark:border-slate-600 overflow-hidden group">
               <Image
                 src={barva}
@@ -264,7 +264,7 @@ function PortfolioSection() {
 
         {/* Barva Skin Therapie DETAILS */}
 
-        <div className="grid lg:grid-cols-3 gap-10 mt-12">
+        <div className="grid grid-cols-1 gap-10 mt-[30px] md:grid-cols-2 lg:grid-cols-3">
           <div>
             <p className="text-purple-700 dark:text-purple-300 font-semibold">UI/UX Design</p>
 
@@ -315,9 +315,9 @@ function PortfolioSection() {
 
         {/* -------------------- THIRD PROJECT : Document Management System -------------------- */}
 
-        <div className="grid lg:grid-cols-12 gap-10 items-center mt-24">
+        <div className="mt-[30px] grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
           {/* Image */}
-          <div className="lg:col-span-6">
+          <div className="order-2 lg:order-1 lg:col-span-6">
             <div className="aspect-video rounded-2xl border dark:border-slate-600 overflow-hidden group">
               <Image
                 src={dms}
@@ -328,7 +328,7 @@ function PortfolioSection() {
           </div>
 
           {/* Content */}
-          <div className="lg:col-span-6">
+          <div className="order-1 lg:order-2 lg:col-span-6">
             <div className="flex flex-wrap gap-2">
               <Badge label="Figma" textColor="text-purple-700 dark:text-purple-300" />
               <Badge label="React" textColor="text-purple-700 dark:text-purple-300" />
@@ -376,7 +376,7 @@ function PortfolioSection() {
 
         {/* DMS DETAILS */}
 
-        <div className="grid lg:grid-cols-3 gap-10 mt-12">
+        <div className="grid grid-cols-1 gap-10 mt-[30px] md:grid-cols-2 lg:grid-cols-3">
           <div>
             <p className="text-purple-700 dark:text-purple-300 font-semibold">UI/UX Design</p>
 

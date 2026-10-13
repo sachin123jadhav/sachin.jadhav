@@ -14,10 +14,10 @@ function About() {
     "Frontend Development Support",
   ];
   return (
-    <section className="relative md:py-8 py-8  bg-slate-100  dark:bg-slate-800 ">
+    <section className="relative bg-slate-100 py-[15px] dark:bg-slate-800">
       <div className="container">
         <div className="grid grid-cols-1 pb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-8 wow animate__animated animate__fadeInLeft">
               <p className="mb-2">
                 I am a Senior UI/UX Designer and Frontend Developer with over 15
@@ -79,9 +79,9 @@ function About() {
               </div>
             </div>
             <div className="lg:col-span-4 wow animate__animated animate__fadeInRight relative">
-              <div className="sticky top-24 space-y-6">
+              <div className="space-y-6 lg:sticky lg:top-24">
                 {/* Profile Card */}
-                <div className="p-8 rounded-2xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600">
+                <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-600 dark:bg-slate-700 md:p-8">
                   <div className="w-20 h-20 rounded-2xl bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 flex items-center justify-center mb-6">
                     <span className="font-bold text-2xl text-purple-700 dark:text-purple-300">
                       SJ
@@ -127,7 +127,7 @@ function About() {
                 </div>
 
                 {/* CTA Card */}
-                <div className="p-8 rounded-2xl bg-slate-200 border border-slate-300 dark:bg-slate-700 dark:border-slate-600">
+                <div className="rounded-2xl border border-slate-300 bg-slate-200 p-5 dark:border-slate-600 dark:bg-slate-700 md:p-8">
                   <h4 className="font-semibold text-slate-900 dark:text-white mb-4">
                     Let&apos;s Connect
                   </h4>

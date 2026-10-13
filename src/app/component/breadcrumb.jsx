@@ -10,7 +10,7 @@ function BreadCrumb({
     <section
       className="
         relative
-        pt-16 pb-12 md:pt-24 md:pb-14
+        pt-16 pb-[15px] md:pt-24 md:pb-[15px]
         bg-gradient-to-br from-[#faf8fd] via-[#f2edf8] to-[#edf6f7]
         dark:from-[#0f172a] dark:via-[#172554] dark:to-[#1e293b]
       "

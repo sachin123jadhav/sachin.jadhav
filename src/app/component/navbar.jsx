@@ -5,37 +5,50 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiDownload } from "react-icons/fi";
 import AnimatedButton from "./button";
-import ThemeToggle from "./theme-toggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navbarRef = useRef(null);
-  const hasAnimated = useRef(false);
   const pathname = usePathname();
 
-  // Sticky navbar animation
+  // Keep the navbar fixed without leaving a transform on its fixed-position drawer.
   const handleScroll = useCallback(() => {
+    if (isOpen) return;
+
     const navbar = navbarRef.current;
     if (!navbar) return;
 
+    navbar.classList.remove("animate__animated", "animate__fadeInDown");
+
     if (window.scrollY >= 50) {
       navbar.classList.add("is-sticky", "p-0");
-
-      if (!hasAnimated.current) {
-        navbar.classList.add("animate__animated", "animate__fadeInDown");
-        hasAnimated.current = true;
-      }
     } else {
       navbar.classList.remove("is-sticky", "p-0");
-      hasAnimated.current = false;
-      navbar.classList.remove("animate__animated", "animate__fadeInDown");
     }
-  }, []);
+  }, [isOpen]);
 
   useEffect(() => {
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      handleScroll();
+      return;
+    }
+
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousRootOverflow = document.documentElement.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousRootOverflow;
+    };
+  }, [isOpen, handleScroll]);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
@@ -44,46 +57,65 @@ export default function Navbar() {
 
   return (
     <nav className="navbar" ref={navbarRef}>
-      <div className="container flex flex-wrap items-center justify-between">
+      <div className="container flex flex-nowrap items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="navbar-brand max-w-[200px]" onClick={closeMenu}>
+        <Link href="/" className="navbar-brand max-w-[200px] max-xl:me-4 max-xl:max-w-[140px]" onClick={closeMenu}>
           <img src="/images/SachinJadhav.svg" alt="Sachin Jadhav" />
         </Link>
 
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="collapse-btn inline-flex items-center ms-3 text-dark dark:text-white lg:hidden"
+          className="collapse-btn relative z-[1001] inline-flex items-center ms-3 text-dark dark:text-white lg_992:hidden"
           onClick={toggleMenu}
-          aria-label="Toggle navigation"
+          aria-label={isOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={isOpen}
+          aria-controls="primary-navigation"
         >
-          <i className="mdi mdi-menu mdi-24px"></i>
+          <i className={`mdi ${isOpen ? "mdi-close" : "mdi-menu"} mdi-24px`} aria-hidden="true"></i>
         </button>
 
-        {/* Menu */}
-        <div className={`${isOpen ? "block" : "hidden"} navigation lg_992:flex`}>
-          <ul className="navbar-nav lg:gap-8 py-1 items-center">
-            <Link href="/" className={`nav-item ${isActive("/") ? "active" : ""}`} onClick={closeMenu}>
+        {/* Mobile backdrop */}
+        {isOpen && (
+          <button
+            type="button"
+            className="fixed inset-0 z-[998] bg-slate-950/40 lg_992:hidden"
+            onClick={closeMenu}
+            aria-label="Close navigation menu"
+          />
+        )}
+
+        {/* Left-side mobile drawer; reset to the inline desktop navigation at 992px. */}
+        <div
+          id="primary-navigation"
+          className={`navigation fixed inset-y-0 start-0 z-[999] w-[min(85vw,320px)] bg-white px-6 pt-24 shadow-2xl transition-transform duration-300 dark:bg-slate-800 lg_992:static lg_992:z-auto lg_992:w-auto lg_992:translate-x-0 lg_992:bg-transparent lg_992:p-0 lg_992:shadow-none ${
+            isOpen
+              ? "visible translate-x-0"
+              : "invisible -translate-x-full lg_992:visible"
+          }`}
+        >
+          <ul className="navbar-nav mt-0 flex h-full flex-col items-start gap-2 overflow-y-auto lg_992:h-auto lg_992:flex-row lg_992:items-center lg_992:gap-4 lg_992:overflow-visible xl:gap-8">
+            <Link href="/" className={`nav-item w-full lg_992:w-auto ${isActive("/") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">Home</span>
             </Link>
 
-            <Link href="/about" className={`nav-item ${isActive("/about") ? "active" : ""}`} onClick={closeMenu}>
+            <Link href="/about" className={`nav-item w-full lg_992:w-auto ${isActive("/about") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">About Me</span>
             </Link>
 
-            <Link href="/experience" className={`nav-item ${isActive("/experience") ? "active" : ""}`} onClick={closeMenu}>
+            <Link href="/experience" className={`nav-item w-full lg_992:w-auto ${isActive("/experience") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">Experience</span>
             </Link>
 
-            <Link href="/portfolio" className={`nav-item ${isActive("/portfolio") ? "active" : ""}`} onClick={closeMenu}>
+            <Link href="/portfolio" className={`nav-item w-full lg_992:w-auto ${isActive("/portfolio") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">Portfolio</span>
             </Link>
 
-            <Link href="/skills" className={`nav-item ${isActive("/skills") ? "active" : ""}`} onClick={closeMenu}>
+            <Link href="/skills" className={`nav-item w-full lg_992:w-auto ${isActive("/skills") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">Skills</span>
             </Link>
 
-            <Link href="/contact" className={`nav-item ${isActive("/contact") ? "active" : ""}`} onClick={closeMenu}>
+            <Link href="/contact" className={`nav-item w-full lg_992:w-auto ${isActive("/contact") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">Contact</span>
             </Link>
 
@@ -92,13 +124,10 @@ export default function Navbar() {
               href="/images/SachinJadhavWebDeveloper.pdf"
               label="Download CV"
               icon={<FiDownload className="inline ms-2 text-xl" />}
-              className="ml-2"
+              className="ml-0 lg_992:ml-2"
             />
           </ul>
 
-          {/* Outside the <ul> on purpose: .navbar-nav is a scroll container on
-              mobile (overflow-y-scroll), which would clip this dropdown. */}
-          <ThemeToggle />
         </div>
       </div>
     </nav>

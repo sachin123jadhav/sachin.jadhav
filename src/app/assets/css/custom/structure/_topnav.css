@@ -134,12 +134,27 @@
  
 }
 
+@media (min-width: 992px) and (max-width: 1139px) {
+    .navbar {
+        .navigation {
+            .navbar-nav {
+                @apply flex-nowrap gap-1;
+
+                .nav-link {
+                    @apply whitespace-nowrap px-2 py-2 text-[15px];
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 991px) {
   .navbar {
       @apply bg-white dark:bg-slate-800 !shadow-sm dark:shadow-slate-800;
       .navigation {
+          @apply w-[min(85vw,320px)];
           .navbar-nav {
-              @apply flex h-[21.25rem] flex-col;
+              @apply flex h-full flex-col items-start overflow-y-auto;
               .nav-link {
                   @apply text-slate-900 dark:text-white;
               }

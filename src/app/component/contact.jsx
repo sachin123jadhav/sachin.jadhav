@@ -11,7 +11,7 @@ export default function Contact() {
     <>
       {/* Start */}
       <section
-        className="relative md:py-24 py-16 bg-gray-50 dark:bg-slate-800"
+        className="relative bg-gray-50 py-[15px] dark:bg-slate-800"
         id="contact"
       >
         <div className="container">

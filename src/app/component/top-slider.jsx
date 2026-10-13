@@ -54,18 +54,17 @@ function TopSlider() {
   return (
     <>
       <section
-        className="py-36 lg:py-12 w-full table relative bg-center bg-cover bg-blue-50 dark:bg-slate-800  dark:bg-none bg-[url('/images/hero-bg.jpg')] overflow-hidden"
+        className="w-full table relative overflow-hidden bg-center bg-cover bg-blue-50 bg-[url('/images/hero-bg.jpg')] pb-[15px] pt-20 dark:bg-slate-800 dark:bg-none md:pt-16 lg:pt-20"
         id="home"
       >
         <div className="container relative  overflow-x-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 gap-10 items-center ">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
             <div
-              className="lg:col-span-6 wow animate__animated animate__fadeInLeft"
+              className="wow animate__animated animate__fadeInLeft md:max-lg:text-center lg:col-span-6"
               data-wow-delay=".90s "
             >
-              <h4 className="text-black lg:text-4xl text-3xl lg:leading-normal leading-normal font-medium mb-2 text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-800 bg-clip-text text-transparent">
-                {" "}
-                Hi, I'm Senior
+              <h4 className="mb-2 text-2xl font-bold leading-tight text-transparent bg-gradient-to-r from-purple-600 to-blue-800 bg-clip-text md:text-3xl lg:text-[1.75rem] xl:text-4xl xl:leading-normal">
+                <span className="block whitespace-nowrap">Hi, I&apos;m Senior</span>
                 <TypeAnimation
                   sequence={[
                     // Same substring at the start will only be typed out once, initially
@@ -77,16 +76,17 @@ function TopSlider() {
                   wrapper="span"
                   speed={20}
                   repeat={Infinity}
-                  className="typewrite relative text-type-element ms-2  bg-gradient-to-r from-purple-600 to-blue-800 bg-clip-text text-transparent"
+                  className="typewrite relative block h-[1.25em] whitespace-nowrap bg-gradient-to-r from-purple-600 to-blue-800 bg-clip-text text-transparent"
                   cursor={false}
                 />
-                <br></br>
-                with 15+ Years of Experience
+                <span className="block whitespace-nowrap text-[clamp(1rem,6vw,1.5rem)] lg:text-[1.75rem] xl:text-4xl">
+                  with 15+ Years of Experience
+                </span>
               </h4>
-              <h2 className="text-xl font-medium py-2">
+              <h2 className="py-2 text-lg font-medium xl:text-xl">
                 B2B SaaS • Dashboards • Enterprise Platforms • Web Applications
               </h2>
-              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-5">
+              <p className="mb-5 text-base leading-relaxed text-gray-700 dark:text-gray-300 xl:text-lg">
                 Senior UI/UX Designer and Frontend Developer with 15+ years of
                 experience designing and building B2B SaaS platforms,
                 dashboards, data-heavy interfaces, and enterprise web
@@ -94,19 +94,22 @@ function TopSlider() {
                 frontend technologies including HTML, CSS, JavaScript, and
                 React.
               </p>
-              <AnimatedButton
-                href="/portfolio"
-                label="View Case Studies"
-                icon={<FiArrowRight className="inline ms-2 text-xl" />}
-                className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"
-              />
+              <div className="flex flex-wrap items-center gap-3 md:max-lg:justify-center lg_992:flex-nowrap lg_992:gap-2">
+                <AnimatedButton
+                  href="/portfolio"
+                  label="View Case Studies"
+                  icon={<FiArrowRight className="inline ms-2 text-xl" />}
+                  className="bg-gradient-to-br from-[#7047c3] to-[#7047c3] lg_992:px-4 xl:px-[35px]"
+                />
 
-              <AnimatedButton
-                target="_blank"
-                href="/images/SachinJadhavWebDeveloper.pdf"
-                label="Download CV"
-                icon={<FiDownload className="inline ms-2 text-xl" />}
-              />
+                <AnimatedButton
+                  target="_blank"
+                  href="/images/SachinJadhavWebDeveloper.pdf"
+                  label="Download CV"
+                  icon={<FiDownload className="inline ms-2 text-xl" />}
+                  className="lg_992:px-4 xl:px-[35px]"
+                />
+              </div>
             </div>
 
             <div
@@ -114,10 +117,10 @@ function TopSlider() {
               data-wow-delay="1.1s"
             >
               {/* Portrait box: this is what the badges are positioned against. */}
-              <div className="relative mx-auto w-full max-w-[400px] mt-10">
+              <div className="relative mx-auto w-full max-w-[400px] max-xl:max-w-[320px]">
                 {/* Badges need the wide layout; below lg the portrait fills the
                     column and they would sit on top of it. */}
-                <div className="hidden lg:block">
+                <div className="hidden origin-top-left scale-75 lg:block xl:scale-100">
                   {techIcons.map(({ src, label, left, top, size, side }) => (
                     <div
                       key={label}

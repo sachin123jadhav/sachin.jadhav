@@ -131,15 +131,15 @@ export default function Contact() {
     "mt-8 inline-block px-[25px] h-[50px] leading-[50px] rounded-md border-2 border-purple-700 dark:border-slate-400 text-purple-700 dark:text-white font-bold text-[16px] tracking-[0.02em] hover:bg-purple-700 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-300 cursor-pointer";
 
   return (
-    <section className="min-h-screen bg-slate-100 dark:bg-slate-800 py-20">
+    <section className="min-h-screen bg-slate-100 py-[15px] dark:bg-slate-800">
       {/* Hero Section */}
-      <div className="container mx-auto px-4 lg:px-8 mb-16">
+      <div className="container mx-auto mb-[30px]">
         <div className="max-w-4xl">
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+          <h1 className="mb-6 text-3xl font-bold leading-tight text-gray-900 dark:text-white md:text-4xl lg:text-5xl xl:text-6xl">
             Let&apos;s Work Together
           </h1>
 
-          <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
+          <p className="max-w-3xl text-base leading-relaxed text-gray-600 dark:text-gray-300 md:text-lg">
             If you&apos;re looking for a Senior UI/UX Designer who can also
             build and support frontend implementation for SaaS and enterprise
             products, feel free to get in touch.
@@ -148,7 +148,7 @@ export default function Contact() {
       </div>
 
       {/* Contact Content */}
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Contact Form */}
           <div className="lg:col-span-3">
@@ -361,7 +361,7 @@ export default function Contact() {
 
           {/* Contact Info */}
           <div className="lg:col-span-2">
-            <div className="sticky top-32 space-y-6">
+            <div className="space-y-6 lg:sticky lg:top-32">
               <div className="p-6 lg:p-8 rounded-3xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 shadow-sm">
                 <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-6">
                   Contact Information

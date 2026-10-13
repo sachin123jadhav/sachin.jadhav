@@ -6,11 +6,11 @@ function MySkills() {
   return (
     <div>
 
-      <section className="bg-[#faf9fb] dark:bg-slate-800 py-20">
+      <section className="bg-[#faf9fb] py-[15px] dark:bg-slate-800">
 
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
 
-          <div className="grid lg:grid-cols-12 gap-10 ">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-6">
 
               <HoverCard>

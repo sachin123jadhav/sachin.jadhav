@@ -33,9 +33,9 @@ const highlights = [
 
 function Highlights() {
   return (
-    <section id="projects" className="relative py-24">
+    <section id="projects" className="relative py-[15px]">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
           {highlights.map(({ title, desc, icon: Icon }, index) => (
             <div
               key={title}
