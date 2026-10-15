@@ -9,6 +9,7 @@ import Image from "next/image";
 import hrms from "./../../../public/images/HRMS.jpg";
 import barva from "./../../../public/images/Barva.jpg";
 import dms from "./../../../public/images/websites/DMS.jpg";
+import extentiaPreview from "./../../../public/images/websites/extentia-design-preview.svg";
 
 import HRMSCaseStudy from "./HRMSCaseStudy";
 import DMSCaseStudy from "./DMSCaseStudy";
@@ -82,6 +83,89 @@ function PortfolioSection() {
   return (
     <section className="bg-[#faf9fb] py-[15px] dark:bg-slate-800">
       <div className="container mx-auto">
+        {/* -------------------- EXTENTIA WEBSITE UI DESIGN -------------------- */}
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
+          <div className="order-2 lg:order-1 lg:col-span-6">
+            <a
+              href="https://www.figma.com/design/jX4ZA3XB0I7tRJc1tkoHVh/Extentia-Web-UI-Design?node-id=3437-35530"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Extentia website UI designs in Figma"
+              className="block aspect-video overflow-hidden rounded-2xl border dark:border-slate-600 group"
+            >
+              <Image
+                src={extentiaPreview}
+                alt="Illustrative preview of Extentia's responsive website and services page designs"
+                className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                priority
+              />
+            </a>
+          </div>
+
+          <div className="order-1 lg:order-2 lg:col-span-6">
+            <div className="flex flex-wrap gap-2">
+              <Badge label="Figma" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="UI/UX Design" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="Responsive Web Design" textColor="text-purple-700 dark:text-purple-300" />
+              <Badge label="Corporate Website" textColor="text-purple-700 dark:text-purple-300" />
+            </div>
+
+            <h2 className="text-2xl text-purple-700 dark:text-purple-300 mt-6 font-semibold">
+              Extentia Web UI Design
+            </h2>
+            <p className="text-[#07bdd5]">UI/UX Designer</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
+              Corporate website redesign · March–September 2022
+            </p>
+
+            <p className="text-purple-700 dark:text-purple-300 mt-6 font-semibold">
+              Project Overview
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 mt-2">
+              A corporate web design project focused on a polished, modern, and
+              consistent digital experience for Extentia. The work improves
+              navigation, typography hierarchy, and content clarity across the
+              main website and its service pages, with layouts prepared for
+              desktop and mobile screens.
+            </p>
+
+            <a
+              href="https://www.figma.com/design/jX4ZA3XB0I7tRJc1tkoHVh/Extentia-Web-UI-Design?node-id=3437-35530"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center rounded-md bg-purple-700 px-5 py-3 font-medium text-white transition hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+            >
+              View designs in Figma <FiArrowRight className="ms-2 text-xl" />
+            </a>
+            <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+              Preview illustration based on the project layouts; open Figma for the original designs.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-[30px] grid grid-cols-1 gap-10 md:grid-cols-2">
+          <div>
+            <p className="text-purple-700 dark:text-purple-300 font-semibold">UI/UX Design</p>
+            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
+              <li>Organized corporate content into clear navigation and page hierarchies.</li>
+              <li>Designed responsive desktop and mobile layouts for key pages and services.</li>
+              <li>Established a legible Roboto typography scale and consistent visual hierarchy.</li>
+              <li>Defined brand and supporting color palettes for a cohesive interface.</li>
+              <li>Created reusable grid, card, and form patterns with clear interactive states.</li>
+            </ul>
+          </div>
+          <div>
+            <p className="text-purple-700 dark:text-purple-300 font-semibold">Key Features</p>
+            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
+              <li><strong>Corporate navigation</strong> — Direct paths to services, technology, industries, media, careers, and company information.</li>
+              <li><strong>Service landing pages</strong> — Distinct page headers, supporting illustrations, and structured content.</li>
+              <li><strong>Responsive layouts</strong> — Website content adapted for desktop and mobile browsing.</li>
+              <li><strong>Reusable content cards</strong> — Consistent presentation for illustrations, titles, summaries, and links.</li>
+              <li><strong>Accessible interface controls</strong> — Clear calls to action, form controls, and interactive states.</li>
+            </ul>
+          </div>
+        </div>
+
         {/* -------------------- HRMS PROJECT -------------------- */}
 
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">

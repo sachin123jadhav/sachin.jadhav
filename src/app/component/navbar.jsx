@@ -60,7 +60,27 @@ export default function Navbar() {
       <div className="container flex flex-nowrap items-center justify-between">
         {/* Logo */}
         <Link href="/" className="navbar-brand max-w-[200px] max-xl:me-4 max-xl:max-w-[140px]" onClick={closeMenu}>
-          <img src="/images/SachinJadhav.svg" alt="Sachin Jadhav" />
+          {/*
+            The wordmark is a two-tone cyan/purple SVG, which goes muddy against
+            the dark navbar, so dark mode swaps in the white version of the same
+            artwork. Both render `block` in their active theme — matching
+            Tailwind's preflight for <img> — so the header height and spacing are
+            identical in either theme.
+
+            Both carry the same alt text on purpose: the hidden one is
+            display:none, which removes it from the accessibility tree, so the
+            link always has exactly one accessible name.
+          */}
+          <img
+            src="/images/SachinJadhav.svg"
+            alt="Sachin Jadhav"
+            className="dark:hidden"
+          />
+          <img
+            src="/images/SachinJadhavWhite.svg"
+            alt="Sachin Jadhav"
+            className="hidden dark:block"
+          />
         </Link>
 
         {/* Mobile Menu Button */}
