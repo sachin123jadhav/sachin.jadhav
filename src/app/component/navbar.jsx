@@ -101,7 +101,7 @@ export default function Navbar() {
               : "invisible -translate-x-full lg_992:visible"
           }`}
         >
-          <ul className="navbar-nav mt-0 flex h-full flex-col items-start gap-2 overflow-y-auto lg_992:h-auto lg_992:flex-row lg_992:items-center lg_992:gap-4 lg_992:overflow-visible xl:gap-8">
+          <ul className="navbar-nav mt-0 flex h-full flex-col items-start gap-2 overflow-y-auto lg_992:h-auto lg_992:flex-row lg_992:items-center lg_992:gap-4 lg_992:overflow-visible 2xl:gap-8">
             <Link href="/" className={`nav-item w-full lg_992:w-auto ${isActive("/") ? "active" : ""}`} onClick={closeMenu}>
               <span className="nav-link">Home</span>
             </Link>

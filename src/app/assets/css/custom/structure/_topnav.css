@@ -59,7 +59,9 @@
  
 }
 
-@media (min-width: 992px) and (max-width: 1139px) {
+/* Compact links until there is room for the full spacing (the theme switch
+   shares the row, so the 1140px container is still too narrow). */
+@media (min-width: 992px) and (max-width: 1439px) {
     .navbar {
         .navigation {
             .navbar-nav {

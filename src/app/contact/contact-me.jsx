@@ -7,6 +7,7 @@ import {
   FiMapPin,
   FiSend,
   FiCheckCircle,
+  FiAlertCircle,
 } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import AnimatedButton from "../component/button";
@@ -52,7 +53,7 @@ const fieldClass = (hasError) =>
 export default function Contact() {
   const [formData, setFormData] = useState(emptyForm);
   const [company, setCompany] = useState(""); // honeypot, never shown to humans
-  const [status, setStatus] = useState("idle"); // idle | sending | sent | fallback
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState("");
 
@@ -64,18 +65,6 @@ export default function Contact() {
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
-  };
-
-  /** Last-resort path: hand the message to the visitor's own mail client. */
-  const openMailClient = () => {
-    const subject = encodeURIComponent(
-      formData.subject.trim() || `Portfolio enquiry from ${formData.name}`,
-    );
-    const body = encodeURIComponent(
-      `${formData.message}\n\n—\n${formData.name}\n${formData.email}`,
-    );
-
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
   };
 
   const handleSubmit = async (e) => {
@@ -108,13 +97,17 @@ export default function Contact() {
         return;
       }
 
-      // Delivery is broken or unconfigured — do not strand the visitor.
-      setServerError(data.error || "");
-      openMailClient();
-      setStatus("fallback");
+      // Delivery failed (rate limit, mail service down or misconfigured).
+      // Keep what the visitor typed so they can simply try again.
+      setServerError(
+        data.error || "Your message couldn't be sent right now. Please try again.",
+      );
+      setStatus("error");
     } catch {
-      openMailClient();
-      setStatus("fallback");
+      setServerError(
+        "Your message couldn't be sent. Please check your connection and try again.",
+      );
+      setStatus("error");
     }
   };
 
@@ -160,35 +153,6 @@ export default function Contact() {
                     className={secondaryButtonClass}
                   >
                     Send another message
-                  </button>
-                </div>
-              ) : status === "fallback" ? (
-                <div className="text-center py-10">
-                  <FiCheckCircle className="w-14 h-14 text-amber-500 mx-auto mb-4" />
-
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                    One last step
-                  </h3>
-
-                  <p className="text-gray-600 dark:text-gray-300 max-w-md mx-auto">
-                    {serverError ||
-                      "I couldn't send that automatically just now, so your email app should have opened with the message ready to go."}{" "}
-                    If it didn&apos;t open, email me directly at{" "}
-                    <a
-                      href={`mailto:${CONTACT_EMAIL}`}
-                      className="text-purple-700 dark:text-purple-400 underline"
-                    >
-                      {CONTACT_EMAIL}
-                    </a>
-                    .
-                  </p>
-
-                  <button
-                    type="button"
-                    onClick={handleReset}
-                    className={secondaryButtonClass}
-                  >
-                    Back to the form
                   </button>
                 </div>
               ) : (
@@ -327,6 +291,22 @@ export default function Contact() {
                       </p>
                     )}
                   </div>
+
+                  {status === "error" && (
+                    <div
+                      role="alert"
+                      className="flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700 dark:border-red-500/40 dark:bg-red-500/10 dark:text-red-300"
+                    >
+                      <FiAlertCircle className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
+                      <p>
+                        {serverError} If it keeps failing, you can email me at{" "}
+                        <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium underline">
+                          {CONTACT_EMAIL}
+                        </a>
+                        .
+                      </p>
+                    </div>
+                  )}
 
                   <AnimatedButton
                     type="submit"
