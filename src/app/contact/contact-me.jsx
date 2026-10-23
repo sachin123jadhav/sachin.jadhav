@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   FiMail,
   FiPhone,
@@ -43,6 +43,40 @@ const contactInfo = [
 
 const emptyForm = { name: "", email: "", subject: "", message: "" };
 
+/**
+ * Sends the (already validated) message to FormSubmit from the browser. Used
+ * when the server has no mail transport configured; FormSubmit blocks requests
+ * from cloud servers, so this cannot happen in the API route.
+ */
+async function sendViaFormSubmit({ name, email, subject, message }, honeypot) {
+  // Same trimming and length caps the API route applies before it validates.
+  const clean = (value, max) => value.trim().slice(0, max);
+  const fields = {
+    name: clean(name, 120),
+    email: clean(email, 200),
+    subject: clean(subject, 200),
+    message: clean(message, 5000),
+  };
+
+  const res = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({
+      ...fields,
+      _subject: fields.subject || `Portfolio enquiry from ${fields.name}`,
+      _replyto: fields.email,
+      _template: "table",
+      _captcha: "false",
+      // FormSubmit's own spam trap, for bots that skip the API route.
+      _honey: honeypot,
+    }),
+  });
+
+  const body = await res.json().catch(() => ({}));
+  const ok = res.ok && (body.success === true || body.success === "true");
+  return { ok, reason: ok ? "" : body.message || "" };
+}
+
 const fieldClass = (hasError) =>
   `w-full h-12 px-4 rounded-xl border bg-white dark:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-600 ${
     hasError
@@ -56,6 +90,8 @@ export default function Contact() {
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState("");
+  // Guards against a second submit fired before the "sending" re-render lands.
+  const sendingRef = useRef(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -70,7 +106,8 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (status === "sending") return;
+    if (sendingRef.current) return;
+    sendingRef.current = true;
 
     setStatus("sending");
     setErrors({});
@@ -87,6 +124,21 @@ export default function Contact() {
 
       if (res.ok && data.ok) {
         setStatus("sent");
+        return;
+      }
+
+      // The server checked the message but has no mail service of its own.
+      if (res.ok && data.relay === "formsubmit") {
+        const relay = await sendViaFormSubmit(formData, company);
+
+        if (relay.ok) {
+          setStatus("sent");
+          return;
+        }
+
+        console.error("[contact] FormSubmit relay refused:", relay.reason);
+        setServerError("Your message couldn't be sent right now. Please try again in a moment.");
+        setStatus("error");
         return;
       }
 
@@ -108,6 +160,8 @@ export default function Contact() {
         "Your message couldn't be sent. Please check your connection and try again.",
       );
       setStatus("error");
+    } finally {
+      sendingRef.current = false;
     }
   };
 

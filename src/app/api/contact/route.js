@@ -6,12 +6,15 @@ import { NextResponse } from "next/server";
  * Transports are tried in this order, first configured one wins:
  *   1. RESEND_API_KEY        -> Resend HTTP API (best: your own domain, reply-to set)
  *   2. WEB3FORMS_ACCESS_KEY  -> Web3Forms relay
- *   3. (nothing configured)  -> FormSubmit relay, which needs no account at all
+ *   3. (nothing configured)  -> FormSubmit relay, sent from the visitor's browser
  *
- * The FormSubmit fallback means the form works out of the box. The very first
- * submission makes FormSubmit email the destination address an activation link;
- * until that link is clicked, nothing is delivered. Set RESEND_API_KEY any time
- * to move off the relay without touching this file.
+ * FormSubmit sits behind bot protection that rejects requests from cloud
+ * servers such as Vercel's, so this route cannot call it. Instead, once the
+ * message has passed validation, the honeypot and the rate limit here, the
+ * route answers `{ relay: "formsubmit" }` and contact-me.jsx posts the message
+ * to FormSubmit straight from the browser. The FormSubmit form must have been
+ * activated once (via the link it emails to the destination address).
+ * Set RESEND_API_KEY any time to move off the relay without touching this file.
  *
  * See .env.example for every supported variable.
  */
@@ -130,49 +133,12 @@ async function sendWithWeb3Forms({ name, email, subject, message }) {
   }
 }
 
-async function sendWithFormSubmit({ name, email, subject, message }, siteOrigin) {
-  const res = await fetch(`https://formsubmit.co/ajax/${TO_EMAIL}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      // FormSubmit refuses requests that do not look like they came from a page
-      // on a web server. This fetch runs on the server, so the browser's own
-      // Referer is not present and has to be passed through explicitly.
-      Referer: `${siteOrigin}/contact`,
-      Origin: siteOrigin,
-    },
-    body: JSON.stringify({
-      name,
-      email,
-      subject,
-      message,
-      _subject: subject,
-      _replyto: email,
-      _template: "table",
-      _captcha: "false",
-    }),
-  });
-
-  // FormSubmit answers 200 even when it is only asking for activation, so the
-  // body has to be checked as well — otherwise a first-time setup request would
-  // be reported to the visitor as a delivered message.
-  const body = await res.json().catch(() => ({}));
-  const succeeded = body.success === true || body.success === "true";
-
-  if (!res.ok || !succeeded) {
-    throw new Error(
-      `FormSubmit ${res.status}: ${body.message || "delivery not confirmed"}`,
-    );
-  }
-}
-
 export async function GET() {
   const via = process.env.RESEND_API_KEY
     ? "resend"
     : process.env.WEB3FORMS_ACCESS_KEY
       ? "web3forms"
-      : "formsubmit";
+      : "formsubmit-browser";
 
   return NextResponse.json({ ok: true, transport: via, to: TO_EMAIL });
 }
@@ -218,14 +184,6 @@ export async function POST(request) {
     return NextResponse.json({ ok: false, errors }, { status: 422 });
   }
 
-  // Work out which site this submission came from, for the relay's benefit.
-  const forwardedHost = request.headers.get("x-forwarded-host");
-  const forwardedProto = request.headers.get("x-forwarded-proto");
-  const host = forwardedHost || request.headers.get("host") || "localhost:3000";
-  const isLocal = /^(localhost|127\.|\[::1\])/.test(host);
-  const proto = forwardedProto || (isLocal ? "http" : "https");
-  const siteOrigin = request.headers.get("origin") || `${proto}://${host}`;
-
   try {
     if (process.env.RESEND_API_KEY) {
       const id = await sendWithResend(data);
@@ -247,8 +205,8 @@ export async function POST(request) {
       return NextResponse.json({ ok: true, via: "web3forms" });
     }
 
-    await sendWithFormSubmit(data, siteOrigin);
-    return NextResponse.json({ ok: true, via: "formsubmit" });
+    // No server-side transport: the browser relays to FormSubmit itself.
+    return NextResponse.json({ ok: false, relay: "formsubmit" });
   } catch (error) {
     console.error("[contact] delivery failed:", error);
 
