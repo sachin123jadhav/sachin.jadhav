@@ -25,6 +25,32 @@
     }
 }
 
+/* Hovering an entry lights up its dot (pointer devices only). */
+@media (hover: hover) {
+.timeline .timeline-item .date-label-left::before,
+.timeline .timeline-item .duration-right::before {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline .timeline-item .date-label-left::after,
+.timeline .timeline-item .duration-right::after {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timeline .timeline-item:hover .date-label-left::before,
+.timeline .timeline-item:hover .duration-right::before {
+    border-style: solid;
+    border-color: #7047c3;
+    box-shadow: 0 0 0 6px rgb(112 71 195 / 0.15);
+}
+
+.timeline .timeline-item:hover .date-label-left::after,
+.timeline .timeline-item:hover .duration-right::after {
+    transform: scale(1.4);
+    background-color: #07bdd5;
+}
+}
+
 @media (max-width: 575px) {
     .timeline {
         @apply ms-3 after:m-0 after:-ms-[7px];

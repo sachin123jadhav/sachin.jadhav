@@ -33,24 +33,23 @@ const highlights = [
 
 function Highlights() {
   return (
-    <section id="projects" className="relative py-[15px]">
+    <section id="highlights" aria-labelledby="highlights-title" className="section relative">
       <div className="container mx-auto">
+        <h2 id="highlights-title" className="sr-only">What I do</h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
           {highlights.map(({ title, desc, icon: Icon }, index) => (
             <div
               key={title}
-              className="group border border-gray-200 bg-[#f5f9ff] p-5 rounded-md
+              data-reveal
+              style={{ "--reveal-delay": `${index * 100}ms` }}
+              className="lift group h-full border border-gray-200 bg-[#f5f9ff] p-5 rounded-2xl
                          dark:border-slate-600 dark:bg-slate-700
-                         transition-all duration-300 hover:bg-blue-800 dark:hover:bg-blue-700
-                         wow animate__animated animate__fadeInUp"
-              data-wow-delay={`${index * 0.15}s`}
+                         hover:bg-blue-800 dark:hover:bg-blue-700"
             >
               <div
                 className="w-[50px] h-[50px] bg-blue-800 rounded-sm grid place-items-center
                            transition-all duration-300 group-hover:bg-white
-                           group-hover:rounded-[15px] group-hover:rotate-45
-                           wow animate__animated animate__zoomIn"
-                data-wow-delay={`${index * 0.15 + 0.2}s`}
+                           group-hover:rounded-[15px] group-hover:rotate-45"
               >
                 <Icon
                   size={28}
@@ -59,9 +58,9 @@ function Highlights() {
                 />
               </div>
 
-              <h2 className="text-xl font-medium py-3 transition-colors duration-300 group-hover:text-white">
+              <h3 className="text-xl font-medium py-3 transition-colors duration-300 group-hover:text-white">
                 {title}
-              </h2>
+              </h3>
               <p className="transition-colors duration-300 group-hover:text-gray-200">
                 {desc}
               </p>

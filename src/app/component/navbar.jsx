@@ -3,8 +3,9 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FiDownload } from "react-icons/fi";
+import { FiDownload, FiMenu, FiX } from "react-icons/fi";
 import AnimatedButton from "./button";
+import ThemeToggle from "./theme-toggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,8 +18,6 @@ export default function Navbar() {
 
     const navbar = navbarRef.current;
     if (!navbar) return;
-
-    navbar.classList.remove("animate__animated", "animate__fadeInDown");
 
     if (window.scrollY >= 50) {
       navbar.classList.add("is-sticky", "p-0");
@@ -83,18 +82,6 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Mobile Menu Button */}
-        <button
-          type="button"
-          className="collapse-btn relative z-[1001] inline-flex items-center ms-3 text-dark dark:text-white lg_992:hidden"
-          onClick={toggleMenu}
-          aria-label={isOpen ? "Close navigation" : "Open navigation"}
-          aria-expanded={isOpen}
-          aria-controls="primary-navigation"
-        >
-          <i className={`mdi ${isOpen ? "mdi-close" : "mdi-menu"} mdi-24px`} aria-hidden="true"></i>
-        </button>
-
         {/* Mobile backdrop */}
         {isOpen && (
           <button
@@ -148,6 +135,24 @@ export default function Navbar() {
             />
           </ul>
 
+        </div>
+
+        {/* Theme switch + mobile menu button. Comes after the links in the
+            DOM so keyboard order matches the desktop layout; the drawer is
+            position: fixed below 992px, so on mobile this sits right of the logo. */}
+        <div className="ms-3 flex items-center gap-3 lg_992:ms-4">
+          <ThemeToggle />
+
+          <button
+            type="button"
+            className="relative z-[1001] inline-flex items-center dark:text-white lg_992:hidden"
+            onClick={toggleMenu}
+            aria-label={isOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={isOpen}
+            aria-controls="primary-navigation"
+          >
+            {isOpen ? <FiX size={24} aria-hidden="true" /> : <FiMenu size={24} aria-hidden="true" />}
+          </button>
         </div>
       </div>
     </nav>

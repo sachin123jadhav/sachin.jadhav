@@ -1,6 +1,5 @@
-import Link from 'next/link';
 import React from 'react'
-import { FiArrowRight, FiCheckCircle, FiDownload } from "react-icons/fi";
+import { FiArrowRight, FiCheckCircle } from "react-icons/fi";
 import AnimatedButton from '../component/button';
 import { FaUserTie } from "react-icons/fa6";
 
@@ -14,13 +13,13 @@ function About() {
     "Frontend Development Support",
   ];
   return (
-    <section className="relative bg-slate-100 py-[15px] dark:bg-slate-800">
+    <section className="section section--band relative bg-slate-100 dark:bg-slate-800">
       <div className="container">
-        <div className="grid grid-cols-1 pb-8">
+        <div className="grid grid-cols-1">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-8 wow animate__animated animate__fadeInLeft">
+            <div className="lg:col-span-8" data-reveal="left">
               <p className="mb-2">
-                I am a Senior UI/UX Designer and Frontend Developer with over 15
+                I am a Senior UI/UX Designer and Frontend Developer with over 16
                 years of experience designing and developing user-friendly,
                 scalable web applications.
               </p>
@@ -37,9 +36,9 @@ function About() {
                 stakeholders to translate complex business requirements into
                 clear, usable interfaces and production-ready solutions.
               </p>
-              <h3 className="mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold text-purple-700 dark:text-purple-300 mb-2">
+              <h2 className="mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold text-purple-700 dark:text-purple-300 mb-2">
                 My Approach
-              </h3>
+              </h2>
 
               <p>
                 I believe in designing with purpose. Every decision—from color
@@ -49,13 +48,13 @@ function About() {
                 quickly, and deliver solutions that work in the real world.
               </p>
 
-              <h3 className="mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold  text-purple-700 dark:text-purple-300 mb-2">
+              <h2 className="mt-4 text-2xl sm:text-3xl lg:text-2xl font-semibold  text-purple-700 dark:text-purple-300 mb-2">
                 What I Do Best
-              </h3>
+              </h2>
               <ul className="space-y-3 mt-2">
                 {items.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <FiCheckCircle className="text-emerald-500 mt-1 text-lg shrink-0" />
+                  <li key={item} className="group flex items-start gap-3 transition-transform duration-300 hover:translate-x-1">
+                    <FiCheckCircle className="text-emerald-500 mt-1 text-lg shrink-0 transition-transform duration-500 group-hover:scale-125 group-hover:rotate-[360deg]" />
                     <span className="text-gray-800 dark:text-gray-200">
                       {item}
                     </span>
@@ -63,12 +62,12 @@ function About() {
                 ))}
               </ul>
 
-              <div className="mt-15">
+              <div className="mt-10 flex flex-wrap gap-4">
                 <AnimatedButton
                   href="/portfolio"
                   label="View My Work"
                   icon={<FiArrowRight className="inline ms-2 text-xl" />}
-                  className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"
+                  className="bg-gradient-to-br from-[#7047c3] to-[#7047c3]"
                 />
 
                 <AnimatedButton
@@ -78,8 +77,8 @@ function About() {
                 />
               </div>
             </div>
-            <div className="lg:col-span-4 wow animate__animated animate__fadeInRight relative">
-              <div className="space-y-6 lg:sticky lg:top-24">
+            <div className="lg:col-span-4 relative" data-reveal="right">
+              <div className="space-y-6 lg:sticky lg:top-28">
                 {/* Profile Card */}
                 <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-600 dark:bg-slate-700 md:p-8">
                   <div className="w-20 h-20 rounded-2xl bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 flex items-center justify-center mb-6">
@@ -102,7 +101,7 @@ function About() {
                         Experience
                       </span>
                       <span className="font-medium text-slate-900 dark:text-white">
-                        15+ Years
+                        16+ Years
                       </span>
                     </div>
 
@@ -111,7 +110,7 @@ function About() {
                         Location
                       </span>
                       <span className="font-medium text-slate-900 dark:text-white">
-                        India
+                        Pune, India
                       </span>
                     </div>
 
@@ -127,10 +126,10 @@ function About() {
                 </div>
 
                 {/* CTA Card */}
-                <div className="rounded-2xl border border-slate-300 bg-slate-200 p-5 dark:border-slate-600 dark:bg-slate-700 md:p-8">
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-4">
+                <div className="lift rounded-2xl border border-slate-300 bg-slate-200 p-5 dark:border-slate-600 dark:bg-slate-700 md:p-8">
+                  <h3 className="font-semibold text-slate-900 dark:text-white mb-4">
                     Let&apos;s Connect
-                  </h4>
+                  </h3>
 
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
                     Interested in working together? I&apos;d love to hear about
@@ -142,7 +141,7 @@ function About() {
                       href="/contact"
                       label="Get in Touch"
                       icon={<FiArrowRight className="inline ms-2 text-xl" />}
-                      className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"
+                      className="bg-gradient-to-br from-[#7047c3] to-[#7047c3]"
                     />
                   </div>
                 </div>

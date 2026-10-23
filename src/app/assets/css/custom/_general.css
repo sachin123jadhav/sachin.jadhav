@@ -10,7 +10,52 @@ body {
 }
 
 .container {
-    @apply w-full mx-auto px-4;
+    @apply relative w-full mx-auto px-4;
+}
+
+/*
+ * Section rhythm — the one vertical spacing every page section uses:
+ * 48px on phones, 64px from the md breakpoint (720px) up.
+ *
+ * Two plain sections in a row share a background, so the second drops its top
+ * padding and the gap between them stays one step, not two. A section with its
+ * own background band (`section--band`) always keeps its full padding, and so
+ * does the section after it.
+ */
+.section {
+    padding-block: 3rem;
+    /* Scroll-reveal slides content in from the sides; clip (unlike hidden)
+       stops that widening the page without breaking position: sticky. */
+    overflow-x: clip;
+}
+
+@media (min-width: 720px) {
+    .section {
+        padding-block: 4rem;
+    }
+}
+
+.section:not(.section--band) + .section:not(.section--band) {
+    padding-top: 0;
+}
+
+/* First band on a page (page header): clears the fixed navbar, tighter bottom. */
+.section--page-top {
+    padding-top: 6.5rem;
+    padding-bottom: 2.5rem;
+}
+
+/* Home hero: clears the navbar; the section after it supplies the gap. */
+.section--hero {
+    padding-top: 5rem;
+    padding-bottom: 0;
+}
+
+@media (min-width: 720px) {
+    .section--page-top {
+        padding-top: 8rem;
+        padding-bottom: 3rem;
+    }
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -21,85 +66,12 @@ p {
     @apply leading-relaxed ;
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    @apply font-rubik;
-}
 a{
     @apply cursor-pointer;
 }
 
 
-
-:root {
-  --pinkC-50: #ffe6f0;
-  --pinkC-100: #ffccd9;
-  --pinkC-200: #ff99b3;
-  --pinkC-300: #ff6699;
-  --pinkC-400: #ff3385;
-  --pinkC-500: #ff4b7e; /* Custom Pink */
-  --pinkC-600: #e64373;
-  --pinkC-700: #b7365f;
-  --pinkC-800: #9b2d4d;
-  --pinkC-900: #6e1b33;
-
-  --redC-50: #ffebef;
-  --redC-100: #ffccd0;
-  --redC-200: #ff99a2;
-  --redC-300: #ff6675;
-  --redC-400: #ff3347;
-  --redC-500: #ff4b7e; /* Custom Red */
-  --redC-600: #e04371;
-  --redC-700: #b7365d;
-  --redC-800: #9b2d4b;
-  --redC-900: #6e1b32;
-
-  --yellow-50: #fff9e6;
-  --yellow-100: #ffeb99;
-  --yellow-200: #ffdb4d;
-  --yellow-300: #ffcc00;
-  --yellow-400: #e6b800;
-  --yellow-500: #fcc760; /* Custom Yellow */
-  --yellow-600: #e6b44d;
-  --yellow-700: #cc9f3a;
-  --yellow-800: #b38a28;
-  --yellow-900: #8d6a1c;
-
-  --skyblue-50: #e6f7ff;
-  --skyblue-100: #b3e0ff;
-  --skyblue-200: #80c9ff;
-  --skyblue-300: #4db2ff;
-  --skyblue-400: #1a9bff;
-  --skyblue-500: #00c8d8; /* Custom SkyBlue */
-  --skyblue-600: #00a3c1;
-  --skyblue-700: #008da3;
-  --skyblue-800: #007380;
-  --skyblue-900: #004d59;
-
-  --purple-50: #f3e6ff;
-  --purple-100: #d1a6ff;
-  --purple-200: #b466ff;
-  --purple-300: #9b29d7;
-  --purple-400: #8a00bf;
-  --purple-500: #7709d7; /* Custom Purple */
-  --purple-600: #6600c1;
-  --purple-700: #5500a3;
-  --purple-800: #440085;
-  --purple-900: #33006a;
-
-
-  --orangeC-50: #fff0e6;
-          --orangeC-100: #ffcc99;
-          --orangeC-200: #ff9933;
-          --orangeC-300: #ff751f;
-          --orangeC-400: #ff5a14;
-          --orangeC-500: #ff7551; 
-          --orangeC-600: #e66a4a;
-          --orangeC-700: #cc5e40;
-          --orangeC-800: #b34c36;
-          --orangeC-900: #8d3925;
-}
-
-/* CREATIVE LOADER - add to globals.css */
+/* Creative loader */
 
 /* glass helper */
 .glass {
@@ -184,10 +156,3 @@ a{
     }
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}

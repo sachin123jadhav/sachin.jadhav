@@ -12,66 +12,18 @@
           }
           .active {
               .nav-link {
-                  @apply text-purple-800 dark:text-white;
+                  @apply text-purple-800 dark:text-purple-300;
               }
           }
       }
   }
   .navbar-brand {
       @apply me-12 p-0;
-      .l-dark,
-      .logo-dark-mode {
-          @apply hidden;
-      }
-      .l-light,
-      .logo-light-mode {
-          @apply inline-block;
-      }
-      @media (max-width: 991.98px) {
-          .l-dark {
-              @apply !inline-block;
-          }
-          .l-light {
-              @apply !hidden;
-          }
-      }
-  }
-  .menu-social {
-      .login-btn-primary {
-          @apply hidden;
-      }
-      .login-btn-light {
-          @apply inline-block;
-      }
-
-      @media (max-width: 991.98px) {
-          .login-btn-primary {
-              @apply !inline-block;
-          }
-          .login-btn-light {
-              @apply !hidden;
-          }
-      }
   }
   &.is-sticky {
       @apply bg-white dark:bg-slate-800 shadow-sm dark:shadow-slate-800;
       .navbar-brand {
         @apply max-w-[180px];
-          .l-dark {
-              @apply inline-block;
-          }
-          .l-light {
-              @apply hidden;
-          }
-      }
-
-      .menu-social {
-          .login-btn-primary {
-              @apply inline-block;
-          }
-          .login-btn-light {
-              @apply hidden;
-          }
       }
   }
 }
@@ -86,25 +38,9 @@
                 .nav-link {
                     @apply border-0 hover:bg-transparent;
                 }
-
-                &.nav-light {
-                    .nav-link {
-                        @apply block p-0 text-black hover:text-black dark:text-white dark:hover:text-white;
-                    }
-                    .active {
-                        .nav-link {
-                            @apply text-black dark:text-white dark:hover:text-white;
-                        }
-                    }
-                }
             }
         }
 
-        .nav-icons {
-            .collapse-btn {
-                @apply hidden;
-            }
-        }
         &.is-sticky {
             @apply py-1;
             .navbar-nav {
@@ -113,18 +49,7 @@
                 }
                 .active {
                     .nav-link {
-                        @apply text-purple-800 font-semibold;
-                    }
-                }
-
-                &.nav-light {
-                    .nav-link {
-                        @apply text-slate-900 hover:text-purple-800 dark:text-white dark:hover:text-white;
-                    }
-                    .active {
-                        .nav-link {
-                            @apply text-purple-800 dark:text-white;
-                        }
+                        @apply text-purple-800 font-semibold dark:text-purple-300;
                     }
                 }
             }
@@ -160,15 +85,10 @@
               }
               .active {
                   .nav-link {
-                      @apply text-purple-800;
+                      @apply text-purple-800 dark:text-purple-300;
                   }
-              }
-              .menu-social {
-                  @apply !mb-5;
               }
           }
       }
   }
 }
-
-

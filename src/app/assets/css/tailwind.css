@@ -100,19 +100,8 @@
 }
 
 
-/* Components */
-@import "./components/_buttons.css";
-
 /* Custom */
 @import "./custom/_general.css";
-@import "./custom/pages/_helper.css";
-@import "./custom/pages/_contact.css";
 @import "./custom/pages/_timeline.css";
-@import "./custom/plugins/_testi.css";
 @import "./custom/structure/_topnav.css";
-@import "./custom/animate.min.css";
-
-
-
-          
-      
+@import "./custom/_motion.css";

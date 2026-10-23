@@ -1,9 +1,7 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Badge from "../component/badge";
 import AnimatedButton from "../component/button";
-import { FiX, FiArrowRight } from "react-icons/fi";
+import { FiDownload, FiExternalLink } from "react-icons/fi";
 
 import Image from "next/image";
 import hrms from "./../../../public/images/HRMS.jpg";
@@ -11,512 +9,340 @@ import barva from "./../../../public/images/Barva.jpg";
 import dms from "./../../../public/images/websites/DMS.jpg";
 import extentiaPreview from "./../../../public/images/websites/extentia-design-preview.svg";
 
-import HRMSCaseStudy from "./HRMSCaseStudy";
-import DMSCaseStudy from "./DMSCaseStudy";
+/**
+ * Downloadable portfolio PDF with the full UI/UX case studies. Page numbers in
+ * the notes below refer to this file — update them if the PDF changes.
+ */
+const PORTFOLIO_PDF = "/images/Sachin_Jadhav_Portfolio.pdf";
 
-const caseStudies = {
-  hrms: { title: "Workfusion HRMS", Component: HRMSCaseStudy },
-  dms: { title: "Document Management System", Component: DMSCaseStudy },
-};
+/**
+ * Projects in display order. Image sides alternate down the page: the first
+ * project has its image on the left, the second on the right, and so on.
+ *
+ * cta.kind:
+ *   "portfolio" - design work covered in the PDF; downloads PORTFOLIO_PDF
+ *   "website"   - live site, opens `href` in a new tab
+ */
+const projects = [
+  {
+    id: "extentia",
+    category: "Corporate Website",
+    title: "Extentia Web UI Design",
+    role: "UI/UX Designer / Web Designer",
+    meta: "Corporate website redesign · March–September 2022",
+    image: extentiaPreview,
+    imageAlt:
+      "Illustrative preview of Extentia's responsive website and services page designs",
+    badges: ["Figma", "UI/UX Design", "Responsive Web Design", "Corporate Website"],
+    overview: [
+      "A corporate web design project focused on a polished, modern, and consistent digital experience for Extentia. The work improves navigation, typography hierarchy, and content clarity across the main website and its service pages, with layouts prepared for desktop and mobile screens.",
+    ],
+    cta: { kind: "portfolio" },
+    note: "Preview illustration based on the project layouts. View Portfolio downloads the full designs as a PDF (7.6 MB) — pages 5–7.",
+    details: [
+      {
+        heading: "UI/UX Design",
+        items: [
+          "Organized corporate content into clear navigation and page hierarchies.",
+          "Designed responsive desktop and mobile layouts for key pages and services.",
+          "Established a legible Roboto typography scale and consistent visual hierarchy.",
+          "Defined brand and supporting color palettes for a cohesive interface.",
+          "Created reusable grid, card, and form patterns with clear interactive states.",
+        ],
+      },
+      {
+        heading: "Key Features",
+        features: [
+          ["Corporate navigation", "Direct paths to services, technology, industries, media, careers, and company information."],
+          ["Service landing pages", "Distinct page headers, supporting illustrations, and structured content."],
+          ["Responsive layouts", "Website content adapted for desktop and mobile browsing."],
+          ["Reusable content cards", "Consistent presentation for illustrations, titles, summaries, and links."],
+          ["Accessible interface controls", "Clear calls to action, form controls, and interactive states."],
+        ],
+      },
+    ],
+  },
+  {
+    id: "hrms",
+    category: "Enterprise HRMS · Mobile App",
+    title: "WorkFusion HRMS",
+    role: "UI/UX Designer / Product Designer",
+    meta: "Employee self-service app · February–June 2024",
+    image: hrms,
+    imageAlt: "WorkFusion HRMS login and dashboard screens",
+    badges: ["Figma", "Product UX", "Information Architecture", "Mobile UI", "Design System"],
+    overview: [
+      "A mobile-first employee self-service app for WorkFusion HRMS — attendance check-in, leave and approvals, company information and requests — with separate views for employees and for approvers or HR.",
+      "My contribution: information architecture, mobile UI design for the modules shown, and the color and sizing tokens behind them.",
+    ],
+    cta: { kind: "portfolio" },
+    note: "The PDF (7.6 MB) covers the flows, role-based views, design system and UI screens — pages 8–16.",
+    details: [
+      {
+        heading: "UX & Information Architecture",
+        items: [
+          "Grouped ten modules — attendance, leave, holidays, events, staff, visitors and more — into one Services grid with module sub-menus.",
+          "A persistent header and bottom bar (Services · Home · Add · Approvals · Chat), so people always know where they are.",
+          "Placed the daily check-in in one card at the top of Home, offering only the next action: Check-In, then Check-Out.",
+          "Designed key modules twice: for the employee raising a request and for the approver or HR acting on it.",
+        ],
+      },
+      {
+        heading: "UI & Design System",
+        items: [
+          "Mobile screens, forms, list cards and status chips.",
+          "Color tokens: 11 ramps from 50 to 950, plus primary, error, warning and success sets.",
+          "Text and surface tokens and reusable components — inputs, avatars, checkboxes, radios, badges, pagination.",
+          "One status-chip style and card layout reused across lists for consistency.",
+          "Empty, success and pop-up states laid out as screen sequences.",
+        ],
+      },
+      {
+        heading: "Key Features",
+        features: [
+          ["Attendance Check-In", "Assigned shift, running timer and one clear action."],
+          ["Leave & Approvals", "Balances for employees; approve or decline for approvers."],
+          ["Services Grid", "Ten modules in one Services grid, one tap from Home."],
+          ["Role-Based Views", "Employee and approver / HR versions of key modules."],
+          ["Self-Service", "Profile, requests, suggestions and appraisal details."],
+        ],
+      },
+    ],
+  },
+  {
+    id: "barva",
+    category: "E-commerce",
+    title: "Barva Skin Therapie",
+    role: "UI/UX Designer & Frontend Developer",
+    meta: "Shopify E-commerce Website",
+    image: barva,
+    imageAlt: "Barva Skin Therapie Shopify project",
+    badges: ["Figma", "Photoshop", "Shopify", "Liquid", "HTML/CSS", "JavaScript"],
+    overview: [
+      "Barva Skin Therapie is a Shopify-based e-commerce platform designed to showcase premium products through a clean and modern online shopping experience.",
+      "The project focused on building an engaging storefront while improving UI elements during development to enhance product visibility, layout balance, and customer interaction.",
+      "My role: designed the homepage UI mockup and enhanced the interface during development to improve usability, visual hierarchy, and product presentation.",
+    ],
+    cta: { kind: "website", href: "https://barvaskintherapie.com/" },
+    details: [
+      {
+        heading: "UI/UX Design",
+        items: [
+          "Created homepage UI mockup using Figma.",
+          "Improved typography, spacing and layout balance.",
+          "Enhanced product card UI.",
+          "Optimized CTA placement and user flow.",
+          "Maintained brand design consistency.",
+        ],
+      },
+      {
+        heading: "Frontend Development",
+        items: [
+          "Developed Shopify storefront using Liquid.",
+          "Implemented responsive layouts.",
+          "Improved UI components during development.",
+          "Optimized product collections and layouts.",
+        ],
+      },
+      {
+        heading: "Key Features",
+        features: [
+          ["Modern Homepage", "Brand-focused hero section."],
+          ["Product Collections", "Organized browsing."],
+          ["Product Pages", "Clean product presentation."],
+          ["Responsive Design", "Mobile friendly layout."],
+          ["Optimized UI", "Improved product display."],
+        ],
+      },
+    ],
+  },
+  {
+    id: "dms",
+    category: "Enterprise Application",
+    title: "Document Management System",
+    role: "UI/UX Designer",
+    meta: "Desktop web · Document lifecycle · January–August 2025",
+    image: dms,
+    imageAlt: "Document Management System dashboard and file manager screens",
+    badges: ["Figma", "Enterprise UX", "Information Architecture", "AI Workspace", "Dashboards"],
+    overview: [
+      "A structured document experience for managing files, access permissions, workflows, and document history — bringing files, users, branches, permissions, and document actions into one connected workspace.",
+      "The design work makes common actions easier to find while keeping access and document history understandable. The latest designs extend this into an AI-assisted workspace: document intelligence in the file manager, intelligent forms, a conversational copilot and OCR.",
+    ],
+    cta: { kind: "portfolio" },
+    note: "The PDF (7.6 MB) covers the information architecture, AI workspace, forms and key UX challenges — pages 17–24.",
+    details: [
+      {
+        heading: "UX & Information Architecture",
+        items: [
+          "Structured the relationship between users, branches, files, document properties, and configuration.",
+          "Mapped document actions to permissions, so people only see the actions available to them.",
+          "Gave lifecycle actions — update, move, archive, bin — clear labels and predictable placement.",
+          "Accounted for version history, audit logs, workflow assignment, reminders, email, and signatures.",
+        ],
+      },
+      {
+        heading: "UI Design",
+        items: [
+          "Dashboard with an AI daily brief, alerts, file activity, recent files and reminders.",
+          "File manager with one-click AI actions and an AI-tagged document list.",
+          "Review queue with due date, priority, AI risk score and in-row approval.",
+          "Intelligent form builder with an AI assistant and form analytics.",
+          "Copilot and OCR scanner entry points.",
+        ],
+      },
+      {
+        heading: "Key Features",
+        features: [
+          ["AI Document Workspace", "Summaries, clause highlights, extracted dates and risks."],
+          ["Permission-Aware Actions", "View, download, update, share, lock, archive, delete."],
+          ["Sharing & Retention", "Secure links with expiry, archives and compliance."],
+          ["Intelligent Forms", "Build, publish and review forms with AI help."],
+          ["Copilot & OCR", "Plain-language search and scan-to-data."],
+        ],
+      },
+    ],
+  },
+];
 
-function CaseStudyModal({ caseKey, onClose }) {
-  const study = caseStudies[caseKey];
-
-  useEffect(() => {
-    if (!study) return undefined;
-
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") onClose();
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
-    };
-  }, [study, onClose]);
-
-  if (!study) return null;
-
-  const { title, Component } = study;
+function ProjectAction({ cta }) {
+  if (cta.kind === "website") {
+    return (
+      <AnimatedButton
+        href={cta.href}
+        target="_blank"
+        label="Visit Website"
+        icon={<FiExternalLink className="inline ms-2 text-xl" />}
+      />
+    );
+  }
 
   return (
-    <div
-      className="fixed inset-0 z-[999] bg-black/70 flex items-start justify-center p-4 overflow-y-auto"
-      onClick={onClose}
-      role="dialog"
-      aria-modal="true"
-      aria-label={`${title} case study`}
-    >
-      <div
-        className="relative bg-white dark:bg-slate-700 rounded-2xl w-full max-w-4xl my-8 shadow-xl"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <div className="flex items-center justify-between gap-4 p-6 border-b border-slate-200 dark:border-slate-600 sticky top-0 z-10 bg-white dark:bg-slate-700 rounded-t-2xl">
-          <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white">
-            {title} — Case Study
-          </h2>
+    <AnimatedButton
+      href={PORTFOLIO_PDF}
+      download="Sachin_Jadhav_Portfolio.pdf"
+      label="View Portfolio"
+      icon={<FiDownload className="inline ms-2 text-xl" />}
+    />
+  );
+}
 
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close case study"
-            className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors cursor-pointer"
-          >
-            <FiX size={20} />
-          </button>
+function ProjectCard({ project, index }) {
+  // Even positions (1st, 3rd, ...) keep the image left; odd ones flip it right.
+  const imageRight = index % 2 === 1;
+  const number = String(index + 1).padStart(2, "0");
+  const titleId = `${project.id}-title`;
+
+  return (
+    <article id={project.id} aria-labelledby={titleId} className="scroll-mt-28">
+      <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
+        {/* Image */}
+        <div
+          className={`lg:col-span-6 ${imageRight ? "lg:order-2" : ""}`}
+          data-reveal={imageRight ? "right" : "left"}
+        >
+          <div className="lift group rounded-2xl border border-slate-200 bg-white p-2 shadow-sm dark:border-slate-600 dark:bg-slate-700">
+            <div className="aspect-video overflow-hidden rounded-xl">
+              <Image
+                src={project.image}
+                alt={project.imageAlt}
+                sizes="(min-width: 960px) 50vw, 100vw"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                priority={index === 0}
+              />
+            </div>
+          </div>
         </div>
 
-        <Component />
+        {/* Content */}
+        <div
+          className={`lg:col-span-6 ${imageRight ? "lg:order-1" : ""}`}
+          data-reveal={imageRight ? "left" : "right"}
+          style={{ "--reveal-delay": "120ms" }}
+        >
+          <p className="flex items-center gap-3 text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <span className="text-purple-700 dark:text-purple-300">{number}</span>
+            <span className="h-px w-8 bg-slate-300 dark:bg-slate-500" aria-hidden="true" />
+            {project.category}
+          </p>
+
+          <h2
+            id={titleId}
+            className="mt-3 text-2xl font-semibold text-purple-700 dark:text-purple-300 md:text-3xl"
+          >
+            {project.title}
+          </h2>
+          <p className="mt-1 font-medium text-[#07bdd5]">{project.role}</p>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{project.meta}</p>
+
+          <div className="mt-5 flex flex-wrap gap-y-2">
+            {project.badges.map((label) => (
+              <Badge
+                key={label}
+                label={label}
+                textColor="text-purple-700 dark:text-purple-300"
+              />
+            ))}
+          </div>
+
+          <div className="mt-5 space-y-3 text-gray-700 dark:text-gray-300">
+            {project.overview.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <ProjectAction cta={project.cta} />
+            {project.note && (
+              <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
+                {project.note}
+              </p>
+            )}
+          </div>
+        </div>
       </div>
-    </div>
+
+      {/* Details */}
+      <div
+        data-reveal
+        className={`mt-10 grid grid-cols-1 gap-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-600 dark:bg-slate-700 md:grid-cols-2 lg:p-8 ${
+          project.details.length > 2 ? "lg:grid-cols-3" : ""
+        }`}
+      >
+        {project.details.map((column) => (
+          <div key={column.heading}>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-purple-700 dark:text-purple-300">
+              {column.heading}
+            </h3>
+
+            <ul className="bullet-list mt-4 space-y-2.5 text-gray-700 dark:text-gray-300">
+              {column.items?.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+
+              {column.features?.map(([name, desc]) => (
+                <li key={name}>
+                  <strong className="font-semibold text-slate-900 dark:text-white">{name}</strong>
+                  {" — "}
+                  {desc}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </article>
   );
 }
 
 function PortfolioSection() {
-  const [activeCaseStudy, setActiveCaseStudy] = useState(null);
-
-  const closeCaseStudy = () => setActiveCaseStudy(null);
-
   return (
-    <section className="bg-[#faf9fb] py-[15px] dark:bg-slate-800">
-      <div className="container mx-auto">
-        {/* -------------------- EXTENTIA WEBSITE UI DESIGN -------------------- */}
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
-          <div className="order-2 lg:order-1 lg:col-span-6">
-            <a
-              href="https://www.figma.com/design/jX4ZA3XB0I7tRJc1tkoHVh/Extentia-Web-UI-Design?node-id=3437-35530"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open Extentia website UI designs in Figma"
-              className="block aspect-video overflow-hidden rounded-2xl border dark:border-slate-600 group"
-            >
-              <Image
-                src={extentiaPreview}
-                alt="Illustrative preview of Extentia's responsive website and services page designs"
-                className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-                priority
-              />
-            </a>
-          </div>
-
-          <div className="order-1 lg:order-2 lg:col-span-6">
-            <div className="flex flex-wrap gap-2">
-              <Badge label="Figma" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="UI/UX Design" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="Responsive Web Design" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="Corporate Website" textColor="text-purple-700 dark:text-purple-300" />
-            </div>
-
-            <h2 className="text-2xl text-purple-700 dark:text-purple-300 mt-6 font-semibold">
-              Extentia Web UI Design
-            </h2>
-            <p className="text-[#07bdd5]">UI/UX Designer</p>
-            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
-              Corporate website redesign · March–September 2022
-            </p>
-
-            <p className="text-purple-700 dark:text-purple-300 mt-6 font-semibold">
-              Project Overview
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 mt-2">
-              A corporate web design project focused on a polished, modern, and
-              consistent digital experience for Extentia. The work improves
-              navigation, typography hierarchy, and content clarity across the
-              main website and its service pages, with layouts prepared for
-              desktop and mobile screens.
-            </p>
-
-            <a
-              href="https://www.figma.com/design/jX4ZA3XB0I7tRJc1tkoHVh/Extentia-Web-UI-Design?node-id=3437-35530"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center rounded-md bg-purple-700 px-5 py-3 font-medium text-white transition hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-            >
-              View designs in Figma <FiArrowRight className="ms-2 text-xl" />
-            </a>
-            <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-              Preview illustration based on the project layouts; open Figma for the original designs.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-[30px] grid grid-cols-1 gap-10 md:grid-cols-2">
-          <div>
-            <p className="text-purple-700 dark:text-purple-300 font-semibold">UI/UX Design</p>
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
-              <li>Organized corporate content into clear navigation and page hierarchies.</li>
-              <li>Designed responsive desktop and mobile layouts for key pages and services.</li>
-              <li>Established a legible Roboto typography scale and consistent visual hierarchy.</li>
-              <li>Defined brand and supporting color palettes for a cohesive interface.</li>
-              <li>Created reusable grid, card, and form patterns with clear interactive states.</li>
-            </ul>
-          </div>
-          <div>
-            <p className="text-purple-700 dark:text-purple-300 font-semibold">Key Features</p>
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
-              <li><strong>Corporate navigation</strong> — Direct paths to services, technology, industries, media, careers, and company information.</li>
-              <li><strong>Service landing pages</strong> — Distinct page headers, supporting illustrations, and structured content.</li>
-              <li><strong>Responsive layouts</strong> — Website content adapted for desktop and mobile browsing.</li>
-              <li><strong>Reusable content cards</strong> — Consistent presentation for illustrations, titles, summaries, and links.</li>
-              <li><strong>Accessible interface controls</strong> — Clear calls to action, form controls, and interactive states.</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* -------------------- HRMS PROJECT -------------------- */}
-
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
-          {/* Image */}
-          <div className="order-2 lg:order-1 lg:col-span-6">
-            <div className="aspect-video rounded-2xl border dark:border-slate-600 overflow-hidden group">
-              <Image
-                src={hrms}
-                alt="Workfusion HRMS project"
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-              />
-            </div>
-          </div>
-
-          {/* Content */}
-          <div className="order-1 lg:order-2 lg:col-span-6">
-            <div className="flex flex-wrap gap-2">
-              <Badge label="Figma" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="Photoshop" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="UI/UX" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="React" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="Tailwind CSS" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="JavaScript" textColor="text-purple-700 dark:text-purple-300" />
-            </div>
-
-            <h2 className="text-2xl text-purple-700 dark:text-purple-300 mt-6 font-semibold">
-              Workfusion HRMS
-            </h2>
-
-            <p className="text-[#07bdd5]">
-              UI Team Lead, UI/UX Designer &amp; Frontend Developer
-            </p>
-
-            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
-              Enterprise HR Management System (HRMS)
-            </p>
-
-            <p className="text-purple-700 dark:text-purple-300 mt-6 font-semibold">
-              Project Overview
-            </p>
-
-            <p className="text-gray-700 dark:text-gray-300 mt-2">
-              Workfusion HRMS is a comprehensive Human Resource Management
-              System designed to streamline and automate HR operations including
-              employee records, attendance, leave requests, payroll insights and
-              internal communication.
-            </p>
-
-            <p className="text-gray-700 dark:text-gray-300 mt-3">
-              The goal was to create a scalable and intuitive HR platform that
-              simplifies complex HR workflows for both employees and
-              administrators.
-            </p>
-
-            <AnimatedButton
-              label="View Case Study"
-              onClick={() => setActiveCaseStudy("hrms")}
-              icon={<FiArrowRight className="inline ms-2 text-xl" />}
-              className="mt-6"
-            />
-          </div>
-        </div>
-
-        {/* -------------------- DETAILS SECTION -------------------- */}
-
-        <div className="grid grid-cols-1 gap-10 mt-[30px] md:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <p className="text-purple-700 dark:text-purple-300 font-semibold">UI/UX Design</p>
-
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
-              <li>Led the UI/UX design team and ensured design consistency.</li>
-              <li>Designed complete UI flows using Figma.</li>
-              <li>Created wireframes and reusable design systems.</li>
-              <li>Designed visual assets using Photoshop.</li>
-              <li>Simplified complex HR workflows.</li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-purple-700 dark:text-purple-300 font-semibold">
-              Frontend Development
-            </p>
-
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
-              <li>Converted Figma designs into responsive UI.</li>
-              <li>Built reusable React components.</li>
-              <li>Ensured cross-browser compatibility.</li>
-              <li>Optimized performance and layout structure.</li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-purple-700 dark:text-purple-300 font-semibold">Key Features</p>
-
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
-              <li>
-                <strong>Employee Dashboard</strong> – Overview of employees.
-              </li>
-              <li>
-                <strong>Attendance &amp; Leave</strong> – Leave management.
-              </li>
-              <li>
-                <strong>Profile Management</strong> – Employee data management.
-              </li>
-              <li>
-                <strong>Role-Based Access</strong> – HR admin &amp; employee
-                roles.
-              </li>
-              <li>
-                <strong>HR Analytics</strong> – Workforce insights.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* -------------------- SECOND PROJECT : Barva Skin Therapie -------------------- */}
-
-        <div className="mt-[30px] grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
-          {/* Content */}
-          <div className="order-1 lg:col-span-6">
-            <div className="flex flex-wrap gap-2">
-              <Badge label="Figma" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="Photoshop" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="Shopify" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="Liquid" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="HTML/CSS" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="JavaScript" textColor="text-purple-700 dark:text-purple-300" />
-            </div>
-
-            <h2 className="text-2xl text-purple-700 dark:text-purple-300 mt-6 font-semibold">
-              Barva Skin Therapie
-            </h2>
-
-            <p className="text-[#07bdd5]">
-              UI/UX Designer &amp; Frontend Developer
-            </p>
-
-            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
-              Shopify E-commerce Website
-            </p>
-
-            <p className="text-purple-700 dark:text-purple-300 mt-6 font-semibold">
-              Project Overview
-            </p>
-
-            <p className="text-gray-700 dark:text-gray-300 mt-2">
-              Barva Skin Therapie is a Shopify-based e-commerce platform
-              designed to showcase premium products through a clean and modern
-              online shopping experience.
-            </p>
-
-            <p className="text-gray-700 dark:text-gray-300 mt-3">
-              The project focused on building an engaging storefront while
-              improving UI elements during development to enhance product
-              visibility, layout balance, and customer interaction.
-            </p>
-
-            <p className="text-purple-700 dark:text-purple-300 mt-6 font-semibold">
-              My Role &amp; Responsibilities
-            </p>
-
-            <p className="text-gray-700 dark:text-gray-300 mt-2">
-              Designed the homepage UI mockup and enhanced the interface during
-              development to improve usability, visual hierarchy, and product
-              presentation.
-            </p>
-          </div>
-
-          {/* Image */}
-          <div className="order-2 lg:col-span-6">
-            <div className="aspect-video rounded-2xl border dark:border-slate-600 overflow-hidden group">
-              <Image
-                src={barva}
-                alt="Barva Skin Therapie Shopify project"
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Barva Skin Therapie DETAILS */}
-
-        <div className="grid grid-cols-1 gap-10 mt-[30px] md:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <p className="text-purple-700 dark:text-purple-300 font-semibold">UI/UX Design</p>
-
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
-              <li>Created homepage UI mockup using Figma.</li>
-              <li>Improved typography, spacing and layout balance.</li>
-              <li>Enhanced product card UI.</li>
-              <li>Optimized CTA placement and user flow.</li>
-              <li>Maintained brand design consistency.</li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-purple-700 dark:text-purple-300 font-semibold">
-              Frontend Development
-            </p>
-
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
-              <li>Developed Shopify storefront using Liquid.</li>
-              <li>Implemented responsive layouts.</li>
-              <li>Improved UI components during development.</li>
-              <li>Optimized product collections and layouts.</li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-purple-700 dark:text-purple-300 font-semibold">Key Features</p>
-
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
-              <li>
-                <strong>Modern Homepage</strong> – Brand-focused hero section.
-              </li>
-              <li>
-                <strong>Product Collections</strong> – Organized browsing.
-              </li>
-              <li>
-                <strong>Product Pages</strong> – Clean product presentation.
-              </li>
-              <li>
-                <strong>Responsive Design</strong> – Mobile friendly layout.
-              </li>
-              <li>
-                <strong>Optimized UI</strong> – Improved product display.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* -------------------- THIRD PROJECT : Document Management System -------------------- */}
-
-        <div className="mt-[30px] grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
-          {/* Image */}
-          <div className="order-2 lg:order-1 lg:col-span-6">
-            <div className="aspect-video rounded-2xl border dark:border-slate-600 overflow-hidden group">
-              <Image
-                src={dms}
-                alt="B2B SaaS Document Management System"
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-              />
-            </div>
-          </div>
-
-          {/* Content */}
-          <div className="order-1 lg:order-2 lg:col-span-6">
-            <div className="flex flex-wrap gap-2">
-              <Badge label="Figma" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="React" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="UI/UX" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="Design Systems" textColor="text-purple-700 dark:text-purple-300" />
-              <Badge label="Dashboards" textColor="text-purple-700 dark:text-purple-300" />
-            </div>
-
-            <h2 className="text-2xl text-purple-700 dark:text-purple-300 mt-6 font-semibold">
-              Document Management System
-            </h2>
-
-            <p className="text-[#07bdd5]">
-              UI/UX &amp; Frontend Lead
-            </p>
-
-            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
-              B2B SaaS Platform — Metamind Systems
-            </p>
-
-            <p className="text-purple-700 dark:text-purple-300 mt-6 font-semibold">
-              Project Overview
-            </p>
-
-            <p className="text-gray-700 dark:text-gray-300 mt-2">
-              A B2B SaaS Document Management System for centralising document
-              storage, versioning, approval routing, and audit trails — built
-              around complex, role-dependent workflows.
-            </p>
-
-            <p className="text-gray-700 dark:text-gray-300 mt-3">
-              The goal was to make heavy, compliance-driven document workflows
-              understandable for administrators, contributors, approvers, and
-              auditors alike.
-            </p>
-
-            <AnimatedButton
-              label="View Case Study"
-              onClick={() => setActiveCaseStudy("dms")}
-              icon={<FiArrowRight className="inline ms-2 text-xl" />}
-              className="mt-6"
-            />
-          </div>
-        </div>
-
-        {/* DMS DETAILS */}
-
-        <div className="grid grid-cols-1 gap-10 mt-[30px] md:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <p className="text-purple-700 dark:text-purple-300 font-semibold">UI/UX Design</p>
-
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
-              <li>Led end-to-end UI/UX design for the platform.</li>
-              <li>Mapped workflows and role-based access in Figma.</li>
-              <li>Created 50+ wireframes and interactive prototypes.</li>
-              <li>Designed enterprise dashboards and data-heavy interfaces.</li>
-              <li>Built and maintained a design system across 20+ modules.</li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-purple-700 dark:text-purple-300 font-semibold">
-              Frontend Development
-            </p>
-
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
-              <li>Built reusable React components across modules.</li>
-              <li>Optimized UI architecture and frontend performance.</li>
-              <li>Implemented role-based UI rendering.</li>
-              <li>Reached 90+ Lighthouse scores.</li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-purple-700 dark:text-purple-300 font-semibold">Key Features</p>
-
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
-              <li>
-                <strong>Document Repository</strong> – Centralised storage.
-              </li>
-              <li>
-                <strong>Version History</strong> – Full revision tracking.
-              </li>
-              <li>
-                <strong>Approval Workflows</strong> – Configurable routing.
-              </li>
-              <li>
-                <strong>Role-Based Access</strong> – Admin, contributor,
-                approver, auditor.
-              </li>
-              <li>
-                <strong>Audit Trails</strong> – Compliance-ready logging.
-              </li>
-            </ul>
-          </div>
-        </div>
+    <section className="section section--band bg-[#faf9fb] dark:bg-slate-800">
+      <div className="container mx-auto space-y-20 lg:space-y-28">
+        {projects.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} />
+        ))}
       </div>
-
-      {activeCaseStudy && (
-        <CaseStudyModal
-          caseKey={activeCaseStudy}
-          onClose={closeCaseStudy}
-        />
-      )}
     </section>
   );
 }

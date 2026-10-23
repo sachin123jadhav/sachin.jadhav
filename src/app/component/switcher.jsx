@@ -3,10 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { FiArrowUp } from "react-icons/fi";
 import Link from "next/link";
-import ThemeToggle from "./theme-toggle";
 
 /**
- * Floating controls that do not belong in the header.
+ * Floating back-to-top control.
  */
 export default function Switcher() {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -25,7 +24,6 @@ export default function Switcher() {
 
   return (
     <>
-      <ThemeToggle />
       <Link
         href="#"
         onClick={scrollToTop}

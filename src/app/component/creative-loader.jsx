@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 /**
  * CreativeLoader
@@ -17,7 +17,7 @@ export default function CreativeLoader({ show = true }) {
   return (
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none"
-      aria-hidden={!show}
+      aria-hidden="true"
     >
       {/* overlay */}
       <div className="absolute inset-0 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm transition-opacity" />
@@ -71,7 +71,7 @@ export default function CreativeLoader({ show = true }) {
             {/* replace inner content with your logo or initials */}
             <img
               src="/images/SachinJadhavLogo.png"
-              alt="logo"
+              alt=""
               className="w-12 h-12 object-contain"
             />
           </div>

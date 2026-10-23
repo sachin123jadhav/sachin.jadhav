@@ -6,8 +6,9 @@ import Link from "next/link";
  * The site's single button design.
  *
  * Renders a real <button> when no `href` is given (pass `type="submit"` inside a
- * form), and a next/link when `href` is. Both paths share one set of classes, so
- * every button on the site stays visually identical.
+ * form), a plain <a download> when `download` is set (a file, not a page), and a
+ * next/link otherwise. All paths share one set of classes, so every button on
+ * the site stays visually identical.
  */
 const BUTTON_CLASSES = `
   relative inline-block z-[1] overflow-hidden
@@ -27,6 +28,7 @@ export default function AnimatedButton({
   label = "Resume",
   icon = null,
   target,
+  download,
   type = "button",
   onClick,
   disabled = false,
@@ -71,6 +73,15 @@ export default function AnimatedButton({
       >
         {content}
       </button>
+    );
+  }
+
+  // A file download: next/link is for page navigation, so use a plain anchor.
+  if (download) {
+    return (
+      <a href={href} download={download} className={classes}>
+        {content}
+      </a>
     );
   }
 

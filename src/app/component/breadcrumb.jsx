@@ -9,14 +9,14 @@ function BreadCrumb({
   return (
     <section
       className="
+        section section--band section--page-top
         relative
-        pt-16 pb-[15px] md:pt-24 md:pb-[15px]
         bg-gradient-to-br from-[#faf8fd] via-[#f2edf8] to-[#edf6f7]
         dark:from-[#0f172a] dark:via-[#172554] dark:to-[#1e293b]
       "
     >
       <div className="container">
-        <div className="grid grid-cols-1 pt-8 max-w-3xl">
+        <div className="grid grid-cols-1 max-w-3xl" data-reveal>
           <h1
             className="
               mb-4

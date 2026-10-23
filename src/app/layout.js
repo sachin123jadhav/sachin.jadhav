@@ -2,14 +2,15 @@ import "./globals.css";
 import { Rubik } from "next/font/google";
 
 import "./assets/css/tailwind.css";
-import "./assets/css/materialdesignicons.min.css";
 import "animate.css";
 
 import Navbar from "./component/navbar";
 import Footer from "./component/footer";
 import Switcher from "./component/switcher";
 import PageLoaderProvider from "./providers/PageLoaderProvider";
+import RevealProvider from "./providers/RevealProvider";
 import { ThemeProvider } from "./providers/ThemeProvider";
+import { OG_BASE, SITE_URL } from "./site-url";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -19,9 +20,11 @@ const rubik = Rubik({
 });
 
 const siteDescription =
-  "Senior UI/UX Designer and Frontend Developer with 15+ years of experience designing and building B2B SaaS platforms, dashboards, and enterprise web applications.";
+  "Senior UI/UX Designer and Frontend Developer with 16+ years of experience designing and building B2B SaaS platforms, dashboards, and enterprise web applications.";
 
 export const metadata = {
+  // Makes relative URLs (canonical links, the generated share image) absolute.
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Sachin Jadhav | Senior UI/UX Designer & Frontend Developer",
     template: "%s | Sachin Jadhav",
@@ -41,16 +44,15 @@ export const metadata = {
   authors: [{ name: "Sachin Jadhav" }],
   creator: "Sachin Jadhav",
   openGraph: {
-    type: "website",
-    locale: "en_IN",
-    siteName: "Sachin Jadhav",
+    ...OG_BASE,
+    url: "/",
     title: "Sachin Jadhav | Senior UI/UX Designer & Frontend Developer",
     description: siteDescription,
   },
+  // X falls back to each page's og:title / og:description, so only the card
+  // type is set here; a title would otherwise repeat the home page everywhere.
   twitter: {
     card: "summary_large_image",
-    title: "Sachin Jadhav | Senior UI/UX Designer & Frontend Developer",
-    description: siteDescription,
   },
   robots: {
     index: true,
@@ -84,18 +86,23 @@ export default function RootLayout({ children }) {
           Kept inline and tiny because it has to run before first paint. It
           mirrors applyTheme() in providers/ThemeProvider.jsx — keep the two in
           step if the logic ever changes.
+
+          It also arms the scroll reveals (`reveal-ready`) before paint, so
+          on-screen content doesn't flash. providers/RevealProvider.jsx sets
+          window.__revealArmed; if that never happens (the app's JavaScript
+          failed), the class is removed after 3s so nothing stays hidden.
         */}
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "(function(){try{var k=localStorage.getItem('theme');var d=k==='dark';var r=document.documentElement;r.classList.toggle('dark',d);r.dataset.theme=d?'dark':'light';r.style.colorScheme=d?'dark':'light';}catch(e){}})();",
+              "(function(){try{var k=localStorage.getItem('theme');var d=k==='dark';var r=document.documentElement;r.classList.toggle('dark',d);r.dataset.theme=d?'dark':'light';r.style.colorScheme=d?'dark':'light';}catch(e){}try{if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('reveal-ready');setTimeout(function(){if(!window.__revealArmed)r.classList.remove('reveal-ready')},3000)}}catch(e){}})();",
           }}
         />
 
         <ThemeProvider>
           <PageLoaderProvider>
             <Navbar />
-            {children}
+            <RevealProvider>{children}</RevealProvider>
             <Footer />
             <Switcher />
           </PageLoaderProvider>

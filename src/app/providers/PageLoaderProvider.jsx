@@ -23,10 +23,7 @@ export default function PageLoaderProvider({ children }) {
 
   return (
     <>
-      <div
-        aria-hidden={loading}
-        className={loading ? "pointer-events-none" : ""}
-      >
+      <div className={loading ? "pointer-events-none" : ""}>
         {children}
       </div>
 

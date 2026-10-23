@@ -49,7 +49,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="py-8 bg-slate-800 dark:bg-slate-900 text-white">
+    <footer className="py-12 md:py-16 bg-slate-800 dark:bg-slate-900 text-white">
       <div className="container">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
           <div>
@@ -59,7 +59,7 @@ export default function Footer() {
               className="w-full max-w-[220px]"
             />
             <p className="text-white pt-8">
-              Senior UI/UX Designer &amp; Frontend Developer with 15+ years of
+              Senior UI/UX Designer &amp; Frontend Developer with 16+ years of
               experience in B2B SaaS, dashboards, and enterprise platforms.
             </p>
           </div>
@@ -87,6 +87,7 @@ export default function Footer() {
           <div>
             <h3 className="font-medium text-2xl mb-4">Get in Touch</h3>
 
+            <div className="space-y-2">
             <a
               href="mailto:sachin123jadhav@gmail.com"
               className="flex items-center gap-2 hover:text-purple-400 transition"
@@ -97,7 +98,7 @@ export default function Footer() {
 
             <a
               href="tel:+919890122027"
-              className="flex items-center gap-2 hover:text-purple-400 transition my-2"
+              className="flex items-center gap-2 hover:text-purple-400 transition"
             >
               <FiPhone size={18} />
               +91 9890122027
@@ -107,7 +108,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/sachin123jadhav/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-purple-400 transition mb-2"
+              className="flex items-center gap-2 hover:text-purple-400 transition"
             >
               <FiLinkedin size={18} />
               LinkedIn
@@ -122,6 +123,7 @@ export default function Footer() {
               <FiGithub size={18} />
               GitHub
             </a>
+            </div>
           </div>
 
           <div>
@@ -134,7 +136,7 @@ export default function Footer() {
                   href={href}
                   aria-label={label}
                   title={label}
-                  className={`${hover} transition`}
+                  className={`${hover} inline-flex transition-all duration-300 hover:-translate-y-1 hover:scale-110`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -145,7 +147,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex text-center justify-center">
+        <div className="mt-12 flex justify-center border-t border-white/10 pt-8 text-center">
           <p className="text-gray-400">
             © {new Date().getFullYear()} Sachin Jadhav
           </p>

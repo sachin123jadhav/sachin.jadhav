@@ -7,7 +7,6 @@ import {
   FiMapPin,
   FiSend,
   FiCheckCircle,
-  FiAlertCircle,
 } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import AnimatedButton from "../component/button";
@@ -131,27 +130,12 @@ export default function Contact() {
     "mt-8 inline-block px-[25px] h-[50px] leading-[50px] rounded-md border-2 border-purple-700 dark:border-slate-400 text-purple-700 dark:text-white font-bold text-[16px] tracking-[0.02em] hover:bg-purple-700 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-300 cursor-pointer";
 
   return (
-    <section className="min-h-screen bg-slate-100 py-[15px] dark:bg-slate-800">
-      {/* Hero Section */}
-      <div className="container mx-auto mb-[30px]">
-        <div className="max-w-4xl">
-          <h1 className="mb-6 text-3xl font-bold leading-tight text-gray-900 dark:text-white md:text-4xl lg:text-5xl xl:text-6xl">
-            Let&apos;s Work Together
-          </h1>
-
-          <p className="max-w-3xl text-base leading-relaxed text-gray-600 dark:text-gray-300 md:text-lg">
-            If you&apos;re looking for a Senior UI/UX Designer who can also
-            build and support frontend implementation for SaaS and enterprise
-            products, feel free to get in touch.
-          </p>
-        </div>
-      </div>
-
+    <section className="section section--band bg-slate-100 dark:bg-slate-800">
       {/* Contact Content */}
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Contact Form */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3" data-reveal="left">
             <div className="p-6 lg:p-8 rounded-3xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 shadow-sm">
               <h2 className="font-bold text-2xl text-gray-900 dark:text-white mb-6">
                 Send a Message
@@ -360,12 +344,12 @@ export default function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div className="lg:col-span-2">
-            <div className="space-y-6 lg:sticky lg:top-32">
+          <div className="lg:col-span-2" data-reveal="right">
+            <div className="space-y-6 lg:sticky lg:top-28">
               <div className="p-6 lg:p-8 rounded-3xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 shadow-sm">
-                <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-6">
+                <h2 className="font-bold text-xl text-gray-900 dark:text-white mb-6">
                   Contact Information
-                </h3>
+                </h2>
 
                 <ul className="space-y-5">
                   {contactInfo.map((item) => (
@@ -384,15 +368,15 @@ export default function Contact() {
                           className="flex items-start gap-4 group"
                         >
                           <span className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-200 dark:group-hover:bg-purple-900/50 transition-colors">
-                            <item.icon className="w-5 h-5 text-purple-700 dark:text-purple-300" />
+                            <item.icon className="w-5 h-5 text-purple-700 dark:text-purple-300" aria-hidden="true" />
                           </span>
 
                           <div>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-gray-500 dark:text-slate-400">
                               {item.label}
                             </p>
 
-                            <p className="font-medium text-gray-900 dark:text-white group-hover:text-purple-700 transition-colors break-all">
+                            <p className="font-medium text-gray-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors break-words">
                               {item.value}
                             </p>
                           </div>
@@ -400,11 +384,11 @@ export default function Contact() {
                       ) : (
                         <div className="flex items-start gap-4">
                           <span className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
-                            <item.icon className="w-5 h-5 text-purple-700 dark:text-purple-300" />
+                            <item.icon className="w-5 h-5 text-purple-700 dark:text-purple-300" aria-hidden="true" />
                           </span>
 
                           <div>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-gray-500 dark:text-slate-400">
                               {item.label}
                             </p>
 
@@ -421,9 +405,9 @@ export default function Contact() {
 
               {/* Quick Response */}
               <div className="p-6 lg:p-8 rounded-3xl bg-purple-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600">
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
                   Quick Response
-                </h4>
+                </h3>
 
                 <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                   I typically respond within 24–48 hours. For urgent inquiries,

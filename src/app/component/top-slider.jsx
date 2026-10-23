@@ -1,5 +1,6 @@
+"use client";
+
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react'
 import { FiArrowRight, FiDownload } from 'react-icons/fi';
 import { TypeAnimation } from "react-type-animation";
@@ -54,40 +55,45 @@ function TopSlider() {
   return (
     <>
       <section
-        className="w-full table relative overflow-hidden bg-center bg-cover bg-blue-50 bg-[url('/images/hero-bg.jpg')] pb-[15px] pt-20 dark:bg-slate-800 dark:bg-none md:pt-16 lg:pt-20"
+        className="section section--band section--hero w-full table relative overflow-hidden bg-center bg-cover bg-blue-50 bg-[url('/images/hero-bg.jpg')] dark:bg-slate-800 dark:bg-none"
         id="home"
       >
         <div className="container relative  overflow-x-hidden">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
             <div
-              className="wow animate__animated animate__fadeInLeft md:max-lg:text-center lg:col-span-6"
-              data-wow-delay=".90s "
+              className="animate__animated animate__fadeInLeft md:max-lg:text-center lg:col-span-6"
             >
-              <h4 className="mb-2 text-2xl font-bold leading-tight text-transparent bg-gradient-to-r from-purple-600 to-blue-800 bg-clip-text md:text-3xl lg:text-[1.75rem] xl:text-4xl xl:leading-normal">
-                <span className="block whitespace-nowrap">Hi, I&apos;m Senior</span>
+              <h1 className="gradient-shift mb-2 text-2xl font-bold leading-tight text-transparent bg-gradient-to-r from-purple-600 via-blue-700 to-purple-600 bg-clip-text md:text-3xl lg:text-[1.75rem] xl:text-4xl xl:leading-normal">
+                {/* The typing effect spells words out a letter at a time, so screen
+                    readers and search engines get this stable title instead. */}
+                <span className="sr-only">
+                  Hi, I&apos;m Sachin Jadhav, a Senior UI/UX Designer and Frontend
+                  Developer with 16+ years of experience
+                </span>
+                <span className="block whitespace-nowrap" aria-hidden="true">Hi, I&apos;m Senior</span>
                 <TypeAnimation
                   sequence={[
-                    // Same substring at the start will only be typed out once, initially
                     "UI/UX Designer",
-                    2000, // wait 1s before replacing "Mice" with "Hamsters"
+                    2000, // hold each phrase for 2s
                     "Frontend Developer",
                     2000,
                   ]}
                   wrapper="span"
+                  aria-hidden="true"
                   speed={20}
                   repeat={Infinity}
-                  className="typewrite relative block h-[1.25em] whitespace-nowrap bg-gradient-to-r from-purple-600 to-blue-800 bg-clip-text text-transparent"
+                  className="typewrite gradient-shift relative block h-[1.25em] whitespace-nowrap bg-gradient-to-r from-[#0fb3d3] via-purple-600 to-[#0fb3d3] bg-clip-text text-transparent"
                   cursor={false}
                 />
-                <span className="block whitespace-nowrap text-[clamp(1rem,6vw,1.5rem)] lg:text-[1.75rem] xl:text-4xl">
-                  with 15+ Years of Experience
+                <span className="block whitespace-nowrap text-[clamp(1rem,6vw,1.5rem)] lg:text-[1.75rem] xl:text-4xl" aria-hidden="true">
+                  with 16+ Years of Experience
                 </span>
-              </h4>
-              <h2 className="py-2 text-lg font-medium xl:text-xl">
+              </h1>
+              <p className="py-2 text-lg font-medium xl:text-xl">
                 B2B SaaS • Dashboards • Enterprise Platforms • Web Applications
-              </h2>
+              </p>
               <p className="mb-5 text-base leading-relaxed text-gray-700 dark:text-gray-300 xl:text-lg">
-                Senior UI/UX Designer and Frontend Developer with 15+ years of
+                Senior UI/UX Designer and Frontend Developer with 16+ years of
                 experience designing and building B2B SaaS platforms,
                 dashboards, data-heavy interfaces, and enterprise web
                 applications. Strong expertise in Figma, UI systems, and
@@ -113,8 +119,7 @@ function TopSlider() {
             </div>
 
             <div
-              className="lg:col-span-6 wow animate__animated animate__fadeInRight relative"
-              data-wow-delay="1.1s"
+              className="lg:col-span-6 animate__animated animate__fadeInRight relative"
             >
               {/* Portrait box: this is what the badges are positioned against. */}
               <div className="relative mx-auto w-full max-w-[400px] max-xl:max-w-[320px]">
@@ -158,6 +163,7 @@ function TopSlider() {
 
                 <Image
                   src={heroSachin}
+                  priority
                   alt="Sachin Jadhav"
                   className="w-full rounded-tl-[50%] rounded-br-[50%] shadow-lg
       animate-[color-change_6s_linear_infinite]

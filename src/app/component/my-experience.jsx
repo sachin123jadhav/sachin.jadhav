@@ -12,11 +12,11 @@ export default function MyExperience() {
   return (
     <>
       {/* Start */}
-      <section id="features" className="relative py-[15px]">
-        <div className="container md:mt-0 mt-1">
-          <div className="grid grid-cols-1 mt-0  pb-10">
+      <section id="experience" className="section relative">
+        <div className="container">
+          <div className="grid grid-cols-1">
             <div className="timeline relative">
-              <div className="timeline-item">
+              <div className="timeline-item" data-reveal>
                 <div className="grid sm:grid-cols-2">
                   <div className="duration date-label-left md:me-7 relative text-right">
                     <h3 className="text-xl font-semibold">
@@ -27,34 +27,34 @@ export default function MyExperience() {
                       Senior Web Designer / UI-UX & Frontend Lead
                     </h4>
 
-                    <div className="flex items-start justify-end mt-2">
+                    <div className="flex items-start justify-end mt-2 max-[575px]:justify-start">
                       <div className="icons">
                         <FaRegCalendarAlt size={22} />
                       </div>
 
                       <div className="me-2">
-                        <h5 className="text-md dark:text-white mb-2 ml-2">
+                        <h5 className="text-base dark:text-white mb-2 ml-2">
                           July 2023 – Present
                         </h5>
                       </div>
                     </div>
-                    <div className="flex items-start justify-end mt-2">
+                    <div className="flex items-start justify-end mt-2 max-[575px]:justify-start">
                       <div className="icons">
                         <MdLocationOn size={24} />
                       </div>
 
                       <div className="me-2">
-                        <h5 className="text-md dark:text-white mb-2">Pune</h5>
+                        <h5 className="text-base dark:text-white mb-2">Pune</h5>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-4 md:mt-0">
-                    <div className="border border-gray-300 dark:border-slate-600 dark:bg-slate-700 p-6 rounded-2xl event event-description-right ltr:float-left rtl:float-right ltr:text-left rtl:text-right md:ms-7">
-                      <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                  <div className="mt-4 sm:mt-0">
+                    <div className="lift bg-white border border-gray-300 dark:border-slate-600 dark:bg-slate-700 p-6 rounded-2xl event event-description-right ltr:float-left rtl:float-right ltr:text-left rtl:text-right md:ms-7">
+                      <ul className="bullet-list space-y-2 text-gray-700 dark:text-gray-300">
                         <li>
                           Led end-to-end <strong>UI/UX design</strong> for a{" "}
-                          <strong>B2B SaaS Document Management System</strong>
+                          <strong>B2B SaaS Document Management System</strong>{" "}
                           with complex workflows and role-based access control.
                         </li>
                         <li>
@@ -67,14 +67,14 @@ export default function MyExperience() {
                           <strong>
                             50+ wireframes, interactive prototypes, and
                             high-fidelity UI screens
-                          </strong>
+                          </strong>{" "}
                           using <strong>Figma</strong>.
                         </li>
                         <li>
                           Collaborated closely with{" "}
                           <strong>
                             product managers, developers, and stakeholders
-                          </strong>
+                          </strong>{" "}
                           to simplify complex requirements and ensure alignment.
                         </li>
                         <li>
@@ -83,22 +83,22 @@ export default function MyExperience() {
                             UI architecture and frontend performance
                           </strong>
                           , reducing <strong>page load time by 38%</strong> and
-                          achieving
+                          achieving{" "}
                           <strong>90+ Lighthouse scores</strong>.
                         </li>
                         <li>
                           Built and maintained{" "}
-                          <strong>scalable design systems</strong> across
+                          <strong>scalable design systems</strong> across{" "}
                           <strong>20+ application modules</strong>.
                         </li>
                         <li>
                           Mentored <strong>designers and developers</strong>,
-                          reducing
+                          reducing{" "}
                           <strong>UI rework by 25%</strong>.
                         </li>
                         <li>
                           Identified and resolved <strong>40+ UX issues</strong>
-                          , reducing
+                          , reducing{" "}
                           <strong>release cycle delays by 28%</strong>.
                         </li>
                       </ul>
@@ -107,11 +107,11 @@ export default function MyExperience() {
                 </div>
               </div>
 
-              <div className="timeline-item mt-5 pt-4">
+              <div className="timeline-item mt-5 pt-4" data-reveal>
                 <div className="grid sm:grid-cols-2">
-                  <div className="md:order-1 order-2">
-                    <div className="event   md:me-7 border border-gray-300 dark:border-slate-600 dark:bg-slate-700 p-6 rounded-2xl">
-                      <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                  <div className="md:order-1 order-2 mt-4 sm:mt-0">
+                    <div className="lift event md:me-7 bg-white border border-gray-300 dark:border-slate-600 dark:bg-slate-700 p-6 rounded-2xl">
+                      <ul className="bullet-list space-y-2 text-gray-700 dark:text-gray-300">
                         <li>
                           Delivered <strong>20+ web applications</strong> and{" "}
                           <strong>50+ responsive websites</strong> with complex
@@ -137,7 +137,7 @@ export default function MyExperience() {
                         </li>
                         <li>
                           Built e-commerce platforms on{" "}
-                          <strong>WooCommerce, Shopify, and OpenCart</strong>
+                          <strong>WooCommerce, Shopify, and OpenCart</strong>{" "}
                           with <strong>15–40% conversion improvements</strong>.
                         </li>
                         <li>
@@ -167,7 +167,7 @@ export default function MyExperience() {
                         </div>
 
                         <div className="me-2">
-                          <h5 className="text-md dark:text-white mb-2 ml-2">
+                          <h5 className="text-base dark:text-white mb-2 ml-2">
                             Nov 2014 – Jun 2023
                           </h5>
                         </div>
@@ -178,14 +178,14 @@ export default function MyExperience() {
                         </div>
 
                         <div className="me-2">
-                          <h5 className="text-md dark:text-white mb-2">Pune</h5>
+                          <h5 className="text-base dark:text-white mb-2">Pune</h5>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="timeline-item mt-5 pt-4 mb-12">
+              <div className="timeline-item mt-5 pt-4" data-reveal>
                 <div className="grid sm:grid-cols-2">
                   <div className="duration date-label-left md:me-7 relative text-right">
                     <h3 className="text-xl font-semibold">
@@ -196,36 +196,36 @@ export default function MyExperience() {
                       Graphic & Web Designer
                     </h4>
 
-                    <div className="flex items-start justify-end mt-2">
+                    <div className="flex items-start justify-end mt-2 max-[575px]:justify-start">
                       <div className="icons">
                         <FaRegCalendarAlt size={22} />
                       </div>
 
                       <div className="me-2">
-                        <h5 className="text-md dark:text-white mb-2 ml-2">
+                        <h5 className="text-base dark:text-white mb-2 ml-2">
                           2008 – 2014
                         </h5>
                       </div>
                     </div>
-                    <div className="flex items-start justify-end mt-2">
+                    <div className="flex items-start justify-end mt-2 max-[575px]:justify-start">
                       <div className="icons">
                         <MdLocationOn size={24} />
                       </div>
 
                       <div className="me-2">
-                        <h5 className="text-md dark:text-white mb-2">Pune</h5>
+                        <h5 className="text-base dark:text-white mb-2">Pune</h5>
                       </div>
                     </div>
                   </div>
 
-                  <div className=" md:mt-0">
-                    <div className="border border-gray-300 dark:border-slate-600 dark:bg-slate-700 p-6 rounded-2xl event event-description-right ltr:float-left rtl:float-right ltr:text-left rtl:text-right md:ms-7">
+                  <div className="mt-4 sm:mt-0">
+                    <div className="lift bg-white border border-gray-300 dark:border-slate-600 dark:bg-slate-700 p-6 rounded-2xl event event-description-right ltr:float-left rtl:float-right ltr:text-left rtl:text-right md:ms-7">
                       <ul className="space-y-5 text-gray-700 dark:text-gray-300">
                         <li>
                           <h6 className="text-2xl text-purple-800 dark:text-purple-300">
                             Prasanna Purple Mobility Solutions
                           </h6>
-                          <ul className="list-disc list-inside space-y-2 mt-2">
+                          <ul className="bullet-list space-y-2 mt-2">
                             <li>
                               Designed mock-ups, wireframes, and layout concepts
                               for 20+ landing pages, improving visual hierarchy
@@ -246,7 +246,7 @@ export default function MyExperience() {
                           <h6 className="text-2xl text-purple-800 dark:text-purple-300">
                             Remote Control Media Inc.
                           </h6>
-                          <ul className="list-disc list-inside space-y-2 mt-2">
+                          <ul className="bullet-list space-y-2 mt-2">
                             <li>
                               Created 30+ website mock-ups and marketing assets
                               (brochures, emailers), optimizing visuals in Adobe
@@ -264,12 +264,12 @@ export default function MyExperience() {
             </div>
           </div>
 
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center mt-12">
             <AnimatedButton
               href="/portfolio"
               label="View Portfolio"
               icon={<FiArrowRight className="inline ms-2 text-xl" />}
-              className=" bg-gradient-to-br from-[#7047c3] to-[#7047c3] mr-8"
+              className="bg-gradient-to-br from-[#7047c3] to-[#7047c3]"
             />
           </div>
         </div>

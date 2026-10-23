@@ -53,7 +53,3 @@ body {
     scroll-behavior: auto !important;
   }
 }
-
-.roles-details {
-  display: flex;
-}
